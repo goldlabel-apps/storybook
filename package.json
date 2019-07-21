@@ -3,7 +3,7 @@
   "description": "Bulletproof UI components",
   "version": "0.0.1",
   "scripts": {
-    "deploy": "clear && yarn build-storybook && cd firebase && firebase deploy",
+    "deploy": "clear && cd firebase && firebase deploy",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
