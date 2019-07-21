@@ -11,6 +11,10 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s ./firebase/public"
   },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/listingslab-software/storybook"
+  },
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
