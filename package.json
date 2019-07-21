@@ -3,13 +3,13 @@
   "description": "Bulletproof UI components",
   "version": "0.0.1",
   "scripts": {
-    "deploy": "clear && echo not done yet",
+    "deploy": "clear && yarn build-storybook && cd firebase && firebase deploy",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s ./firebase/public"
   },
   "dependencies": {
     "gulp": "^4.0.2",
