@@ -1,8 +1,8 @@
 
-import HMLR from './HMLR/HMLR';
-import ImportWizard from './ImportWizard/ImportWizard';
+import ImportWizard from './ImportWizard';
+import VerticalLinearStepper from './VerticalLinearStepper';
 
 export {
-    HMLR,
     ImportWizard,
+    VerticalLinearStepper,
 };

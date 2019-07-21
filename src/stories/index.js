@@ -22,18 +22,18 @@ stories.add('Import Wizard', () => (
 ));
 
 
-// Knobs for React props
-stories.add('Knobs with buttons', () => (
-  <button disabled={boolean('Disabled', false)} >
-    {text('Label', 'Hello Storybook')}
-  </button>
-));
+// // Knobs for React props
+// stories.add('Knobs with buttons', () => (
+//   <button disabled={boolean('Disabled', false)} >
+//     {text('Label', 'Hello Storybook')}
+//   </button>
+// ));
  
-// Knobs as dynamic variables.
-stories.add('Dynamic variables', () => {
-  const name = text('Name', 'Arunoda Susiripala');
-  const age = number('Age', 89);
+// // Knobs as dynamic variables.
+// stories.add('Dynamic variables', () => {
+//   const name = text('Name', 'Arunoda Susiripala');
+//   const age = number('Age', 89);
  
-  const content = `I am ${name} and I'm ${age} years old.`;
-  return (<div>{content}</div>);
-});
+//   const content = `I am ${name} and I'm ${age} years old.`;
+//   return (<div>{content}</div>);
+// });
