@@ -8,7 +8,7 @@
     "email": "listingslab@gmail.com"
   },
   "scripts": {
-    "deploy": "clear && yarn build storybook && gulp && cd firebase && firebase deploy",
+    "deploy": "clear && yarn build-storybook && gulp && cd firebase && firebase deploy",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
