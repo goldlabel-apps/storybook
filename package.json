@@ -2,6 +2,11 @@
   "name": "listingslab-storybook",
   "description": "Bulletproof UI components",
   "version": "0.0.1",
+  "license": "OSL-3.0",
+  "author": {
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
+  },
   "scripts": {
     "deploy": "clear && cd firebase && firebase deploy",
     "start": "react-scripts start",
@@ -16,12 +21,18 @@
     "url": "https://github.com/listingslab-software/storybook"
   },
   "dependencies": {
+    "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/lab": "^4.0.0-alpha.20",
+    "@storybook/addon-knobs": "^5.1.9",
+    "add": "^2.0.6",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-color": "^0.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "yarn": "^1.17.3"
   },
   "eslintConfig": {
     "extends": "react-app"
