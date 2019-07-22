@@ -14,6 +14,7 @@ const BootstrapInput = withStyles(theme => ({
     },
   },
   input: {
+    width: 200,
     borderRadius: 4,
     position: 'relative',
     backgroundColor: theme.palette.background.paper,
@@ -54,44 +55,26 @@ const useStyles = makeStyles(theme => ({
 
 export default function CustomizedSelects() {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
+  const [type, setType] = React.useState('');
   const handleChange = event => {
-    setAge(event.target.value);
+    setType(event.target.value);
   };
   return (
-    <form className={classes.root} autoComplete="off">
+    <React.Fragment>
+      <form className={classes.root} autoComplete="off">
       <FormControl className={classes.margin}>
-        <InputLabel htmlFor="age-customized-input">Age</InputLabel>
-        <BootstrapInput id="age-customized-input" />
-      </FormControl>
-      <FormControl className={classes.margin}>
-        <InputLabel htmlFor="age-customized-select">Age</InputLabel>
+        <InputLabel htmlFor="import-type">Import Type</InputLabel>
         <Select
-          value={age}
+          className={classes.dropDown}
+          value={type}
           onChange={handleChange}
-          input={<BootstrapInput name="age" id="age-customized-select" />}
+          input={<BootstrapInput name="type" id="import-type" />}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={`street`}>Street name</MenuItem>
+          <MenuItem value={`postcode`}>Twenty</MenuItem>
         </Select>
       </FormControl>
-      <FormControl className={classes.margin}>
-        <InputLabel htmlFor="age-customized-native-simple">Age</InputLabel>
-        <NativeSelect
-          value={age}
-          onChange={handleChange}
-          input={<BootstrapInput name="age" id="age-customized-native-simple" />}
-        >
-          <option value="" />
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
-        </NativeSelect>
-      </FormControl>
-    </form>
+      </form>
+    </React.Fragment>
   );
 }

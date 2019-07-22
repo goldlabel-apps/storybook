@@ -15,7 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import SVGPaywall from './SVG/SVGPaywall';
+// import SVGPaywall from './SVG/SVGPaywall';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -64,7 +64,7 @@ export default function AnimatedSVG() {
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
       />
-      <SVGPaywall />
+      {/* <SVGPaywall /> */}
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           This impressive paella is a perfect party dish and a fun meal to cook together with your
