@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '90%',
+    width: '460',
   },
   button: {
     marginTop: theme.spacing(1),
@@ -25,22 +25,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+  return [
+    'Import Type',
+  ];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`;
-    case 1:
-      return 'An ad group contains one or more ads which target a shared set of keywords.';
-    case 2:
-      return `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`;
+      return `Search by streetname or full/parial UK postcode.`;
     default:
       return 'Unknown step';
   }
@@ -48,7 +41,10 @@ function getStepContent(step) {
 
 export default function VerticalLinearStepper() {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [
+    activeStep, 
+    setActiveStep
+  ] = React.useState(0);
   const steps = getSteps();
 
   function handleNext() {
@@ -81,12 +77,12 @@ export default function VerticalLinearStepper() {
                     Back
                   </Button>
                   <Button
-                    variant="contained"
-                    color="primary"
+                    variant={`contained`}
+                    color={`primary`}
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Select Properties' : 'Next'}
                   </Button>
                 </div>
               </div>
@@ -94,6 +90,7 @@ export default function VerticalLinearStepper() {
           </Step>
         ))}
       </Stepper>
+
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
           <Typography>All steps completed - you&apos;re finished</Typography>
@@ -102,6 +99,7 @@ export default function VerticalLinearStepper() {
           </Button>
         </Paper>
       )}
+      
     </div>
   );
 }
