@@ -9,12 +9,11 @@
   },
   "scripts": {
     "deploy": "clear && yarn build-storybook && gulp && cd firebase && firebase deploy",
-    "start": "yarn storybook",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s ./firebase/public"
+    "start": "clear && yarn storybook",
+    "build": "clear && react-scripts build",
+    "test": "clear && react-scripts test",
+    "storybook": "clear && start-storybook -p 9009 -s public",
+    "build-storybook": "clear && build-storybook -s ./build"
   },
   "repository": {
     "type": "github",

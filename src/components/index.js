@@ -1,8 +1,6 @@
-
-import ImportWizard from './ImportWizard';
-import VerticalLinearStepper from './VerticalLinearStepper';
-
+import {AnimatedSVG} from './AnimatedSVG';
+import {ImportWizard} from './ImportWizard';
 export {
+    AnimatedSVG,
     ImportWizard,
-    VerticalLinearStepper,
 };

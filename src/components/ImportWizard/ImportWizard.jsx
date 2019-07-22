@@ -3,12 +3,14 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
+// import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Paper from '@material-ui/core/Paper';
 import Draggable from 'react-draggable';
 
-import VerticalLinearStepper from './VerticalLinearStepper';
+import VerticalLinearStepper from './components/VerticalLinearStepper';
+
+//import SelectImportType from './components/SelectImportType';
 
 function PaperComponent(props) {
   return (
@@ -36,11 +38,11 @@ export default function ImportWizard() {
     <div>
       
       <Button 
-        variant="outlined" 
+        variant="contained" 
         color="primary" 
         onClick={handleClickOpen}
       >
-        Open Import Wizard
+        HM Land Registry
       </Button>
       
       <Dialog
@@ -50,13 +52,12 @@ export default function ImportWizard() {
         aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
-        Import Wizard
+        Sales Import History
         </DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Search by streetname or full/parial UK postcode.
-          </DialogContentText>
+          
           <VerticalLinearStepper />
+
         </DialogContent>
         <DialogActions>
           <Button 
