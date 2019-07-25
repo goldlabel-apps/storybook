@@ -1,14 +1,14 @@
 {
   "name": "listingslab-storybook",
-  "description": "Bulletproof UI components",
-  "version": "0.0.4",
+  "description": "Build Bulletproof Stuff",
+  "version": "0.0.6",
   "license": "OSL-3.0",
   "author": {
     "name": "listingslab",
     "email": "listingslab@gmail.com"
   },
   "scripts": {
-    "deploy": "clear && yarn build-storybook && gulp && cd firebase && firebase deploy",
+    "deploy": "clear && yarn build-storybook && gulp && cd firebase && firebase deploy --only hosting",
     "start": "clear && yarn storybook",
     "build": "clear && react-scripts build",
     "test": "clear && react-scripts test",

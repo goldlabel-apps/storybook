@@ -5,27 +5,13 @@ import {
   number,
 } from '@storybook/addon-knobs';
 import {
+  REKA,
   Greensock,
   AnimatedSVG,
   ImportWizard,
   DashboardIndicator,
 } from '../components';
 // import StoryAnimatedSVG from './AnimatedSVG.js';
-
-const stories = storiesOf('🇬🇧listingslab', module);
-stories.addParameters({ options: { 
-  panelPosition: 'right' 
-}});
-
-stories.add('🍊 Card', () => (
-  <AnimatedSVG />
-))
-
-stories.add('🍏 Wizard', () => (
-  <ImportWizard />
-));
-
-
 const label = '% Complete';
 const defaultValue = 73;
 const options = {
@@ -34,6 +20,22 @@ const options = {
    max: 100,
    step: 1,
 };
+const stories = storiesOf('🇬🇧listingslab', module);
+stories.addParameters({ options: { 
+  panelPosition: 'right' 
+}});
+
+stories.add('🍓 REKA', () => (
+  <REKA percentComplete={number(label, defaultValue, options)}/>
+))
+
+stories.add('🍊 Card', () => (
+  <AnimatedSVG />
+))
+
+stories.add('🍏 Wizard', () => (
+  <ImportWizard />
+));
 
 stories.add('🍒 Indicator', () => (
   <DashboardIndicator
