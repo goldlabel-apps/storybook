@@ -5,9 +5,9 @@ import {
   number,
 } from '@storybook/addon-knobs';
 import {
+  AnimatedSVG,
   REKA,
   Greensock,
-  AnimatedSVG,
   ImportWizard,
   DashboardIndicator,
 } from '../components';
@@ -25,12 +25,12 @@ stories.addParameters({ options: {
   panelPosition: 'right' 
 }});
 
-stories.add('🍓 REKA', () => (
-  <REKA percentComplete={number(label, defaultValue, options)}/>
+stories.add('🍌 AnimatedSVG', () => (
+  <AnimatedSVG percentComplete={number(label, defaultValue, options)}/>
 ))
 
-stories.add('🍊 Card', () => (
-  <AnimatedSVG />
+stories.add('🍓 REKA', () => (
+  <REKA percentComplete={number(label, defaultValue, options)}/>
 ))
 
 stories.add('🍏 Wizard', () => (
