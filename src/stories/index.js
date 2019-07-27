@@ -26,7 +26,8 @@ stories.addParameters({ options: {
 }});
 
 stories.add('🍌 AnimatedSVG', () => (
-  <AnimatedSVG percentComplete={number(label, defaultValue, options)}/>
+  <AnimatedSVG />
+  // percentComplete={number(label, defaultValue, options)}
 ))
 
 stories.add('🍓 REKA', () => (
