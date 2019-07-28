@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import './style.css';
-import { TweenLite } from 'gsap';
-import SVGGraphic from './SVGGraphic';
+// import { TweenLite } from 'gsap';
+import Steps from './Steps';
 import {
   Box,
   Button,
+  Card,
+  CardHeader,
   Grid,
   Typography,
 } from '@material-ui/core/';
@@ -30,35 +32,61 @@ class AnimatedSVG extends Component {
   render(){
     return (
       <React.Fragment>
-        <SVGGraphic/>
-        <div id={'thingo'}>
-            dluahslid
-        </div>
         <Grid container spacing={1}>
-          <Grid item>
+          <Grid item xs={12}>
+            <Card className={`card`}>
+              <CardHeader 
+                title={`Steps.jsx`}
+                subheader={`All SVG elements can be controlled in several ways just as any DOM 
+                object can be. Some people like CSS. My preference is Tweening.`}
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12}>
+            <Steps/>
+          </Grid>
+          <Grid item xs={6}>
+            <Card className={`card`}>
+              <Typography variant={`h6`}>
+                CSS
+              </Typography>
+              <Typography variant={`body1`}>
+                You can apply classes conditionally to any of the element in your svg
+              </Typography>
+            </Card>
+          </Grid>
+          <Grid item xs={6}>
+            <Card className={`card`}>
+              <Typography variant={`h6`}>
+                Tweening
+              </Typography>
+              <Typography variant={`body1`}>
+                Using an animation library like Greensock
+              </Typography>
+            </Card>
+          </Grid>
+          {/* <Grid item xs={12}>
             <Button
               color={`secondary`}
-              variant={`contained`}
+              variant={`outlined`}
               onClick={(e) => {
                 e.preventDefault();
                 this.applyCSS ();
-                // window.location.assign('https://greensock.com/react', '_blank')
               }}>
-              apply CSS
+              CSS
             </Button>
-          </Grid>
-          <Grid item>
+          </Grid> */}
+          {/* <Grid item xs={12}>
             <Button
               color={`primary`}
-              variant={`contained`}
+              variant={`outlined`}
               onClick={(e) => { 
                 e.preventDefault();
-                console.log ('CSS');
-                // window.location.assign('https://greensock.com/react', '_blank')
+                console.log ('Betterer');
               }}>
-              GSAP
+              Betterer
             </Button>
-          </Grid>
+          </Grid> */}
           {/* <Grid item xs={12}>
             <Box>
               <Typography variant={`body1`}>
@@ -66,13 +94,8 @@ class AnimatedSVG extends Component {
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={12}>
-            <Box>
-              <Typography variant={`body1`}>
-                Greensock animation
-              </Typography>
-            </Box>
-          </Grid> */}
+           */}
+
         </Grid>
       </React.Fragment>
     );
