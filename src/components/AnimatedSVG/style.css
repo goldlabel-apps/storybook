@@ -2,3 +2,7 @@
 .isHidden {
     visibility: hidden;
 }
+
+.card {
+    padding: 8px;
+}
