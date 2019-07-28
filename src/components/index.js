@@ -1,11 +1,9 @@
 import {Animator} from './Animator';
 import {AnimatedSVG} from './AnimatedSVG';
-import {DashboardIndicator} from './DashboardIndicator';
-import {ImportWizard} from './ImportWizard';
+import {REKA} from './REKA';
 
 export {
     Animator,
     AnimatedSVG,
-    DashboardIndicator,
-    ImportWizard,
+    REKA,
 };
