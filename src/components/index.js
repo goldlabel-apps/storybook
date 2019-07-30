@@ -1,7 +1,7 @@
-import {Animator} from './Animator';
+import {SVGGraphics} from './SVGGraphics';
 import {REKA} from './REKA';
 
 export {
-    Animator,
+    SVGGraphics,
     REKA,
 };
