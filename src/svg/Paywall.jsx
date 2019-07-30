@@ -1,6 +1,6 @@
 import React from "react";
 
-const SVGPaywall = props => (
+const Paywall = props => (
   <svg 
     {...props}
     viewBox="0 0 3080 1200"
@@ -592,5 +592,5 @@ const SVGPaywall = props => (
   </svg>
 );
 
-export default SVGPaywall;
+export default Paywall;
 
