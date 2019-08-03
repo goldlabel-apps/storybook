@@ -10,6 +10,7 @@ import {
 import {
   REKA,
   SVGGraphics,
+  Characters,
 } from '../components';
 
 const stories = storiesOf('🇬🇧listingslab', module);
@@ -18,15 +19,11 @@ stories.addParameters({ options: {
   panelPosition: 'right' 
 }})
 
-// storiesOf('🌈 SVG Graphics').addStory({
-//   name: '🌈 Example',
-//   story: () => {
-//     return (
-//      
-//     )}
-// });
+stories.add('🌈 Characters', () => (
+  <Characters />
+))
 
-stories.add('🌈 SVG Graphics', () => (
+stories.add('SVG Graphics', () => (
   <SVGGraphics 
     title={ text('Title', 'Goal this month') }
     score={ number('Score', 1000) }
@@ -40,7 +37,7 @@ stories.add('🌈 SVG Graphics', () => (
   />
 ))
 
-stories.add('🍌 REKA', () => (
+stories.add('REKA', () => (
   <REKA />
 ))
 
