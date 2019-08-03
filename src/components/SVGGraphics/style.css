@@ -1,0 +1,40 @@
+
+/* add/remove this class to an svg element */
+.isHidden {
+    visibility: hidden;
+}
+#blokey {
+    z-index: 1000;
+}
+
+#cloud-left {
+    z-index: 900;
+}
+#cloud-top {
+    z-index: 800;
+}
+#cloudBottom {
+    z-index: 700;
+}
+#cloudRight {
+    z-index: 1000;
+}
+.app {
+    max-width: 800px;
+    margin: auto;
+}
+.graphic {
+    position: relative;
+}
+.propLayer {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.75);
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 8px;
+    bottom: 16px;
+    right: 16px;
+    z-index: 10;
+}
