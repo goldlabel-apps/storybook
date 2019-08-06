@@ -2,7 +2,7 @@ import React from "react";
 
 const Dapper = props => (
     <svg {...props} viewBox="0 0 197 347">
-    <g id="all" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="all" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
         <g id="iStock-943542898" transform="translate(-312.000000, -496.000000)">
             <g id="dapper" transform="translate(312.066045, 496.420741)">
                 <path d="M31.8609546,66.409259 C44.8639546,66.793259 73.4059546,76.348259 73.4059546,82.354259 C73.4059546,88.360259 36.8639546,84.168259 23.8609546,83.784259 C10.8589546,83.400259 0.191954618,77.094259 0.191954618,71.088259 C0.191954618,65.082259 18.8589546,66.025259 31.8609546,66.409259" id="Fill-218" fill="#684835"></path>
