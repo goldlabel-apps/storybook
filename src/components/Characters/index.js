@@ -1,5 +1,5 @@
 import Characters from './Characters';
-import CharacterCard from './CharacterCard';
+import CharacterCard from './components/CharacterCard';
 export {
     Characters,
     CharacterCard,

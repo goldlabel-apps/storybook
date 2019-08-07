@@ -12,6 +12,11 @@ import {
   Dapper,
   Hippy,
   Hipster,
+  Mumma,
+  Punk,
+  Rasta,
+  Rocker,
+  Youngun,
 } from './characters/';
 // import CharacterCard from './CharacterCard';
 
@@ -20,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     // border: '1px solid red',
   },
   gridItem: {
-    border: '1px solid #eee',
+    // border: '1px solid #eee',
     // padding: theme.spacing(),
   }
 }));
@@ -37,16 +42,33 @@ export default function Characters() {
           <Biker />
         </Grid>
         <Grid item xs={gridWidth} className={cn(classes.gridItem)}>
-          <Chix />
+          <Youngun />
         </Grid>
         <Grid item xs={gridWidth} className={cn(classes.gridItem)}>
-          <Dapper />
+          <Rocker />
+        </Grid>
+        <Grid item xs={gridWidth} className={cn(classes.gridItem)}>
+          <Rasta />
+        </Grid>
+        <Grid item xs={gridWidth} className={cn(classes.gridItem)}>
+          <Punk />
+        </Grid>
+        <Grid item xs={1} className={cn()}></Grid>
+        <Grid item xs={1} className={cn()}></Grid>
+        <Grid item xs={gridWidth} className={cn(classes.gridItem)}>
+          <Hipster />
         </Grid>
         <Grid item xs={gridWidth} className={cn(classes.gridItem)}>
           <Hippy />
         </Grid>
         <Grid item xs={gridWidth} className={cn(classes.gridItem)}>
-          <Hipster />
+          <Dapper />
+        </Grid>
+        <Grid item xs={gridWidth} className={cn(classes.gridItem)}>
+          <Chix />
+        </Grid>
+        <Grid item xs={gridWidth} className={cn(classes.gridItem)}>
+          <Mumma />
         </Grid>
         <Grid item xs={1} className={cn()}></Grid>
       </Grid>
