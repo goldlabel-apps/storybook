@@ -1,7 +1,7 @@
 {
   "name": "listingslab-storybook",
   "description": "Building Bulletproof Stuff",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "OSL-3.0",
   "author": {
     "name": "listingslab",
@@ -33,6 +33,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
+    "react-swipeable-views": "^0.13.3",
     "yarn": "^1.17.3"
   },
   "eslintConfig": {

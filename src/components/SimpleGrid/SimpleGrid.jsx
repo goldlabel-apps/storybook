@@ -3,36 +3,33 @@ import { makeStyles } from '@material-ui/core/styles';
 // import clsx from 'clsx';
 import cn from 'classnames';
 import {
-  Grid,
-  // Card,
-} from '@material-ui/core/';
-import { 
-  Biker,
-  Chix,
-  Dapper,
-  Hippy,
-  Hipster,
-  Mumma,
-  Punk,
-  Rasta,
-  Rocker,
-  Youngun,
-} from './characters/';
-// import CharacterCard from './CharacterCard';
+    Grid,
+    // Card,
+  } from '@material-ui/core/';
+  import { 
+    Biker,
+    Chix,
+    Dapper,
+    Hippy,
+    Hipster,
+    Mumma,
+    Punk,
+    Rasta,
+    Rocker,
+    Youngun,
+  } from '../CharacterSelect/characters/';
 
 const useStyles = makeStyles(theme => ({
-  characters: {
-    // border: '1px solid red',
+  card: {
+    padding: theme.spacing(),
   },
-  gridItem: {
-    // border: '1px solid #eee',
-    // padding: theme.spacing(),
-  }
 }));
 
-export default function Characters() {
+export default function SimpleGrid(props) {
+  const {children} = props;
+  console.log ('SimpleGrid', children)
   const classes = useStyles();
-  // const [expanded, setExpanded] = React.useState(false);
+// const [expanded, setExpanded] = React.useState(false);
   const gridWidth = 2;
   return (
     <div className={cn(classes.characters)} >
