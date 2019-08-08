@@ -4,7 +4,7 @@ import {BottomAppBar} from './BottomAppBar';
 import {CharacterCard} from './CharacterCard';
 import {Dropdown} from './Dropdown';
 import {SimpleGrid} from './SimpleGrid';
-import {TabPanel} from './TabPanel';
+import {SwipableTabs} from './SwipableTabs';
 export {
     CharacterSelect,
     StoryTitle,
@@ -12,5 +12,5 @@ export {
     CharacterCard,
     Dropdown,
     SimpleGrid,
-    TabPanel,
+    SwipableTabs,
 };

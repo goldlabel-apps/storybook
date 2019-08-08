@@ -27,8 +27,7 @@ stories.add('Character Select', () => (
       <StoryTitle story={{
         version: `0.0.3`,
         title: `Character Select`,
-        description: `As a user, I want to be able to 
-        select a character.`,
+        description: ``,
       }} />
       <CharacterSelect />
     </MuiThemeProvider>
