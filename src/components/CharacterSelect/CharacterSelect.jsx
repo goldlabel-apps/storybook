@@ -4,10 +4,12 @@ import cn from 'classnames';
 import {
   Grid,
   IconButton,
+  
 } from '@material-ui/core/';
 import IconLeft from '@material-ui/icons/ArrowBack';
 import IconRight from '@material-ui/icons/ArrowForward';
 import { 
+  characterList,
   Biker,
 } from './characters/';
 import { 
@@ -38,14 +40,27 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
+
 export default function CharacterSelect() {
   const css = useStyles();
+
+  const onCharacterSelect = (payload) => {
+    // console.log('onCharacterSelect', payload);
+  }
+
+  const currentCharacter = null;
+
   return (
     <div className={cn(css.characterSelect)} >
 
       <Grid container>
         <Grid item xs={12} className={cn(css.selectDropdown, css.centered)}>
-          <Dropdown />
+          <Dropdown 
+            list={characterList} 
+            onChange={onCharacterSelect}
+            selected={currentCharacter}
+          />
         </Grid>
       </Grid>
       

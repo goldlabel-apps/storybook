@@ -1,13 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import FilledInput from '@material-ui/core/FilledInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
+
+import {
+  NativeSelect,
+  FormControl,
+  FormHelperText,
+} from '@material-ui/core/';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -19,49 +17,37 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Dropdown() {
+export default function Dropdown(props) {
   const classes = useStyles();
-  const [state, /*setState*/] = React.useState({
-    character: '',
-  });
-
-  const inputLabel = React.useRef(null);
-  const [labelWidth, setLabelWidth] = React.useState(0);
-  React.useEffect(() => {
-    setLabelWidth(inputLabel.current.offsetWidth);
-  }, []);
-
-  // const handleChange = name => event => {
-  //   setState({
-  //     ...state,
-  //     [name]: event.target.value,
-  //   });
-  // };
-
+  const {
+    list,
+    onChange,
+    selected,
+  } = props;
   return (
-    <FormControl variant="outlined" className={classes.formControl}>
-      <InputLabel ref={inputLabel} htmlFor="outlined-dropdown">
-        Character
-      </InputLabel>
-      <Select
-        native
-        value={state.age}
-        onChange={(e) => {
-          e.preventDefault();
-        }}
-        input={
-          <OutlinedInput 
-            name="character" 
-            labelWidth={labelWidth} 
-            id="outlined-dropdown" 
-          />
-        }
-      >
-        <option value="" />
-        <option value={10}>Ten</option>
-        <option value={20}>Twenty</option>
-        <option value={30}>Thirty</option>
-      </Select>
-    </FormControl>
+    <FormControl className={classes.formControl}>
+        <NativeSelect
+          className={classes.selectEmpty}
+          value={selected}
+          name="character"
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
+          inputProps={{ 'aria-label': 'character' }}
+        >
+          { selected === null ? <option value="" /> : null }
+          {
+            list.map((item, i) => {
+                return (
+                  <option value={item.value || item.label}>
+                    {item.label}
+                  </option>
+                );
+              }
+            )
+          }
+        </NativeSelect>
+        <FormHelperText>Pick Character</FormHelperText>
+      </FormControl>
   );
 }
