@@ -22,7 +22,6 @@ import {
 
 const useStyles = makeStyles(theme => ({
   character:{
-    // border: '1px solid orange',
     maxHeight: '68vh',
   }
 }));
@@ -30,7 +29,6 @@ const useStyles = makeStyles(theme => ({
 function TabPanel(props) {
   const { index } = props;
   const css = useStyles();
-  console.log (index);
   switch(index) {
     case 0:
       return <Biker className={cn(css.character)}/>;
