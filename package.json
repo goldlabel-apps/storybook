@@ -1,7 +1,7 @@
 {
   "name": "listingslab-storybook",
-  "description": "Building Bulletproof Stuff",
-  "version": "0.1.2",
+  "description": "Bulletproof Rect Components",
+  "version": "0.1.5",
   "license": "OSL-3.0",
   "author": {
     "name": "listingslab",

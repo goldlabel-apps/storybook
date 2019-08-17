@@ -6,57 +6,35 @@ import cn from 'classnames';
 import { 
   characterList,
 } from './characters/';
-import { 
-  // Dropdown,
-  SwipableTabs,
-} from '../';
+import SwipableTabs from './SwipableTabs';
+import Dropdown from './Dropdown';
 
 const useStyles = makeStyles(theme => ({
   characterSelect: {
-    //border: '1px solid red',
-  },
-  character: {
-    maxHeight: 350,
-  },
-  vertAligned:{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  centered:{
-    textAlign: 'center',
-  },
-  grow:{
-    flexGrow: 1,
-  },
-  button: {
-    margin: theme.spacing(1),
-  },
-  iconSmall: {
-    fontSize: 20,
+    textAlign: 'center'
   },
 }));
 
-
-
 export default function CharacterSelect() {
+  const [value, setValue] = React.useState(0);
   const css = useStyles();
-  const onCharacterSelect = (payload) => {
-    console.log('onCharacterSelect', payload);
+  const onCharacterSelect = (index) => {
+    console.log('onCharacterSelect', index);
+    setValue(index);
   }
-  const currentCharacter = null;
   return (
     <div className={cn(css.characterSelect)}>
+      {value}
+      <Dropdown 
+        list={characterList} 
+        onChange={onCharacterSelect}
+        selected={value}
+      />
       <SwipableTabs 
         list={characterList} 
         onChange={onCharacterSelect}
-        selected={currentCharacter}
+        selected={value}
       />
-      {/* <Dropdown 
-        list={characterList} 
-        onChange={onCharacterSelect}
-        selected={currentCharacter}
-      /> */}
     </div>
   );
 }

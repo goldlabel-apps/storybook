@@ -4,8 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import {
   Grid,
-  Tab,
-  Tabs,
+  // Tab,
+  // Tabs,
 } from '@material-ui/core/';
 import {
   Biker,
@@ -18,7 +18,7 @@ import {
   Rasta,
   Rocker,
   Youngun,
-} from '../../components/CharacterSelect/characters';
+} from './characters';
 
 const useStyles = makeStyles(theme => ({
   character:{
@@ -56,32 +56,67 @@ function TabPanel(props) {
   }
 }
 
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
-  };
-}
-
-
+// function a11yProps(index) {
+//   return {
+//     id: `full-width-tab-${index}`,
+//     'aria-controls': `full-width-tabpanel-${index}`,
+//   };
+// }
 
 export default function SwipableTabs(props) {
   const css = useStyles();
-  const [value, setValue] = React.useState(0);
-  const {list} = props;
-  function handleChange(event, newValue) {
-    setValue(newValue);
-  }
+  const {
+    list,
+    selected,
+    onChange,
+  } = props;
 
-  function handleChangeIndex(index) {
-    setValue(index);
-  }
-
+  console.log ('selected', selected);
+  
   return (
     <div className={css.swipableTabs}>
-      
       <Grid container>
         <Grid item xs={12} className={cn()}>
+          <Grid container>
+            <Grid item xs={1} className={cn()}></Grid>
+            <Grid item xs={10} className={cn()}>
+              <SwipeableViews
+                index={selected}
+                onChangeIndex={(e) => {
+                  e.preventDefault();
+                  onChange(e.target.value);
+                }}
+              >
+                {list.map((item, i) => {
+                  return (
+                    <TabPanel value={i} index={i}>
+                      {item.label}
+                    </TabPanel>
+                  );
+                })}
+              </SwipeableViews>
+            </Grid>
+            <Grid item xs={1} className={cn()}></Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </div>
+  );
+}
+
+/*
+          <IconButton 
+            variant={`contained`}
+            color={`primary`}
+            onClick={(e) => {
+              e.preventDefault();
+              console.log ('Back');
+            }}>
+              <IconLeft />
+          </IconButton>
+
+
+                  <Grid item xs={12} className={cn()}>
 
         <Grid container>
           <Grid item xs={1} className={cn()}></Grid>
@@ -104,41 +139,6 @@ export default function SwipableTabs(props) {
         </Grid>
           
         </Grid>
-        <Grid item xs={12} className={cn()}>
-
-          <Grid container>
-            <Grid item xs={1} className={cn()}></Grid>
-            <Grid item xs={10} className={cn()}>
-              <SwipeableViews
-                index={value}
-                onChangeIndex={handleChangeIndex}
-              >
-                {list.map((item, i) => {
-                  return (
-                    <TabPanel value={value} index={i}>
-                      {item.label}
-                    </TabPanel>
-                  );
-                })}
-              </SwipeableViews>
-            </Grid>
-            <Grid item xs={1} className={cn()}></Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-    </div>
-  );
-}
 
 
-/*
-          <IconButton 
-            variant={`contained`}
-            color={`primary`}
-            onClick={(e) => {
-              e.preventDefault();
-              console.log ('Back');
-            }}>
-              <IconLeft />
-          </IconButton>
 */
