@@ -39,7 +39,7 @@ export default function Dropdown(props) {
           {
             list.map((item, i) => {
                 return (
-                  <option value={item.value || item.label}>
+                  <option value={i}>
                     {item.label}
                   </option>
                 );
