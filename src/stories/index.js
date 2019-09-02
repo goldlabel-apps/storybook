@@ -10,6 +10,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import {
+  GPXReplay,
   TimeMachine,
   StoryTitle,
 } from '../components';
@@ -20,6 +21,19 @@ stories.addParameters({ options: {
   // panelPosition: 'right',
   showPanel: false,
 }})
+
+
+stories.add('GPX Replay', () => (
+  <React.Fragment>
+  <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
+    <GPXReplay story={{
+        version: `0.0.1`,
+        title: `GPX Replay`,
+        description: `geo location over time`,
+      }} />
+  </MuiThemeProvider>
+</React.Fragment>
+))
 
 stories.add('Time Machine SVG', () => (
     <React.Fragment>
