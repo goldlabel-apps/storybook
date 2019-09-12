@@ -10,6 +10,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import {
+  Chuckens,
   GPXReplay,
   TimeMachine,
   StoryTitle,
@@ -23,42 +24,31 @@ stories.addParameters({ options: {
 }})
 
 
-stories.add('GPX Replay', () => (
+stories.add('Chuckens', () => (
   <React.Fragment>
   <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
-    <GPXReplay story={{
+    <StoryTitle story={{
         version: `0.0.1`,
-        title: `GPX Replay`,
-        description: `geo location over time`,
+        title: `Chuckens`,
+        description: `Open Source example of creating a Firestore/Cloud Functions powered RESTful API`,
       }} />
+    <GPXReplay />
   </MuiThemeProvider>
 </React.Fragment>
 ))
 
-stories.add('Time Machine SVG', () => (
-    <React.Fragment>
-    <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
-      <StoryTitle story={{
-          version: `0.0.3`,
-          title: `Time Machine`,
-          description: `Animated Scalar Vector Graphic`,
-        }} />
-      <TimeMachine />
-    </MuiThemeProvider>
-  </React.Fragment>
-))
-
-// stories.add('Character Select', () => (
-//   <React.Fragment>
+// stories.add('Time Machine SVG', () => (
+//     <React.Fragment>
 //     <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
 //       <StoryTitle story={{
-//         version: `0.0.4`,
-//         title: `Character Select`,
-//         description: ``,
-//       }} />
-//       <CharacterSelect />
+//           version: `0.0.3`,
+//           title: `Time Machine`,
+//           description: `Animated Scalar Vector Graphic`,
+//         }} />
+//       <TimeMachine />
 //     </MuiThemeProvider>
 //   </React.Fragment>
 // ))
+
 
 stories.addDecorator(withKnobs);
