@@ -11,8 +11,7 @@ import {
 
 import {
   Chuckens,
-  GPXReplay,
-  TimeMachine,
+  CharacterSelect,
   StoryTitle,
 } from '../components';
 
@@ -23,32 +22,30 @@ stories.addParameters({ options: {
   showPanel: false,
 }})
 
-
-stories.add('Chuckens', () => (
+stories.add('Chuckens 0.0.3', () => (
   <React.Fragment>
   <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
     <StoryTitle story={{
-        version: `0.0.1`,
         title: `Chuckens`,
-        description: `Open Source example of creating a Firestore/Cloud Functions powered RESTful API`,
+        description: `Bloody Hippies.`,
+        tech: `Open Source example of creating a Firestore/Cloud Functions powered RESTful API`,
       }} />
-    <GPXReplay />
+    <Chuckens />
   </MuiThemeProvider>
 </React.Fragment>
 ))
 
-// stories.add('Time Machine SVG', () => (
-//     <React.Fragment>
-//     <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
-//       <StoryTitle story={{
-//           version: `0.0.3`,
-//           title: `Time Machine`,
-//           description: `Animated Scalar Vector Graphic`,
-//         }} />
-//       <TimeMachine />
-//     </MuiThemeProvider>
-//   </React.Fragment>
-// ))
 
+stories.add('Character Select 0.0.4', () => (
+  <React.Fragment>
+  <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
+    <StoryTitle story={{
+        title: `Character Select`,
+        description: `Swipable SVG Image carosel`,
+      }} />
+    <CharacterSelect />
+  </MuiThemeProvider>
+</React.Fragment>
+))
 
 stories.addDecorator(withKnobs);

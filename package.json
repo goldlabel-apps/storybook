@@ -1,10 +1,9 @@
 {
-  "name": "listingslab-storybook",
-  "description": "Bulletproof Rect Components",
-  "version": "0.1.6",
-  "license": "OSL-3.0",
+  "name": "storybook",
+  "description": "Bulletproof, portable React Components",
+  "version": "0.1.8",
   "author": {
-    "name": "listingslab",
+    "name": "Chris Dorward",
     "email": "listingslab@gmail.com"
   },
   "scripts": {
@@ -15,6 +14,7 @@
     "storybook": "clear && start-storybook -p 9009 -s public",
     "build-storybook": "clear && build-storybook -s ./build"
   },
+  "license": "OSL-3.0",
   "repository": {
     "type": "github",
     "url": "https://github.com/listingslab-software/storybook"

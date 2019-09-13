@@ -1,5 +1,5 @@
 
-## Listingslab Storybook
+# Storybook
 
 [Storybook](https://www.learnstorybook.com/) can be used as a Design System to create bulletproof UI components and allow more iteration between UI/UX & Development, perhaps resulting in better software.
 
