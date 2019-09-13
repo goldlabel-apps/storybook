@@ -22,12 +22,12 @@ stories.addParameters({ options: {
   showPanel: false,
 }})
 
-stories.add('Chuckens 0.0.3', () => (
+stories.add('Chuckens 0.0.4', () => (
   <React.Fragment>
   <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
     <StoryTitle story={{
         title: `Chuckens`,
-        description: `Bloody Hippies.`,
+        description: `A collection of 6 SVG Graphics representing lifecycle stages of a chicken.`,
         tech: `Open Source example of creating a Firestore/Cloud Functions powered RESTful API`,
       }} />
     <Chuckens />
