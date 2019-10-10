@@ -1,0 +1,58 @@
+{
+  "chuckens" : [
+    {
+      "label": "Violet",
+      "value": "purple",
+      "colours": {
+        "light": "#e9cdff",
+        "mid": "#e0b8ff",
+        "dark": "#d8a3ff"
+      }
+    },
+    {
+      "label": "Scarlet",
+      "value": "red",
+      "colours": {
+        "light": "#ffb3b8",
+        "mid": "#ff9ea2",
+        "dark": "#ff8b90"
+      }
+    },
+    {
+      "label": "lilly",
+      "value": "green",
+      "colours": {
+        "light": "#baffb5",
+        "mid": "#a6ffa0",
+        "dark": "#93ff8d"
+      }
+    },
+    {
+      "label": "Bluey",
+      "value": "blue",
+      "colours": {
+        "light": "#cde0ff",
+        "mid": "#b8d2ff",
+        "dark": "#a3c4ff"
+      }
+    },
+    {
+      "label": "Sunshine",
+      "value": "yellow",
+      "colours": {
+        "light": "#fff5a5",
+        "mid": "#fff285",
+        "dark": "#ffee68"
+      }
+    },
+    {
+      "label": "Moonlight",
+      "value": "grey",
+      "colours": {
+        "light": "#e7e7e7",
+        "mid": "#dddddd",
+        "dark": "#d4d4d4"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "storybook",
+  "description": "Codeworx React Components",
+  "version": "0.0.1",
+  "author": {
+    "name": "Chris",
+    "email": "chris@codeworx.com.au"
+  },
+  "scripts": {
+    "deploy": "clear && yarn build-storybook && gulp && cd firebase && firebase deploy --only hosting",
+    "start": "clear && yarn storybook",
+    "build": "clear && react-scripts build",
+    "test": "clear && react-scripts test",
+    "storybook": "clear && start-storybook -p 9009 -s public",
+    "build-storybook": "clear && build-storybook -s ./build"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/lab": "^4.0.0-alpha.20",
+    "@storybook/addon-knobs": "^5.1.9",
+    "add": "^2.0.6",
+    "classnames": "^2.2.6",
+    "gsap": "^2.1.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "react-swipeable-views": "^0.13.3",
+    "yarn": "^1.17.3"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "github",
+    "url": "https://github.cwx.io/chris/storybook"
+  },
+  "keywords": [
+    "storybook",
+    "react"
+  ]
+}
