@@ -1,18 +1,16 @@
 {
   "name": "storybook",
   "description": "Codeworx React Components",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": {
     "name": "Chris",
     "email": "chris@codeworx.com.au"
   },
   "scripts": {
-    "deploy": "clear && yarn build-storybook && gulp && cd firebase && firebase deploy --only hosting",
     "start": "clear && yarn storybook",
     "build": "clear && react-scripts build",
-    "test": "clear && react-scripts test",
     "storybook": "clear && start-storybook -p 9009 -s public",
-    "build-storybook": "clear && build-storybook -s ./build"
+    "storybook:build": "clear && build-storybook -s ./build"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.1.9",
