@@ -1,7 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import muiTheme from '../theme/mui';
 import { 
   withKnobs, 
  number,

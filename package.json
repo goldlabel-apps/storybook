@@ -8,9 +8,9 @@
   },
   "scripts": {
     "start": "clear && yarn storybook",
-    "build": "clear && react-scripts build",
     "storybook": "clear && start-storybook -p 9009 -s public",
-    "storybook:build": "clear && build-storybook -s ./build"
+    "storybook:build": "clear && build-storybook -s ./build",
+    "deploy": "clear && yarn storybook:build && firebase deploy"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.1.9",
