@@ -1,0 +1,25 @@
+{
+  "short_name": "Playing Cards",
+  "name": "React Playing Cards",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192w.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512w.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#3CB371",
+  "background_color": "#ffffff"
+}

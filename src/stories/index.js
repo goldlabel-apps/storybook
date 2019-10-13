@@ -6,36 +6,18 @@ import {
  object,
  text,
 } from '@storybook/addon-knobs';
+import {PlayingCards} from '../components/react-playing-cards';
 
-import {
-  FileSystemNavigator,
-  SimpleCard,
-  SimpleRating,
-  
-} from '../components';
-
-const stories = storiesOf('codeworx', module);
+const stories = storiesOf('React Playing Cards', module);
 
 stories.addParameters({ options: { 
   panelPosition: 'right',
-  showPanel: true,
+  showPanel: false,
 }})
 
-stories.add('SimpleCard', () => (
+stories.add('Pick a card, any card', () => (
   <React.Fragment>
-    <SimpleCard />
-  </React.Fragment>
-))
-
-stories.add('SimpleRating', () => (
-  <React.Fragment>
-    <SimpleRating />
-  </React.Fragment>
-))
-
-stories.add('FileSystemNavigator', () => (
-  <React.Fragment>
-    <FileSystemNavigator />
+    <PlayingCards />
   </React.Fragment>
 ))
 

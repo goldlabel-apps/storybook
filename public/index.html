@@ -1,15 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#fa4079" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Storybook</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#42949f" />
+  <meta name="description" content="Fun and easy to use deck of ReactJS playing cards" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/themes/whitelabel/favicon.ico" />
+  <link rel="apple-touch-icon" href="/themes/whitelabel/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/themes/whitelabel/manifest.json" />
+  <script>
+    var currentBrand = 'whitelabel';
+    var style = document.createElement('style');
+    var ref = document.querySelector('script');
+    var brands = [];
+    // HEX Colours => https://htmlcolorcodes.com/color-names/
+    var bgColourLight = "#f5f5f5";
+    var bgColourDark = "#e3e3e4";
+    var muiPrimary = '#3CB371';
+    var muiSecondary = '#3fd582';
+    var mainText = 'dark';
+    brands["whitelabel"] = {
+      "id": "whitelabel",
+      "title": "Pick a card, any card",
+      "colours": {
+        "background": {
+          gradient1: bgColourLight,
+          gradient2: bgColourDark
+        },
+        "text": mainText,
+        "muiPrimary": muiPrimary,
+        "muiSecondary": muiSecondary,
+        "cards": {
+          "red": "#d43943",
+          "black": "#1c1c19",
+          "bgLight": "white",
+          "bgDark": "black",
+          "borders": "#333"
+        }
+      }
+    };
+    window.pwaConfig = {
+      "brand": brands[currentBrand]
+    }
+    style.innerHTML =
+      'body {' +
+      'background-color: ' + window.pwaConfig["brand"].colours.background.gradient1 + ';' +
+      'background-image: radial-gradient(' +
+      window.pwaConfig["brand"].colours.background.gradient2 +
+      ', ' + window.pwaConfig["brand"].colours.background.gradient1 +
+      ');' +
+      // 'color: ' + window.pwaConfig["brand"].colours.colourBodyText + ';' +
+      '}' +
+      '#pwa {' +
+      // 'margin: auto;' +
+      // 'max-width: 600px;' +
+      '}';
+    ref.parentNode.insertBefore(style, ref);
+  </script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica";
+      /* 
+          background: #126970;
+          #42949f, #33686f);
+          color: rgba(255, 255, 255, 0.85); 
+        */
+      font-size: 1rem;
+    }
+  </style>
+  <title>React Playing Cards</title>
+</head>
+
+<body>
+  <noscript>
+    Fun, easy to use deck of ReactJS playing cards
+    <a href="https://react-playing-cards.com/" title="Fun, easy to use deck of ReactJS playing cards">
+      Find out more
+    </a>
+  </noscript>
+  <div id="pwa" />
+</body>
+
 </html>
