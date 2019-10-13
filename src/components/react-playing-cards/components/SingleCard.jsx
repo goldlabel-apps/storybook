@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
 import cn from 'classnames';
 import {
-    RankAce,
+    RankA,
     Rank2,
     Rank3,
     Rank4,
@@ -20,7 +20,7 @@ import {
     DiamondIcon,
     HeartIcon,
     PokerFace,
-    SpadeIcon,
+    IconSpade,
     CardFront,
 } from './cardElements'
 
@@ -57,103 +57,101 @@ class SingleCard extends Component {
         const {
             classes,
             cardObj,
+            whitelabel,
         } = this.props;
-        const c = cardObj.colours;
-        let suit;
+        const {colours} = whitelabel;
+        let suit = cardObj.suit
         let suitColour;
-        let suitIcon = <PokerFace c={c} and={suitColour} />;
-        switch (cardObj.card[0]) {
+        let suitIcon = <PokerFace c={colours} and={suitColour} />;
+
+        switch (cardObj.suit) {
             case 'C':
                 suit = "Clubs";
-                suitColour = c.black;
-                suitIcon = <ClubIcon c={c} />;
+                suitColour = colours.blackSuit;
+                suitIcon = <ClubIcon c={colours} />;
                 break;
             case 'D':
                 suit = "Diamonds";
-                suitColour = c.red;
-                suitIcon = <DiamondIcon c={c} />;
+                suitColour = colours.redSuit;
+                suitIcon = <DiamondIcon c={colours} />;
                 break;
             case 'H':
                 suit = "Hearts";
-                suitColour = c.red;
-                suitIcon = <HeartIcon c={c} />;
+                suitColour = colours.redSuit;
+                suitIcon = <HeartIcon c={colours} />;
                 break;
             case 'S':
                 suit = "Spades";
-                suitColour = c.black;
-                suitIcon = <SpadeIcon c={c} />;
+                suitColour = colours.blackSuit;
+                suitIcon = <IconSpade c={colours} />;
                 break;
 
             default:
                 suit = "Bad Suit";
         }
         let rank;
-        let rankIcon = <PokerFace c={c} />;
-        switch (cardObj.card[1]) {
+        let rankIcon = <PokerFace c={colours} />;
+        switch (cardObj.rank) {
             case 'A':
                 rank = "Ace";
-                rankIcon = <RankAce c={c} suit={suit} />;
+                rankIcon = <RankA c={colours} suit={suit} />;
                 break;
             case '2':
                 rank = "Two";
-                rankIcon = <Rank2 c={c} suit={suit} />;
+                rankIcon = <Rank2 c={colours} suit={suit} />;
                 break;
             case '3':
                 rank = "Three";
-                rankIcon = <Rank3 c={c} suit={suit} />;
+                rankIcon = <Rank3 c={colours} suit={suit} />;
                 break;
             case '4':
                 rank = "Four";
-                rankIcon = <Rank4 c={c} suit={suit} />;
+                rankIcon = <Rank4 c={colours} suit={suit} />;
                 break;
             case '5':
                 rank = "Five";
-                rankIcon = <Rank5 c={c} suit={suit} />;
+                rankIcon = <Rank5 c={colours} suit={suit} />;
                 break;
             case '6':
                 rank = "Six";
-                rankIcon = <Rank6 c={c} suit={suit} />;
+                rankIcon = <Rank6 c={colours} suit={suit} />;
                 break;
             case '7':
                 rank = "Seven";
-                rankIcon = <Rank7 c={c} suit={suit} />;
+                rankIcon = <Rank7 c={colours} suit={suit} />;
                 break;
             case '8':
                 rank = "Eight";
-                rankIcon = <Rank8 c={c} suit={suit} />;
+                rankIcon = <Rank8 c={colours} suit={suit} />;
                 break;
             case '9':
                 rank = "Nine";
-                rankIcon = <Rank9 c={c} suit={suit} />;
+                rankIcon = <Rank9 c={colours} suit={suit} />;
                 break;
             case 'T':
                 rank = "Ten";
-                rankIcon = <RankT c={c} suit={suit} />;
+                rankIcon = <RankT c={colours} suit={suit} />;
                 break;
             case 'J':
                 rank = "Jack";
-                rankIcon = <RankJ c={c} suit={suit} />;
+                rankIcon = <RankJ c={colours} suit={suit} />;
                 break;
             case 'Q':
                 rank = "Queen";
-                rankIcon = <RankQ c={c} suit={suit} />;
+                rankIcon = <RankQ c={colours} suit={suit} />;
                 break;
             case 'K':
                 rank = "King";
-                rankIcon = <RankK c={c} suit={suit} />;
+                rankIcon = <RankK c={colours} suit={suit} />;
                 break;
             default:
                 rank = "Bad Rank";
         }
 
-
-
         return (
             <div
                 className={cn(classes.singleCard)}
-                id={cardObj.card}
             >
-
                 <div className={cn(classes.rankIcon)}>
                     {rankIcon}
                 </div>
@@ -164,15 +162,18 @@ class SingleCard extends Component {
 
                 <div className={cn(classes.advert)}>
                     <img
+                        src={`/adverts/Advert.png`}
                         className={cn(classes.advertImage)}
                         alt={`Advert`}
-                        src={`/adverts/Advert.png`}
-
                     />
                 </div>
 
                 <div className={cn(classes.cardFront)}>
-                    <CardFront c={c} suit={suit} rank={rank} />
+                    <CardFront 
+                        c={colours} 
+                        suit={suit} 
+                        rank={rank} 
+                    />
                 </div>
 
             </div >
@@ -181,57 +182,3 @@ class SingleCard extends Component {
 }
 
 export default withStyles(styles)(SingleCard);
-
-
-
-
-
-
-
-
-/*
-
-const cardName = `${rank} of ${suit}`;
-
-<Typography variant={`h5`} className={cn(classes.padded)}>
-                    {cardName}
-                </Typography>
-<div className={cn(classes.padded)}>
-                    <Divider />
-                    <div className={cn(classes.padded)}>
-                        <Grid container >
-                            <Grid item xs={11}>
-                                <Typography variant={`body1`}>
-                                    Card Background Colour
-                            </Typography>
-                                <Typography variant={`body2`}>
-                                    {c.bgLight}
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={1}>
-                                <div className={cn(classes.colorSwatch)} style={{
-                                    background: c.bgLight
-                                }} />
-                            </Grid>
-                        </Grid>
-                    </div>
-                    <Divider />
-                    <div className={cn(classes.padded)}>
-
-                    </div>
-                    <Divider />
-                </div>
-
-
-            // onMouseEnter={() => {
-            //     animateCard(cardObj.card, 'burp', this.animatingFalse);
-            // }}
-            // onMouseLeave={() => {
-            //     animateCard(cardObj.card, 'reset', this.animatingFalse);
-            // }}
-            // onClick={(e) => {
-            //     e.preventDefault();
-            //     animateCard(cardObj.card, 'flipIn', this.halfFlipped);
-            // }}
-
-*/

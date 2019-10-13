@@ -5,7 +5,7 @@ const ClubIcon = props => {
     }
     const { c } = props;
     const suitColour = c.black;
-
+    console.log ('ClubIcon?', c);
     return (
         <svg {...props} viewBox="0 0 37 43">
             <g id="ClubIcon" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

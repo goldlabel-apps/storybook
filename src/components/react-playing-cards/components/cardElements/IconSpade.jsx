@@ -1,5 +1,5 @@
 import React from "react";
-const SpadeIcon = props => {
+const IconSpade = props => {
     if (!props.c) {
         return null;
     }
@@ -19,4 +19,4 @@ const SpadeIcon = props => {
         </svg >
     )
 };
-export default SpadeIcon;
+export default IconSpade;

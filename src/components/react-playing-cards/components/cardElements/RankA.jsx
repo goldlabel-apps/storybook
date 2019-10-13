@@ -1,5 +1,5 @@
 import React from "react";
-const RankAce = props => {
+const RankA = props => {
     let suitColour;
     const { c, suit } = props;
     switch (suit) {
@@ -26,4 +26,4 @@ const RankAce = props => {
         </svg >
     )
 };
-export default RankAce;
+export default RankA;

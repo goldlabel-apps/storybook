@@ -1,9 +1,5 @@
-/*
-    Expose Card Elements
-*/
-
 import CardFront from "./CardFront";
-import RankAce from "./RankAce";
+import RankA from "./RankA";
 import Rank2 from "./Rank2";
 import Rank3 from "./Rank3";
 import Rank4 from "./Rank4";
@@ -20,11 +16,11 @@ import ClubIcon from "./ClubIcon";
 import DiamondIcon from "./DiamondIcon";
 import HeartIcon from "./HeartIcon";
 import PokerFace from "./PokerFace";
-import SpadeIcon from "./SpadeIcon";
+import IconSpade from "./IconSpade";
 
 export {
   CardFront,
-  RankAce,
+  RankA,
   Rank2,
   Rank3,
   Rank4,
@@ -41,5 +37,5 @@ export {
   DiamondIcon,
   HeartIcon,
   PokerFace,
-  SpadeIcon
+  IconSpade
 };

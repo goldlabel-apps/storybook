@@ -1,35 +1,12 @@
 import React, { Component } from 'react';
-import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import { Provider } from "react-redux";
-// import { persistStore } from "redux-persist";
-// import { PersistGate } from "redux-persist/es/integration/react";
 import { withStyles } from '@material-ui/styles';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import theme from './style/theme';
 import cn from 'classnames';
-import PickACard from './PickACard';
 import {
-    Topbar,
+    SingleCard,
 } from './components';
-import reducer from './store/reducers';
-import rootSaga from './store/sagas';
-
-const purgeOnLoad = false;
-const purgeStore = () => {
-    console.log(`Purging redux`);
-    localStorage.clear();
-};
-if (purgeOnLoad) {
-    purgeStore();
-}
-const sagaMiddleware = createSagaMiddleware();
-const store = createStore(
-    reducer,
-    applyMiddleware(sagaMiddleware)
-)
-sagaMiddleware.run(rootSaga);
-// const persistor = persistStore(store);
+import {animateCard} from './utils/greensock';
 
 const styles = () => ({
     container: {
@@ -40,23 +17,83 @@ const styles = () => ({
 
 class PlayingCards extends Component {
 
-    componentDidMount() {
-        // window.document.title = window.pwaConfig.brand.title;
+    state = {
+        whitelabel:{
+            title: `Whitelabel Project Title`,
+            advert: {
+                image: `advert_default.png`
+            },
+            colours: {
+                redSuit: `orange`,
+                blackSuit: `green`,
+                face: `#eee`,
+                back: `blue`,
+                border: `#ccc`
+            }
+        },
+        currentCard: {
+            suit: `S`,
+            rank: `A`,
+        },
+    }
+
+    componentDidMount(){
+        const { title } = this.state.whitelabel;
+        window.document.title = title;
+        this.playAnimation(`selectedCard`);
+    }
+
+    componentDidUpdate(props){
+        // const { cardObj } = this.state;
+        // storybook override
+        // console.log (props);
+        this.playAnimation(`selectedCard`);
+    }
+
+
+    flipCard = () => {
+        // let facing = `down`;
+        // if (this.state.facing !== 'up') {
+        //     facing = `up`;
+        // }
+        // this.setState({ facing });
+    }
+
+    playAnimation = (divId) => {
+        animateCard(divId, `shrink`, () => {
+            console.log ('First animation complete');
+        })
+    }
+
+    onRankSelect = (rank) => {
+        // this.setState({ rank });
+    }
+
+    onSuitSelect = (suit) => {
+        // this.setState({ suit });
     }
 
     render() {
-        const { classes } = this.props
+        // console.log (this.props);
+        const { classes } = this.props;
+        const { 
+            currentCard, 
+            whitelabel 
+        } = this.state;
+
         return (
-            <Provider store={store}>
-                <MuiThemeProvider theme={createMuiTheme(theme)}>
-                    {/* <PersistGate loading={null} persistor={persistor}> */}
-                    <Topbar />
-                    <div className={cn(classes.container)}>
-                        <PickACard />
+            <MuiThemeProvider theme={createMuiTheme(theme)}>
+                <div className={cn(classes.container)}>
+                <React.Fragment>
+                    <div id={`selectedCard`}>
+                        <SingleCard 
+                            cardObj={currentCard}
+                            whitelabel={whitelabel} 
+                        />
                     </div>
-                    {/* </PersistGate> */}
-                </MuiThemeProvider>
-            </Provider>
+                </React.Fragment>
+                </div>
+            </MuiThemeProvider>
         );
     }
 }
