@@ -1,19 +1,23 @@
 import React from "react";
 const RankA = props => {
+    
     let suitColour;
     const { c, suit } = props;
+
+    console.log ('RankA', c, suit)
+
     switch (suit) {
         case 'Clubs':
-            suitColour = c.black;
+            suitColour = c.blackSuit;
             break;
         case 'Diamonds':
-            suitColour = c.red;
+            suitColour = c.redSuit;
             break;
         case 'Hearts':
-            suitColour = c.red;
+            suitColour = c.redSuit;
             break;
         case 'Spades':
-            suitColour = c.black;
+            suitColour = c.blackSuit;
             break;
         default:
             suitColour = `#ccc`;

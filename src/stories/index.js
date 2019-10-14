@@ -18,28 +18,28 @@ stories.addParameters({ options: {
 stories.add('Pick a card, any card', () => (
   <React.Fragment>
     <PlayingCards 
+      advert={files(
+        `Advert`, 
+        '.png, .jpg', 
+        `/.png`
+      )}
       suit={ select(`Suit`, {
         Diamonds: `D`,
         Hearts: `H`,
         Spades: `S`,
         Clubs: `C`
-      })}
+      }, `C`)}
       rank={ select(`Rank`, {
         Two: `2`,
         Three: `3`,
         Four: `4`,
         Five: `5`
       })}
-      cardRed={color(`Hearts & Diamonds`, `#d43943`)}
-      cardBlack={color(`Spades & Clubs`, `#1c1c19`)}
-      cardBgLight={color(`Light Background`, `#eee`)}
-      cardBgDark={color(`Dark Background`, `#222`)}
-      cardBgDark={color(`Borders`, `#333`)}
-      advert={files(
-        `Advert`, 
-        '.png, .jpg', 
-        `https://firebasestorage.googleapis.com/v0/b/react-playing-cards.appspot.com/o/Advert.png?alt=media&token=8a632636-8409-428c-a042-5f4724f427f6`
-      )}
+      redSuit={color(`Red Suits`, `#D33E43`)}
+      blackSuit={color(`Black Suits`, `#010000`)}
+      face={color(`Face`, `#F7F6F1`)} 
+      back={color(`Back`, `#276473`)} // D33E43
+      border={color(`Borders`, `#1A1919`)}
     />
   </React.Fragment>
 ))

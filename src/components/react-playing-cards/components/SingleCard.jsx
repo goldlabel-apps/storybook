@@ -59,8 +59,12 @@ class SingleCard extends Component {
             cardObj,
             whitelabel,
         } = this.props;
+
+        // console.log ('cardObj,', cardObj)
+
         const {colours} = whitelabel;
         let suit = cardObj.suit
+        
         let suitColour;
         let suitIcon = <PokerFace c={colours} and={suitColour} />;
 
@@ -89,6 +93,7 @@ class SingleCard extends Component {
             default:
                 suit = "Bad Suit";
         }
+
         let rank;
         let rankIcon = <PokerFace c={colours} />;
         switch (cardObj.rank) {
@@ -147,7 +152,7 @@ class SingleCard extends Component {
             default:
                 rank = "Bad Rank";
         }
-
+        console.log ('rank', rank);
         return (
             <div
                 className={cn(classes.singleCard)}

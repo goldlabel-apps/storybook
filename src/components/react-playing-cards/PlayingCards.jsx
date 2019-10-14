@@ -28,7 +28,7 @@ class PlayingCards extends Component {
                 blackSuit: `green`,
                 face: `#eee`,
                 back: `blue`,
-                border: `#ccc`
+                border: `red`
             }
         },
         currentCard: {
@@ -41,13 +41,56 @@ class PlayingCards extends Component {
         const { title } = this.state.whitelabel;
         window.document.title = title;
         this.playAnimation(`selectedCard`);
+        const { 
+            redSuit,
+            blackSuit,
+            face,
+            back,
+            border
+        } = this.props;
+        this.setState({whitelabel:{
+            ...this.state.whitelabel,
+            colours: {
+                redSuit,
+                blackSuit,
+                face,
+                back,
+                border
+            }
+        }})
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        
+        if (nextProps !== this.props) {
+
+            const { 
+                redSuit,
+                blackSuit,
+                face,
+                back,
+                border
+            } = nextProps;
+            
+            this.setState({whitelabel:{
+                ...this.state.whitelabel,
+                colours: {
+                    redSuit,
+                    blackSuit,
+                    face,
+                    back,
+                    border
+                }
+            }})
+        }
     }
 
     componentDidUpdate(props){
-        // const { cardObj } = this.state;
+        
         // storybook override
         // console.log (props);
-        this.playAnimation(`selectedCard`);
+        // this.playAnimation(`selectedCard`);
+
     }
 
 
@@ -61,7 +104,7 @@ class PlayingCards extends Component {
 
     playAnimation = (divId) => {
         animateCard(divId, `shrink`, () => {
-            console.log ('First animation complete');
+            // console.log ('Animation complete');
         })
     }
 
