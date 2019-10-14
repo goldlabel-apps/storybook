@@ -1,14 +1,13 @@
 import React from "react";
-const HeartIcon = props => {
+const IconHeart = props => {
     if (!props.c) {
         return null;
     }
     const { c } = props;
-    const suitColour = c.red;
-
+    const { suitColour } = c;
     return (
         <svg {...props} viewBox="0 0 37 43">
-            <g id="HeartIcon" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+            <g id="IconHeart" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g transform="translate(-276.000000, -26.000000)" fill={suitColour}>
                     <g transform="translate(275.976088, 26.133715)">
                         <path d="M17.7079122,42.5192849 C17.6919122,42.4942849 17.6759122,42.4702849 17.6599122,42.4462849 C17.6449122,42.4702849 17.6279122,42.4942849 17.6119122,42.5192849 L17.7079122,42.5192849"></path>
@@ -19,4 +18,4 @@ const HeartIcon = props => {
         </svg >
     )
 };
-export default HeartIcon;
+export default IconHeart;

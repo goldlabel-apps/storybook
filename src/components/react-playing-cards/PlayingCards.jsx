@@ -1,39 +1,40 @@
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/styles';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import theme from './style/theme';
-import cn from 'classnames';
+import React, { Component } from 'react';
+
 import {
     SingleCard,
 } from './components';
 import {animateCard} from './utils/greensock';
+// import cn from 'classnames';
+import theme from './style/theme';
+import { withStyles } from '@material-ui/styles';
 
 const styles = () => ({
-    container: {
-        margin: 'auto',
-        maxWidth: 800,
-    }
+    // container: {
+    //     margin: 'auto',
+    //     maxWidth: 800,
+    // }
 });
 
 class PlayingCards extends Component {
 
     state = {
+        currentCard: {
+            suit: this.props.suit,
+            rank: this.props.rank,
+        },
         whitelabel:{
             title: `Whitelabel Project Title`,
             advert: {
                 image: `advert_default.png`
             },
             colours: {
-                redSuit: `orange`,
-                blackSuit: `green`,
-                face: `#eee`,
-                back: `blue`,
-                border: `red`
+                redSuit: this.props.redSuit,
+                blackSuit: this.props.blackSuit,
+                face: this.props.face,
+                back: this.props.back,
+                border: this.props.border
             }
-        },
-        currentCard: {
-            suit: `S`,
-            rank: `A`,
         },
     }
 
@@ -46,10 +47,18 @@ class PlayingCards extends Component {
             blackSuit,
             face,
             back,
-            border
+            border,
+            suit,
+            rank,
+            advert
         } = this.props;
         this.setState({whitelabel:{
             ...this.state.whitelabel,
+            advert,
+            currentCard:{
+                suit,
+                rank
+            },
             colours: {
                 redSuit,
                 blackSuit,
@@ -69,30 +78,31 @@ class PlayingCards extends Component {
                 blackSuit,
                 face,
                 back,
-                border
+                border,
+                suit,
+                rank,
+                advert
             } = nextProps;
             
-            this.setState({whitelabel:{
-                ...this.state.whitelabel,
-                colours: {
-                    redSuit,
-                    blackSuit,
-                    face,
-                    back,
-                    border
+            this.setState({
+                advert,
+                currentCard: {
+                    suit,
+                    rank
+                },
+                whitelabel:{
+                    ...this.state.whitelabel,
+                    colours: {
+                        redSuit,
+                        blackSuit,
+                        face,
+                        back,
+                        border
+                    }
                 }
-            }})
+            })
         }
     }
-
-    componentDidUpdate(props){
-        
-        // storybook override
-        // console.log (props);
-        // this.playAnimation(`selectedCard`);
-
-    }
-
 
     flipCard = () => {
         // let facing = `down`;
@@ -108,34 +118,24 @@ class PlayingCards extends Component {
         })
     }
 
-    onRankSelect = (rank) => {
-        // this.setState({ rank });
-    }
-
-    onSuitSelect = (suit) => {
-        // this.setState({ suit });
-    }
-
     render() {
         // console.log (this.props);
-        const { classes } = this.props;
+        // const { classes } = this.props;
         const { 
             currentCard, 
-            whitelabel 
+            whitelabel,
+            advert,
         } = this.state;
 
         return (
             <MuiThemeProvider theme={createMuiTheme(theme)}>
-                <div className={cn(classes.container)}>
-                <React.Fragment>
                     <div id={`selectedCard`}>
                         <SingleCard 
+                            advert={advert}
                             cardObj={currentCard}
                             whitelabel={whitelabel} 
                         />
                     </div>
-                </React.Fragment>
-                </div>
             </MuiThemeProvider>
         );
     }

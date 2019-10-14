@@ -1,11 +1,10 @@
 import React from "react";
-const DiamondIcon = props => {
+const IconDiamond = props => {
     if (!props.c) {
         return null;
     }
     const { c } = props;
-    const suitColour = c.red;
-
+    const { suitColour } = c;
     return (
         <svg {...props} viewBox="0 0 37 43">
             <g id="DiamondIcon" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -18,4 +17,4 @@ const DiamondIcon = props => {
         </svg >
     )
 };
-export default DiamondIcon;
+export default IconDiamond;

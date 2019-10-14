@@ -3,24 +3,8 @@ const Rank5 = props => {
     if (!props.c) {
         return null;
     }
-    let suitColour;
-    const { c, suit } = props;
-    switch (suit) {
-        case 'Clubs':
-            suitColour = c.black;
-            break;
-        case 'Diamonds':
-            suitColour = c.red;
-            break;
-        case 'Hearts':
-            suitColour = c.red;
-            break;
-        case 'Spades':
-            suitColour = c.black;
-            break;
-        default:
-            suitColour = `#ccc`;
-    }
+    const { c } = props;
+    const { suitColour } = c;
     return (
         <svg {...props} viewBox="0 0 15 25">
             <g id="Rank5" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

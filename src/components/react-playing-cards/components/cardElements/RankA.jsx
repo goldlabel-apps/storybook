@@ -1,27 +1,10 @@
 import React from "react";
 const RankA = props => {
-    
-    let suitColour;
-    const { c, suit } = props;
-
-    console.log ('RankA', c, suit)
-
-    switch (suit) {
-        case 'Clubs':
-            suitColour = c.blackSuit;
-            break;
-        case 'Diamonds':
-            suitColour = c.redSuit;
-            break;
-        case 'Hearts':
-            suitColour = c.redSuit;
-            break;
-        case 'Spades':
-            suitColour = c.blackSuit;
-            break;
-        default:
-            suitColour = `#ccc`;
+    if (!props.c) {
+        return null;
     }
+    const { c } = props;
+    const { suitColour } = c;
     return (
         <svg {...props} viewBox="0 0 15 25">
             <g id="RankAce" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

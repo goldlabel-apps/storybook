@@ -1,5 +1,8 @@
 import CardFront from "./CardFront";
-import RankA from "./RankA";
+import IconClub from "./IconClub";
+import IconDiamond from "./IconDiamond";
+import IconHeart from "./IconHeart";
+import IconSpade from "./IconSpade";
 import Rank2 from "./Rank2";
 import Rank3 from "./Rank3";
 import Rank4 from "./Rank4";
@@ -8,15 +11,11 @@ import Rank6 from "./Rank6";
 import Rank7 from "./Rank7";
 import Rank8 from "./Rank8";
 import Rank9 from "./Rank9";
-import RankT from "./RankT";
+import RankA from "./RankA";
 import RankJ from "./RankJ";
-import RankQ from "./RankQ";
 import RankK from "./RankK";
-import ClubIcon from "./ClubIcon";
-import DiamondIcon from "./DiamondIcon";
-import HeartIcon from "./HeartIcon";
-import PokerFace from "./PokerFace";
-import IconSpade from "./IconSpade";
+import RankQ from "./RankQ";
+import RankT from "./RankT";
 
 export {
   CardFront,
@@ -33,9 +32,8 @@ export {
   RankJ,
   RankQ,
   RankK,
-  ClubIcon,
-  DiamondIcon,
-  HeartIcon,
-  PokerFace,
+  IconClub,
+  IconDiamond,
+  IconHeart,
   IconSpade
 };

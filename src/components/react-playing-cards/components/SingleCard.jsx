@@ -1,9 +1,9 @@
-// Single card to rule them all
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/styles';
-import cn from 'classnames';
 import {
-    RankA,
+    CardFront,
+    IconClub,
+    IconDiamond,
+    IconHeart,
+    IconSpade,
     Rank2,
     Rank3,
     Rank4,
@@ -12,17 +12,16 @@ import {
     Rank7,
     Rank8,
     Rank9,
-    RankT,
+    RankA,
     RankJ,
-    RankQ,
     RankK,
-    ClubIcon,
-    DiamondIcon,
-    HeartIcon,
-    PokerFace,
-    IconSpade,
-    CardFront,
+    RankQ,
+    RankT,
 } from './cardElements'
+import React, { Component } from 'react';
+
+import cn from 'classnames';
+import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
     singleCard: {
@@ -58,44 +57,60 @@ class SingleCard extends Component {
             classes,
             cardObj,
             whitelabel,
+            advert,
         } = this.props;
-
-        // console.log ('cardObj,', cardObj)
 
         const {colours} = whitelabel;
         let suit = cardObj.suit
-        
         let suitColour;
-        let suitIcon = <PokerFace c={colours} and={suitColour} />;
+        
+        switch (suit) {
+            case 'C':
+                suitColour = colours.blackSuit;
+                break;
+            case 'D':
+                suitColour = colours.redSuit;
+                break;
+            case 'H':
+                suitColour = colours.redSuit;
+                break;
+            case 'S':
+                suitColour = colours.blackSuit;
+                break;
+            default:
+                suitColour = `#ccc`;
+        }
+        colours.suitColour = suitColour;
 
+        let suitIcon = null;
+        
         switch (cardObj.suit) {
             case 'C':
                 suit = "Clubs";
                 suitColour = colours.blackSuit;
-                suitIcon = <ClubIcon c={colours} />;
+                suitIcon = <IconClub c={colours} />;
                 break;
             case 'D':
                 suit = "Diamonds";
                 suitColour = colours.redSuit;
-                suitIcon = <DiamondIcon c={colours} />;
+                suitIcon = <IconDiamond c={colours} />;
                 break;
             case 'H':
                 suit = "Hearts";
                 suitColour = colours.redSuit;
-                suitIcon = <HeartIcon c={colours} />;
+                suitIcon = <IconHeart c={colours} />;
                 break;
             case 'S':
                 suit = "Spades";
                 suitColour = colours.blackSuit;
                 suitIcon = <IconSpade c={colours} />;
                 break;
-
             default:
                 suit = "Bad Suit";
         }
 
         let rank;
-        let rankIcon = <PokerFace c={colours} />;
+        let rankIcon = null;
         switch (cardObj.rank) {
             case 'A':
                 rank = "Ace";
@@ -152,7 +167,8 @@ class SingleCard extends Component {
             default:
                 rank = "Bad Rank";
         }
-        console.log ('rank', rank);
+        
+        
         return (
             <div
                 className={cn(classes.singleCard)}
@@ -164,14 +180,16 @@ class SingleCard extends Component {
                 <div className={cn(classes.suitIcon)}>
                     {suitIcon}
                 </div>
-
-                <div className={cn(classes.advert)}>
-                    <img
-                        src={`/adverts/Advert.png`}
-                        className={cn(classes.advertImage)}
-                        alt={`Advert`}
-                    />
-                </div>
+                { advert ? (
+                    <div className={cn(classes.advert)}>
+                        <img
+                            src={advert}
+                            className={cn(classes.advertImage)}
+                            alt={`Advert`}
+                        />
+                    </div>
+                ) : null }
+                
 
                 <div className={cn(classes.cardFront)}>
                     <CardFront 
