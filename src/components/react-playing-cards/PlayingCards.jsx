@@ -5,16 +5,10 @@ import {
     SingleCard,
 } from './components';
 import {animateCard} from './utils/greensock';
-// import cn from 'classnames';
 import theme from './style/theme';
 import { withStyles } from '@material-ui/styles';
 
-const styles = () => ({
-    // container: {
-    //     margin: 'auto',
-    //     maxWidth: 800,
-    // }
-});
+const styles = () => ({});
 
 class PlayingCards extends Component {
 
@@ -22,6 +16,7 @@ class PlayingCards extends Component {
         currentCard: {
             suit: this.props.suit,
             rank: this.props.rank,
+            facing: this.props.facing
         },
         whitelabel:{
             title: `Whitelabel Project Title`,
@@ -41,7 +36,6 @@ class PlayingCards extends Component {
     componentDidMount(){
         const { title } = this.state.whitelabel;
         window.document.title = title;
-        this.playAnimation(`selectedCard`);
         const { 
             redSuit,
             blackSuit,
@@ -50,14 +44,16 @@ class PlayingCards extends Component {
             border,
             suit,
             rank,
-            advert
+            advert,
+            facing
         } = this.props;
         this.setState({whitelabel:{
             ...this.state.whitelabel,
             advert,
             currentCard:{
                 suit,
-                rank
+                rank,
+                facing
             },
             colours: {
                 redSuit,
@@ -70,9 +66,7 @@ class PlayingCards extends Component {
     }
 
     componentWillUpdate(nextProps, nextState) {
-        
         if (nextProps !== this.props) {
-
             const { 
                 redSuit,
                 blackSuit,
@@ -81,14 +75,15 @@ class PlayingCards extends Component {
                 border,
                 suit,
                 rank,
-                advert
+                advert,
+                facing
             } = nextProps;
-            
             this.setState({
                 advert,
                 currentCard: {
                     suit,
-                    rank
+                    rank,
+                    facing
                 },
                 whitelabel:{
                     ...this.state.whitelabel,
@@ -104,23 +99,7 @@ class PlayingCards extends Component {
         }
     }
 
-    flipCard = () => {
-        // let facing = `down`;
-        // if (this.state.facing !== 'up') {
-        //     facing = `up`;
-        // }
-        // this.setState({ facing });
-    }
-
-    playAnimation = (divId) => {
-        animateCard(divId, `shrink`, () => {
-            // console.log ('Animation complete');
-        })
-    }
-
     render() {
-        // console.log (this.props);
-        // const { classes } = this.props;
         const { 
             currentCard, 
             whitelabel,

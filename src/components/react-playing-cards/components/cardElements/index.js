@@ -1,3 +1,4 @@
+import CardBack from "./CardBack";
 import CardFront from "./CardFront";
 import IconClub from "./IconClub";
 import IconDiamond from "./IconDiamond";
@@ -19,6 +20,7 @@ import RankT from "./RankT";
 
 export {
   CardFront,
+  CardBack,
   RankA,
   Rank2,
   Rank3,

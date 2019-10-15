@@ -44,8 +44,12 @@ stories.add('Pick a card, any card', () => (
       redSuit={color(`Red Suits`, `#D33E43`)}
       blackSuit={color(`Black Suits`, `#010000`)}
       face={color(`Face`, `#F7F6F1`)} 
-      back={color(`Back`, `#276473`)} // D33E43
-      border={color(`Borders`, `#1A1919`)}
+      back={color(`Back`, `#C62F47`)} // 276473
+      border={color(`Borders`, `#ddd`)}
+      facing={ select(`Facing`, {
+        Up: `up`,
+        Down: `down`
+      }, `down`)}
     />
   </React.Fragment>
 ))

@@ -1,4 +1,5 @@
 import {
+    CardBack,
     CardFront,
     IconClub,
     IconDiamond,
@@ -26,6 +27,8 @@ import { withStyles } from '@material-ui/styles';
 const styles = (theme) => ({
     singleCard: {
         position: 'relative',
+        maxWidth: 360,
+        margin: 'auto'
     },
     rankIcon: {
         position: 'absolute',
@@ -52,6 +55,20 @@ const styles = (theme) => ({
 
 class SingleCard extends Component {
 
+    flipCard = () => {
+        // let facing = `down`;
+        // if (this.state.facing !== 'up') {
+        //     facing = `up`;
+        // }
+        // this.setState({ facing });
+    }
+
+    playAnimation = (divId) => {
+        //animateCard(divId, `shrink`, () => {
+            // console.log ('Animation complete');
+        //})
+    }
+
     render() {
         const {
             classes,
@@ -59,11 +76,13 @@ class SingleCard extends Component {
             whitelabel,
             advert,
         } = this.props;
-
+        const {facing } = cardObj;
         const {colours} = whitelabel;
         let suit = cardObj.suit
         let suitColour;
-        
+        let rank;
+        let rankIcon = null;
+        let suitIcon = null;
         switch (suit) {
             case 'C':
                 suitColour = colours.blackSuit;
@@ -81,9 +100,6 @@ class SingleCard extends Component {
                 suitColour = `#ccc`;
         }
         colours.suitColour = suitColour;
-
-        let suitIcon = null;
-        
         switch (cardObj.suit) {
             case 'C':
                 suit = "Clubs";
@@ -108,9 +124,6 @@ class SingleCard extends Component {
             default:
                 suit = "Bad Suit";
         }
-
-        let rank;
-        let rankIcon = null;
         switch (cardObj.rank) {
             case 'A':
                 rank = "Ace";
@@ -167,12 +180,23 @@ class SingleCard extends Component {
             default:
                 rank = "Bad Rank";
         }
-        
-        
+
+        let showAdvert = false;
+        if (advert !== undefined){
+            if (advert.length !== 0){
+                showAdvert = true
+            }
+        }
+        if (facing === 'down'){
+            return (
+                <div className={cn(classes.singleCard)}>
+                    <CardBack c={colours} />
+                </div>);
+        }
+
         return (
-            <div
-                className={cn(classes.singleCard)}
-            >
+            <div className={cn(classes.singleCard)}>
+                
                 <div className={cn(classes.rankIcon)}>
                     {rankIcon}
                 </div>
@@ -180,7 +204,8 @@ class SingleCard extends Component {
                 <div className={cn(classes.suitIcon)}>
                     {suitIcon}
                 </div>
-                { advert ? (
+
+                { showAdvert ? (
                     <div className={cn(classes.advert)}>
                         <img
                             src={advert}
