@@ -29,6 +29,7 @@ class WhatIsStorybook extends Component {
                 <div className={cn(classes.container)}>
                     <React.Fragment>
                         <Grid container>
+
                             <Grid item xs={12}>
                                 <Typography variant={`h5`}>
                                     What is Storybook?
@@ -36,30 +37,21 @@ class WhatIsStorybook extends Component {
                             </Grid>
 
                             
-                            <Grid item xs={8}>
+                            <Grid item xs={6}>
                                 <Typography variant={`body2`}>
-                                
                                     Storybook is an open source tool for developing UI components in isolation for React, Vue, and Angular. It makes building stunning UIs organized and efficient.
-                                    </Typography>
-
-                                    <Typography variant={`h6`}>
-                                        Build bulletproof UI components faster
-                                    </Typography>
-
-                                    <Typography variant={`body2`}>
-                                    Storybook is a user interface development environment and playground for UI components. The tool enables developers to create components independently and showcase components interactively in an isolated development environment.
-                                    Storybook runs outside of the main app so users can develop UI components in isolation without worrying about app specific dependencies and requirements.
                                 </Typography>
-
                             </Grid>
 
-                            <Grid item xs={4}>
-                                
+                            <Grid item xs={6}>
+                                <Typography variant={`body2`}>
+                                    Think of storybook as the construct. Like in the Matrix. The construct is a playground we control. We can use any dependencies, we can code as badly or as well as we want too. Even hit stuff with big hammers to see what happens is ok because it's not going to impact anything important.
+                                </Typography>
                             </Grid>
                             
                         </Grid>
                     </React.Fragment>
-                    </div>
+                </div>
             </MuiThemeProvider>
         );
     }
