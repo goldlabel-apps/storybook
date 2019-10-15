@@ -1,10 +1,9 @@
 {
   "name": "storybook",
-  "description": "Codeworx React Components",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "author": {
-    "name": "Chris",
-    "email": "chris@codeworx.com.au"
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
   },
   "scripts": {
     "start": "clear && yarn storybook",
@@ -53,7 +52,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "github",
-    "url": "https://github.cwx.io/chris/storybook"
+    "url": "https://github.com/listingslab-software/storybook"
   },
   "keywords": [
     "storybook",
