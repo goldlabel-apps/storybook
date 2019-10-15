@@ -11,10 +11,8 @@ let pwaConfig = {
 const { brand } = pwaConfig;
 const primary = brand.colours.muiPrimary;
 const secondary = brand.colours.muiSecondary;
-let text = textColours.dark;
-if (brand.colours.text === `light`) {
-  text = textColours.light;
-}
+let text = textColours.light;
+
 const theme = {
   palette: {
     primary: {

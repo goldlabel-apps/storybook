@@ -6,7 +6,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import React, { Component } from 'react';
 
 import cn from 'classnames';
-import theme from '../../style/theme';
+import theme from '../style/theme';
 import { withStyles } from '@material-ui/styles';
 
 const styles = () => ({

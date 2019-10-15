@@ -5,23 +5,25 @@ import {
   withKnobs,
 } from '@storybook/addon-knobs';
 
+import Auth from '../components/Auth';
 import {PlayingCards} from '../components/react-playing-cards';
 import React from 'react';
-import {WhatIsStorybook} from '../components/what-is-storybook';
+// import {WhatIsStorybook} from '../components/what-is-storybook';
 import { storiesOf } from '@storybook/react';
+import { themes } from '@storybook/theming';
 
 const stories = storiesOf('Playing Cards', module);
 
 stories.addParameters({ options: { 
   panelPosition: 'right',
   showPanel: true,
+  showNav: false,
+  theme: themes.dark,
 }})
 
-stories.add('What is Storybook?', () => (
-  <React.Fragment>
-    <WhatIsStorybook />
-  </React.Fragment>
-))
+// stories.add('What is Storybook?', () => (
+//   <WhatIsStorybook />
+// ))
 
 stories.add('Pick a card, any card', () => (
   <React.Fragment>
