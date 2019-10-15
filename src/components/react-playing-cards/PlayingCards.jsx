@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import {
     SingleCard,
 } from './components';
-import {animateCard} from './utils/greensock';
+// import {animateCard} from './utils/greensock';
 import theme from './style/theme';
 import { withStyles } from '@material-ui/styles';
 
@@ -18,7 +18,7 @@ class PlayingCards extends Component {
             rank: this.props.rank,
             facing: this.props.facing
         },
-        whitelabel:{
+        whitelabel: {
             title: `Whitelabel Project Title`,
             advert: {
                 image: `advert_default.png`
@@ -33,10 +33,10 @@ class PlayingCards extends Component {
         },
     }
 
-    componentDidMount(){
+    componentDidMount() {
         const { title } = this.state.whitelabel;
         window.document.title = title;
-        const { 
+        const {
             redSuit,
             blackSuit,
             face,
@@ -47,27 +47,29 @@ class PlayingCards extends Component {
             advert,
             facing
         } = this.props;
-        this.setState({whitelabel:{
-            ...this.state.whitelabel,
-            advert,
-            currentCard:{
-                suit,
-                rank,
-                facing
-            },
-            colours: {
-                redSuit,
-                blackSuit,
-                face,
-                back,
-                border
+        this.setState({
+            whitelabel: {
+                ...this.state.whitelabel,
+                advert,
+                currentCard: {
+                    suit,
+                    rank,
+                    facing
+                },
+                colours: {
+                    redSuit,
+                    blackSuit,
+                    face,
+                    back,
+                    border
+                }
             }
-        }})
+        })
     }
 
     componentWillUpdate(nextProps, nextState) {
         if (nextProps !== this.props) {
-            const { 
+            const {
                 redSuit,
                 blackSuit,
                 face,
@@ -85,7 +87,7 @@ class PlayingCards extends Component {
                     rank,
                     facing
                 },
-                whitelabel:{
+                whitelabel: {
                     ...this.state.whitelabel,
                     colours: {
                         redSuit,
@@ -100,21 +102,21 @@ class PlayingCards extends Component {
     }
 
     render() {
-        const { 
-            currentCard, 
+        const {
+            currentCard,
             whitelabel,
             advert,
         } = this.state;
 
         return (
             <MuiThemeProvider theme={createMuiTheme(theme)}>
-                    <div id={`selectedCard`}>
-                        <SingleCard 
-                            advert={advert}
-                            cardObj={currentCard}
-                            whitelabel={whitelabel} 
-                        />
-                    </div>
+                <div id={`selectedCard`}>
+                    <SingleCard
+                        advert={advert}
+                        cardObj={currentCard}
+                        whitelabel={whitelabel}
+                    />
+                </div>
             </MuiThemeProvider>
         );
     }
