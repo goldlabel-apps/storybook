@@ -34,13 +34,13 @@ stories.add('Pick a card, any card', () => (
         Ace: `A`, Two: `2`, Three: `3`, Four: `4`,
         Five: `5`, Six: `6`, Seven: `7`, Eight: `8`,
         Nine: `9`, Ten: `T`, Jack: `J`, Queen: `Q`, King: `K`
-      }, `A`)}
+      }, `J`)}
       suit={ select(`Suit`, {
         Diamonds: `D`,
         Hearts: `H`,
         Spades: `S`,
         Clubs: `C`
-      }, `C`)}
+      }, `H`)}
       redSuit={color(`Red Suits`, `#D33E43`)}
       blackSuit={color(`Black Suits`, `#010000`)}
       face={color(`Face`, `#F7F6F1`)} 
@@ -49,7 +49,7 @@ stories.add('Pick a card, any card', () => (
       facing={ select(`Facing`, {
         Up: `up`,
         Down: `down`
-      }, `down`)}
+      }, `up`)}
     />
   </React.Fragment>
 ))

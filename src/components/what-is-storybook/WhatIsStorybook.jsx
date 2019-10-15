@@ -28,14 +28,13 @@ class WhatIsStorybook extends Component {
             <MuiThemeProvider theme={createMuiTheme(theme)}>
                 <div className={cn(classes.container)}>
                     <React.Fragment>
-                        <Grid container>
+                        <Grid container spacing={2}>
 
                             <Grid item xs={12}>
                                 <Typography variant={`h5`}>
                                     What is Storybook?
                                 </Typography>
                             </Grid>
-
                             
                             <Grid item xs={6}>
                                 <Typography variant={`body2`}>

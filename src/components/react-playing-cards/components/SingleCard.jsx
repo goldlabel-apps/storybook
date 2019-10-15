@@ -181,17 +181,29 @@ class SingleCard extends Component {
                 rank = "Bad Rank";
         }
 
-        let showAdvert = false;
-        if (advert !== undefined){
-            if (advert.length !== 0){
-                showAdvert = true
-            }
-        }
+
+
+
+
         if (facing === 'down'){
             return (
                 <div className={cn(classes.singleCard)}>
                     <CardBack c={colours} />
                 </div>);
+        }
+        let lowerCard = null;
+        if (advert !== undefined){
+            if (advert.length !== 0){
+                lowerCard = (
+                    <div className={cn(classes.advert)}>
+                        <img
+                            src={advert}
+                            className={cn(classes.advertImage)}
+                            alt={`Advert`}
+                        />
+                    </div>
+                    )
+            }
         }
 
         return (
@@ -205,16 +217,7 @@ class SingleCard extends Component {
                     {suitIcon}
                 </div>
 
-                { showAdvert ? (
-                    <div className={cn(classes.advert)}>
-                        <img
-                            src={advert}
-                            className={cn(classes.advertImage)}
-                            alt={`Advert`}
-                        />
-                    </div>
-                ) : null }
-                
+                {lowerCard}
 
                 <div className={cn(classes.cardFront)}>
                     <CardFront 
