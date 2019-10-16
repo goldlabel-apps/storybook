@@ -1,0 +1,22 @@
+
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyCTUnENZ0LoHPklr0BAUXUQIRCtVS0jKu4",
+    authDomain: "codeworx-storybook.firebaseapp.com",
+    databaseURL: "https://codeworx-storybook.firebaseio.com",
+    projectId: "codeworx-storybook",
+    storageBucket: "codeworx-storybook.appspot.com",
+    messagingSenderId: "1008416096883",
+    appId: "1:1008416096883:web:ab81fbc024f1ced1b62006",
+    measurementId: "G-DCL2C5PLDX"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (!user) {
+      window.location.assign(`auth.html`)
+    }
+  });
+</script>

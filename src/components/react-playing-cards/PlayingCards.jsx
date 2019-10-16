@@ -5,7 +5,7 @@ import {
     SingleCard,
 } from './components';
 // import {animateCard} from './utils/greensock';
-import theme from './style/theme';
+import theme from '../style/theme';
 import { withStyles } from '@material-ui/styles';
 
 const styles = () => ({});
