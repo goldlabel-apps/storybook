@@ -4,6 +4,10 @@ import IconClub from "./IconClub";
 import IconDiamond from "./IconDiamond";
 import IconHeart from "./IconHeart";
 import IconSpade from "./IconSpade";
+import FaceJack from "./FaceJack";
+import FaceQueen from "./FaceQueen";
+import FaceKing from "./FaceKing";
+
 import Rank2 from "./Rank2";
 import Rank3 from "./Rank3";
 import Rank4 from "./Rank4";
@@ -21,6 +25,9 @@ import RankT from "./RankT";
 export {
   CardFront,
   CardBack,
+  FaceJack,
+  FaceQueen,
+  FaceKing,
   RankA,
   Rank2,
   Rank3,

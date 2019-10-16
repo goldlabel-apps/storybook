@@ -1,6 +1,9 @@
 import {
     CardBack,
     CardFront,
+    FaceJack,
+    FaceQueen,
+    FaceKing,
     IconClub,
     IconDiamond,
     IconHeart,
@@ -33,20 +36,26 @@ const styles = (theme) => ({
     rankIcon: {
         position: 'absolute',
         width: '25%',
-        left: '19%',
+        left: '17%',
         top: '8%',
     },
     suitIcon: {
         position: 'absolute',
-        width: '34%',
-        left: '50%',
+        width: '35%',
+        left: '52%',
         top: '8%',
     },
-    advert: {
+    lowerCard: {
+        // 
         position: 'absolute',
         width: '90%',
         left: '5%',
         bottom: '4%',
+    },
+    faceCard: {
+        width: '90%',
+        height: '50%',
+        overflow: 'hidden',
     },
     advertImage: {
         width: '100%'
@@ -65,7 +74,7 @@ class SingleCard extends Component {
 
     playAnimation = (divId) => {
         //animateCard(divId, `shrink`, () => {
-            // console.log ('Animation complete');
+        // console.log ('Animation complete');
         //})
     }
 
@@ -76,8 +85,14 @@ class SingleCard extends Component {
             whitelabel,
             advert,
         } = this.props;
-        const {facing } = cardObj;
-        const {colours} = whitelabel;
+        const { facing } = cardObj;
+        const { colours } = whitelabel;
+        if (facing === 'down') {
+            return (
+                <div className={cn(classes.singleCard)}>
+                    <CardBack c={colours} />
+                </div>);
+        }
         let suit = cardObj.suit
         let suitColour;
         let rank;
@@ -182,33 +197,48 @@ class SingleCard extends Component {
         }
 
 
-
-
-
-        if (facing === 'down'){
-            return (
-                <div className={cn(classes.singleCard)}>
-                    <CardBack c={colours} />
-                </div>);
-        }
         let lowerCard = null;
-        if (advert !== undefined){
-            if (advert.length !== 0){
+
+        if (advert !== undefined) {
+            if (advert.length !== 0) {
                 lowerCard = (
-                    <div className={cn(classes.advert)}>
+                    <div className={cn(classes.lowerCard)}>
                         <img
                             src={advert}
                             className={cn(classes.advertImage)}
                             alt={`Advert`}
                         />
                     </div>
-                    )
+                )
             }
+        }
+        if (rank === 'Jack') {
+            lowerCard = (
+                <div className={cn(classes.lowerCard, classes.faceCard)}>
+                    <FaceJack c={colours} suit={suit} />
+                </div>
+            )
+        }
+
+        if (rank === 'Queen') {
+            lowerCard = (
+                <div className={cn(classes.lowerCard, classes.faceCard)}>
+                    <FaceQueen c={colours} suit={suit} />
+                </div>
+            )
+        }
+
+        if (rank === 'King') {
+            lowerCard = (
+                <div className={cn(classes.lowerCard, classes.faceCard)}>
+                    <FaceKing c={colours} suit={suit} />
+                </div>
+            )
         }
 
         return (
             <div className={cn(classes.singleCard)}>
-                
+
                 <div className={cn(classes.rankIcon)}>
                     {rankIcon}
                 </div>
@@ -220,10 +250,10 @@ class SingleCard extends Component {
                 {lowerCard}
 
                 <div className={cn(classes.cardFront)}>
-                    <CardFront 
-                        c={colours} 
-                        suit={suit} 
-                        rank={rank} 
+                    <CardFront
+                        c={colours}
+                        suit={suit}
+                        rank={rank}
                     />
                 </div>
 
