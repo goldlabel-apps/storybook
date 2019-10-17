@@ -1,4 +1,4 @@
-import PlayingCard from "./PlayingCards";
+import PlayingCard from "./PlayingCard";
 export {
   PlayingCard,
 };

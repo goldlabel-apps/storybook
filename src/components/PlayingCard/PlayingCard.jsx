@@ -62,23 +62,12 @@ const styles = (theme) => ({
     },
 });
 
-class SingleCard extends Component {
-
-    flipCard = () => {
-        // let facing = `down`;
-        // if (this.state.facing !== 'up') {
-        //     facing = `up`;
-        // }
-        // this.setState({ facing });
-    }
-
-    playAnimation = (divId) => {
-        //animateCard(divId, `shrink`, () => {
-        // console.log ('Animation complete');
-        //})
-    }
+class PlayingCard extends Component {
 
     render() {
+
+        return null;
+
         const {
             classes,
             cardObj,
@@ -91,7 +80,8 @@ class SingleCard extends Component {
             return (
                 <div className={cn(classes.singleCard)}>
                     <CardBack c={colours} />
-                </div>);
+                </div>
+            );
         }
         let suit = cardObj.suit
         let suitColour;
@@ -262,4 +252,4 @@ class SingleCard extends Component {
     }
 }
 
-export default withStyles(styles)(SingleCard);
+export default withStyles(styles)(PlayingCard);
