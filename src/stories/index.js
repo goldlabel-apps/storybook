@@ -1,12 +1,11 @@
 import { color, files, select, withKnobs } from "@storybook/addon-knobs";
 
-import { PlayingCards } from "../components/react-playing-cards";
+import { PlayingCards } from "../components/PlayingCard";
 import React from "react";
-// import {WhatIsStorybook} from '../components/what-is-storybook';
 import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
 
-const stories = storiesOf("Playing Cards", module);
+const stories = storiesOf("Casino Lego", module);
 
 stories.addParameters({
   options: {
@@ -17,11 +16,11 @@ stories.addParameters({
   }
 });
 
-// stories.add('What is Storybook?', () => (
+// stories.add('Player Card', () => (
 //   <WhatIsStorybook />
 // ))
 
-stories.add("Pick a card, any card", () => (
+stories.add("Playing Card", () => (
   <React.Fragment>
     <PlayingCards
       advert={files(`Advert`, ".png, .jpg")}
