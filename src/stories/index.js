@@ -1,5 +1,4 @@
 import { color, files, select, withKnobs } from "@storybook/addon-knobs";
-
 import { 
   CardTable,
   // PlayingCards,
@@ -11,17 +10,58 @@ import { themes } from "@storybook/theming";
 
 const stories = storiesOf("Casino Lego", module);
 
+const newViewports = {
+  iPhone: {
+    name: 'iPhone 6/7/8',
+    styles: {
+      width: '375px',
+      height: '667px',
+    },
+  },
+  galaxyS5: {
+    name: 'Galaxy S5',
+    styles: {
+      width: '640px',
+      height: '360px',
+    },
+  },
+  ipadPortrait: {
+    name: 'iPad Portrait',
+    styles: {
+      width: '1024px',
+      height: '768px',
+    },
+  },
+};
+
 stories.addParameters({
   options: {
     panelPosition: "right",
     showPanel: true,
-    showNav: false,
+    showNav: true,
     theme: themes.dark
-  }
+  },
+  viewport: {
+    viewports: newViewports,
+    defaultViewport: 'galaxyS5',
+  },
 });
 
 stories.add('Card Table', () => (
-  <CardTable />
+  <CardTable 
+      rank={select(
+        `Number of Players`,
+        {
+          Two: `2`,
+          Three: `3`,
+          Four: `4`,
+          Five: `5`,
+          Six: `6`,
+        },
+        `2  `
+      )}
+  
+  />
 ))
 
 stories.add('Player', () => (
@@ -79,3 +119,4 @@ stories.add('Player', () => (
 // ));
 
 stories.addDecorator(withKnobs);
+// stories.addDecorator(withStorySource);
