@@ -1,33 +1,33 @@
-import {
-    CardBack,
-    CardFront,
-    FaceJack,
-    FaceQueen,
-    FaceKing,
-    IconClub,
-    IconDiamond,
-    IconHeart,
-    IconSpade,
-    Rank2,
-    Rank3,
-    Rank4,
-    Rank5,
-    Rank6,
-    Rank7,
-    Rank8,
-    Rank9,
-    RankA,
-    RankJ,
-    RankK,
-    RankQ,
-    RankT,
-} from './cardElements'
+// import {
+//     CardBack,
+//     CardFront,
+//     FaceJack,
+//     FaceQueen,
+//     FaceKing,
+//     IconClub,
+//     IconDiamond,
+//     IconHeart,
+//     IconSpade,
+//     Rank2,
+//     Rank3,
+//     Rank4,
+//     Rank5,
+//     Rank6,
+//     Rank7,
+//     Rank8,
+//     Rank9,
+//     RankA,
+//     RankJ,
+//     RankK,
+//     RankQ,
+//     RankT,
+// } from './cardElements'
 import {
     Card,
     Typography
 } from '@material-ui/core/';
 import React, { Component } from 'react';
-import defaultCardObj from './defaultCardObj';
+import defaultCardObj from '../../common/data/defaultCardObj';
 import cn from 'classnames';
 import { withStyles } from '@material-ui/styles';
 
@@ -64,7 +64,7 @@ const styles = (theme) => ({
     advertImage: {
         width: '100%'
     },
-    card:{
+    card: {
         padding: '8px',
     }
 });
@@ -85,24 +85,12 @@ class PlayingCard extends Component {
 
     render() {
         const {
-            classes,
-            cardObj
+            classes
         } = this.props;
-        const {
-            // advert,
-            facing,
-            // borderColour,
-            // faceColour,
-            // backColour,
-            // blackSuit,
-            // redSuit,
-            // rank,
-            // suit,
-        } = this.state.cardObj;
         return (
             <div className={cn(classes.singleCard)}>
                 <Card className={cn(classes.card)}>
-                    
+
                     <Typography>
                         facing: {this.state.facing}
                     </Typography>
@@ -127,7 +115,7 @@ class PlayingCard extends Component {
                     <Typography>
                         suit: {suit}
                     </Typography> */}
-                    
+
                 </Card>
             </div>
         );

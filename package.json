@@ -18,7 +18,8 @@
     "@storybook/addon-viewport": "^5.2.4",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
-    "@storybook/source-loader": "^5.2.4"
+    "@storybook/source-loader": "^5.2.4",
+    "storybook-readme": "^5.0.8"
   },
   "dependencies": {
     "@material-ui/core": "^4.2.1",
