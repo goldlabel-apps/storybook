@@ -22,8 +22,12 @@ import {
     RankQ,
     RankT,
 } from './cardElements'
+import {
+    Card,
+    Typography
+} from '@material-ui/core/';
 import React, { Component } from 'react';
-
+import defaultCardObj from './defaultCardObj';
 import cn from 'classnames';
 import { withStyles } from '@material-ui/styles';
 
@@ -60,194 +64,72 @@ const styles = (theme) => ({
     advertImage: {
         width: '100%'
     },
+    card:{
+        padding: '8px',
+    }
 });
 
 class PlayingCard extends Component {
 
+    state = {
+        cardObj: this.props.cardObj || defaultCardObj,
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.cardObj !== prevProps.cardObj) {
+            this.setState({
+                cardObj: this.props.cardObj
+            })
+        }
+    }
+
     render() {
-
-        return null;
-
         const {
             classes,
-            cardObj,
-            whitelabel,
-            advert,
+            cardObj
         } = this.props;
-        const { facing } = cardObj;
-        const { colours } = whitelabel;
-        if (facing === 'down') {
-            return (
-                <div className={cn(classes.singleCard)}>
-                    <CardBack c={colours} />
-                </div>
-            );
-        }
-        let suit = cardObj.suit
-        let suitColour;
-        let rank;
-        let rankIcon = null;
-        let suitIcon = null;
-        switch (suit) {
-            case 'C':
-                suitColour = colours.blackSuit;
-                break;
-            case 'D':
-                suitColour = colours.redSuit;
-                break;
-            case 'H':
-                suitColour = colours.redSuit;
-                break;
-            case 'S':
-                suitColour = colours.blackSuit;
-                break;
-            default:
-                suitColour = `#ccc`;
-        }
-        colours.suitColour = suitColour;
-        switch (cardObj.suit) {
-            case 'C':
-                suit = "Clubs";
-                suitColour = colours.blackSuit;
-                suitIcon = <IconClub c={colours} />;
-                break;
-            case 'D':
-                suit = "Diamonds";
-                suitColour = colours.redSuit;
-                suitIcon = <IconDiamond c={colours} />;
-                break;
-            case 'H':
-                suit = "Hearts";
-                suitColour = colours.redSuit;
-                suitIcon = <IconHeart c={colours} />;
-                break;
-            case 'S':
-                suit = "Spades";
-                suitColour = colours.blackSuit;
-                suitIcon = <IconSpade c={colours} />;
-                break;
-            default:
-                suit = "Bad Suit";
-        }
-        switch (cardObj.rank) {
-            case 'A':
-                rank = "Ace";
-                rankIcon = <RankA c={colours} suit={suit} />;
-                break;
-            case '2':
-                rank = "Two";
-                rankIcon = <Rank2 c={colours} suit={suit} />;
-                break;
-            case '3':
-                rank = "Three";
-                rankIcon = <Rank3 c={colours} suit={suit} />;
-                break;
-            case '4':
-                rank = "Four";
-                rankIcon = <Rank4 c={colours} suit={suit} />;
-                break;
-            case '5':
-                rank = "Five";
-                rankIcon = <Rank5 c={colours} suit={suit} />;
-                break;
-            case '6':
-                rank = "Six";
-                rankIcon = <Rank6 c={colours} suit={suit} />;
-                break;
-            case '7':
-                rank = "Seven";
-                rankIcon = <Rank7 c={colours} suit={suit} />;
-                break;
-            case '8':
-                rank = "Eight";
-                rankIcon = <Rank8 c={colours} suit={suit} />;
-                break;
-            case '9':
-                rank = "Nine";
-                rankIcon = <Rank9 c={colours} suit={suit} />;
-                break;
-            case 'T':
-                rank = "Ten";
-                rankIcon = <RankT c={colours} suit={suit} />;
-                break;
-            case 'J':
-                rank = "Jack";
-                rankIcon = <RankJ c={colours} suit={suit} />;
-                break;
-            case 'Q':
-                rank = "Queen";
-                rankIcon = <RankQ c={colours} suit={suit} />;
-                break;
-            case 'K':
-                rank = "King";
-                rankIcon = <RankK c={colours} suit={suit} />;
-                break;
-            default:
-                rank = "Bad Rank";
-        }
-
-
-        let lowerCard = null;
-
-        if (advert !== undefined) {
-            if (advert.length !== 0) {
-                lowerCard = (
-                    <div className={cn(classes.lowerCard)}>
-                        <img
-                            src={advert}
-                            className={cn(classes.advertImage)}
-                            alt={`Advert`}
-                        />
-                    </div>
-                )
-            }
-        }
-        if (rank === 'Jack') {
-            lowerCard = (
-                <div className={cn(classes.lowerCard, classes.faceCard)}>
-                    <FaceJack c={colours} suit={suit} />
-                </div>
-            )
-        }
-
-        if (rank === 'Queen') {
-            lowerCard = (
-                <div className={cn(classes.lowerCard, classes.faceCard)}>
-                    <FaceQueen c={colours} suit={suit} />
-                </div>
-            )
-        }
-
-        if (rank === 'King') {
-            lowerCard = (
-                <div className={cn(classes.lowerCard, classes.faceCard)}>
-                    <FaceKing c={colours} suit={suit} />
-                </div>
-            )
-        }
-
+        const {
+            // advert,
+            facing,
+            // borderColour,
+            // faceColour,
+            // backColour,
+            // blackSuit,
+            // redSuit,
+            // rank,
+            // suit,
+        } = this.state.cardObj;
         return (
             <div className={cn(classes.singleCard)}>
-
-                <div className={cn(classes.rankIcon)}>
-                    {rankIcon}
-                </div>
-
-                <div className={cn(classes.suitIcon)}>
-                    {suitIcon}
-                </div>
-
-                {lowerCard}
-
-                <div className={cn(classes.cardFront)}>
-                    <CardFront
-                        c={colours}
-                        suit={suit}
-                        rank={rank}
-                    />
-                </div>
-
-            </div >
+                <Card className={cn(classes.card)}>
+                    
+                    <Typography>
+                        facing: {this.state.facing}
+                    </Typography>
+                    {/* <Typography>
+                        borderColour: {borderColour}
+                    </Typography>
+                    <Typography>
+                        Face Colour: {faceColour}
+                    </Typography>
+                    <Typography>
+                        Back Colour: {backColour}
+                    </Typography>
+                    <Typography>
+                        Black Suit: {blackSuit}
+                    </Typography>
+                    <Typography>
+                        Red Suit: {redSuit}
+                    </Typography>
+                    <Typography>
+                        rank: {rank}
+                    </Typography>
+                    <Typography>
+                        suit: {suit}
+                    </Typography> */}
+                    
+                </Card>
+            </div>
         );
     }
 }
