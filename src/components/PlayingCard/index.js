@@ -1,8 +1,4 @@
-/*
-    Expose PlayingCards
-*/
-
-import PlayingCards from "./PlayingCards";
+import PlayingCard from "./PlayingCards";
 export {
-  PlayingCards,
+  PlayingCard,
 };
