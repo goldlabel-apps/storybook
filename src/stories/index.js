@@ -1,6 +1,6 @@
 import { /* color, files, */ select, withKnobs } from "@storybook/addon-knobs";
 import { CardTable } from "../components/PokerClient";
-import { FarmYard } from "../components/Chuckens";
+import { Farmyard } from "../components/Chuckens";
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
@@ -12,7 +12,7 @@ stories.addParameters({
   options: {
     panelPosition: "right",
     showPanel: true,
-    showNav: true,
+    showNav: false,
     theme: themes.dark
   },
   viewport: {
@@ -22,16 +22,20 @@ stories.addParameters({
 });
 
 stories.add("Farm Yard", () => (
-  // see /src/common/brands.js
-  <FarmYard
-    brand={select(
-      `Brand`,
+  // see /src/common/chuckens.js
+  <Farmyard
+    chuckens={select(
+      `Chuckens`,
       {
-        "White Label": `whitelabel`,
-        "Fancy Spade": `fancyspade`,
-        "Ugly as Oil": `ugly`
+        Default: `default`,
+        Scarlet: `red`,
+        Bluey: `blue`,
+        Midnight: `black`,
+        Lilly: `green`,
+        Violet: `purple`,
+        Sunshine: `yellow`
       },
-      `whitelabel`
+      `default`
     )}
   />
 ));

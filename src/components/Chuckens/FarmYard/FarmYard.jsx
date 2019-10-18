@@ -11,14 +11,10 @@ import {
 const brand = `whitelabel`;
 
 export default function Farmyard(props) {
-    const { table } = brands[brand].colours;
     const useStyles = makeStyles(theme => ({
         cardTableContainer: {
             height: '100vh',
-            backgroundColor: table.gradientLight,
-            border: '1px solid ' + table.border,
-            borderRadius: 16,
-            backgroundImage: 'radial-gradient(' + table.gradientLight + ', ' + table.gradientDark + ')',
+            border: '1px solid white',
         },
     }));
 
