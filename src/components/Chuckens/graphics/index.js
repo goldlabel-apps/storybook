@@ -1,2 +1,2 @@
-import Viewport from "./Viewport";
-export { Viewport };
+import FarmyardSVG from "./FarmyardSVG";
+export { FarmyardSVG };
