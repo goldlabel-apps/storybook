@@ -8,10 +8,10 @@ import {
     Container,
     CssBaseline
 } from '@material-ui/core/';
+const brand = `whitelabel`;
 
-export default function CardTable(props) {
-
-    const { table } = brands[props.brand].colours;
+export default function Farmyard(props) {
+    const { table } = brands[brand].colours;
     const useStyles = makeStyles(theme => ({
         cardTableContainer: {
             height: '100vh',
@@ -28,7 +28,7 @@ export default function CardTable(props) {
         <MuiThemeProvider theme={createMuiTheme(theme)}>
             <CssBaseline />
             <Container id={`card-table`} className={cn(classes.cardTableContainer)}>
-                Card Table.
+                Farm Yard
             </Container>
         </MuiThemeProvider>
     );
