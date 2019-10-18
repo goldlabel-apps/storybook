@@ -13,7 +13,7 @@ stories.addParameters({
   options: {
     panelPosition: "right",
     showPanel: true,
-    showNav: true,
+    showNav: false,
     theme: themes.dark
   },
   viewport: {
