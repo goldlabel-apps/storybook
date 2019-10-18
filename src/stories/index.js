@@ -1,7 +1,5 @@
-import { /* color, files, */select, withKnobs } from "@storybook/addon-knobs";
-import {
-  CardTable,
-} from "../components/";
+import { /* color, files, */ select, withKnobs } from "@storybook/addon-knobs";
+import { CardTable } from "../components/PokerClient";
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
@@ -13,12 +11,12 @@ stories.addParameters({
   options: {
     panelPosition: "right",
     showPanel: true,
-    showNav: false,
+    showNav: true,
     theme: themes.dark
   },
   viewport: {
     viewports,
-    defaultViewport: "galaxyS5"
+    defaultViewport: "tiny"
   }
 });
 
@@ -26,10 +24,11 @@ stories.add("Card Table", () => (
   // see /src/common/brands.js
   <CardTable
     brand={select(
-      `Brand`, {
+      `Brand`,
+      {
         "White Label": `whitelabel`,
         "Fancy Spade": `fancyspade`,
-        "Ugly as Oil": `ugly`,
+        "Ugly as Oil": `ugly`
       },
       `whitelabel`
     )}
