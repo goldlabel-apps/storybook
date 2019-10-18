@@ -27,7 +27,7 @@ import {
     Typography
 } from '@material-ui/core/';
 import React, { Component } from 'react';
-import defaultCardObj from '../../common/data/defaultCardObj';
+import defaultCardObj from '../../../common/data/defaultCardObj';
 import cn from 'classnames';
 import { withStyles } from '@material-ui/styles';
 
