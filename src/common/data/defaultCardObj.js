@@ -7,7 +7,6 @@ const defaultCardObj = {
     redSuit: `#d43943`,
     rank: `Ace`,
     suit: `Spades`,
-    advert: null,
     facing: `up`,
 }
 
