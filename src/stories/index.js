@@ -21,6 +21,8 @@ stories.addParameters({
   }
 });
 
+stories.addDecorator(withKnobs);
+
 stories.add("Farm Yard", () => (
   // see /src/common/chuckens.js
   <Farmyard
@@ -54,5 +56,3 @@ stories.add("Card Table", () => (
     )}
   />
 ));
-
-stories.addDecorator(withKnobs);
