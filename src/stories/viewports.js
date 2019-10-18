@@ -9,8 +9,8 @@ const viewports = {
     galaxyS5: {
       name: 'Galaxy S5',
       styles: {
-        height: '640px',
-        width: '360px',
+        width: '640px',
+        height: '360px',
       },
     },
     ipadPortrait: {

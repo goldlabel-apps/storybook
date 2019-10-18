@@ -1,40 +1,25 @@
 import textColours from "./textColours";
 
-let pwaConfig = {
-  brand:{
-    colours:{
-      cards:{}
-    }
-  }  
-};
-
-const { brand } = pwaConfig;
-const primary = brand.colours.muiPrimary;
-const secondary = brand.colours.muiSecondary;
+const primary = '#333';
+const secondary = '#ccc';
 let text = textColours.light;
 
 const theme = {
+  typography: {
+    fontFamily: 'Helvetica'
+  },
   palette: {
     primary: {
-      main: primary || "#222"
+      main: primary
     },
     secondary: {
-      main: secondary || "#333"
+      main: secondary
     },
     text,
     background: {
-      paper: brand.colours.cards.bgLight
+      default: 'none'
     }
-    // background: {
-    //   default: secondary,
-    //   paper: primary,
-    //   appBar: secondary,
-    //   contentFrame: primary
-    // }
   },
-  typography: {
-    fontFamily: '"Helvetica", sans-serif'
-  }
 };
 
 export default theme;

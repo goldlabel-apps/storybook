@@ -3,7 +3,7 @@ import {
   AvatarSelect,
   CardTable,
   Chips,
-  DealerChip,
+  Buck,
   PlayingCard,
   Player,
   TimeBank
@@ -13,19 +13,14 @@ import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
 import viewports from "./viewports";
 import defaultCardObj from "../common/data/defaultCardObj";
-// import CasinoLegoReadme from "../components/README.md";
 
 const stories = storiesOf("Poker Client", module);
 
 stories.addParameters({
-  //   readme: {
-  //     content: CasinoLegoReadme,
-  //     sidebar: CasinoLegoReadme
-  //   },
   options: {
     panelPosition: "right",
     showPanel: true,
-    showNav: true,
+    showNav: false,
     theme: themes.dark
   },
   viewport: {
@@ -33,19 +28,6 @@ stories.addParameters({
     defaultViewport: "galaxyS5"
   }
 });
-
-stories.add("Dealer Chip", () => (
-  <DealerChip
-    c={{
-      colourRim: color(`Rim Colour`, "white"),
-      colourLight: color(`Light Colour`, "green"),
-      colourDark: color(`Dark Colour`, "blue")
-    }}
-  />
-));
-stories.add("Time Bank", () => <TimeBank />);
-stories.add("Chips", () => <Chips />);
-stories.add("Avatar Select", () => <AvatarSelect />);
 
 stories.add("Card Table", () => (
   <CardTable
@@ -62,6 +44,20 @@ stories.add("Card Table", () => (
     )}
   />
 ));
+
+stories.add("Buck", () => (
+  <Buck
+    c={{
+      colourRim: color(`Rim Colour`, "white"),
+      colourLight: color(`Light Colour`, "green"),
+      colourDark: color(`Dark Colour`, "blue")
+    }}
+  />
+));
+
+stories.add("Time Bank", () => <TimeBank />);
+stories.add("Chips", () => <Chips />);
+stories.add("Avatar Select", () => <AvatarSelect />);
 
 stories.add("Player", () => <Player />);
 

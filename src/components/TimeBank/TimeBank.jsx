@@ -15,30 +15,6 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function TimeBank(props) {
-    const { children, open, value } = props;
-
-    const popperRef = React.useRef(null);
-    React.useEffect(() => {
-        if (popperRef.current) {
-            popperRef.current.update();
-        }
-    });
-
-    return (
-        <Tooltip
-            PopperProps={{
-                popperRef,
-            }}
-            open={open}
-            enterTouchDelay={0}
-            placement="top"
-            title={value}
-        >
-            {children}
-        </Tooltip>
-    );
-}
 
 
 const iOSBoxShadow =
@@ -189,7 +165,7 @@ function AirbnbThumbComponent(props) {
     );
 }
 
-export default function CustomizedSlider() {
+export default function TimeBank() {
     const classes = useStyles();
 
     return (

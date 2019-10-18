@@ -1,5 +1,5 @@
 import React from "react";
-const DealerChip = props => {
+const Buck = props => {
     if (!props.c) {
         return null;
     }
@@ -8,7 +8,7 @@ const DealerChip = props => {
     return (
         <React.Fragment>
             <svg {...props} viewBox="0 0 189 189">
-                <g id="DealerChip" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                <g id="Buck" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g>
                         <path d="M94.45,187.526 C43.04,187.526 1.37,145.852 1.37,94.445 C1.37,43.038 43.04,1.364 94.45,1.364 C145.86,1.364 187.53,43.038 187.53,94.445 C187.53,145.852 145.86,187.526 94.45,187.526" id="Fill-365" fill={c.colourLight}></path>
                         <path d="M94.45,2.728 C43.88,2.728 2.73,43.872 2.73,94.445 C2.73,145.017 43.88,186.162 94.45,186.162 C145.02,186.162 186.16,145.017 186.16,94.445 C186.16,43.872 145.02,2.728 94.45,2.728 Z M94.45,188.891 C42.37,188.891 -1.42108547e-14,146.522 -1.42108547e-14,94.445 C-1.42108547e-14,42.368 42.37,-1.42108547e-14 94.45,-1.42108547e-14 C146.53,-1.42108547e-14 188.89,42.368 188.89,94.445 C188.89,146.522 146.53,188.891 94.45,188.891 L94.45,188.891 Z" id="Fill-366" fill={c.colourRim}></path>
@@ -27,4 +27,4 @@ const DealerChip = props => {
         </React.Fragment>
     )
 };
-export default DealerChip;
+export default Buck;
