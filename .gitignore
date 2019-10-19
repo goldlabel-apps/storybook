@@ -4,6 +4,7 @@
 storybook-static
 
 # Firebase
+firebase
 firebase.json
 .firebaserc
 .firebase/
