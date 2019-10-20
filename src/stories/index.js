@@ -1,10 +1,15 @@
+import packageJSON from "../../package.json";
 import { /* color, files, */ select, withKnobs } from "@storybook/addon-knobs";
 import { CardTable } from "../components/PokerClient";
-import { Farmyard } from "../components/Chuckens";
+import { Game } from "../components/Chuckens";
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
 import viewports from "./viewports";
+
+console.log(
+  `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
+);
 
 const stories = storiesOf("listingslab", module);
 
@@ -12,20 +17,20 @@ stories.addParameters({
   options: {
     panelPosition: "right",
     showPanel: true,
-    showNav: false,
-    theme: themes.dark
+    showNav: true,
+    theme: themes.light
   },
   viewport: {
     viewports,
-    defaultViewport: "tiny"
+    defaultViewport: "baseline"
   }
 });
 
 stories.addDecorator(withKnobs);
 
-stories.add("Farm Yard", () => (
+stories.add("Chicken Game", () => (
   // see /src/common/chuckens.js
-  <Farmyard
+  <Game
     chuckens={select(
       `Chuckens`,
       {

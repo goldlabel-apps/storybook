@@ -7,15 +7,16 @@ storybook-static
 firebase
 firebase.json
 .firebaserc
-.firebase/
+.firebase
+
+# env
+.env.development
+.env.production
 
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
-
-# testing
-/coverage
 
 # misc
 .DS_Store

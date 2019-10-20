@@ -1,16 +1,16 @@
 const viewports = {
-  iPhone: {
-    name: "iPhone 6/7/8",
-    styles: {
-      width: "375px",
-      height: "667px"
-    }
-  },
-  tiny: {
-    name: "tiny",
+  olderSmartphone: {
+    name: "baseline",
     styles: {
       height: "600px",
       width: "360px"
+    }
+  },
+  iPhone: {
+    name: "iPhone 6/7/8",
+    styles: {
+      height: "375px",
+      width: "667px"
     }
   },
   galaxyS5: {
@@ -18,13 +18,6 @@ const viewports = {
     styles: {
       height: "640px",
       width: "360px"
-    }
-  },
-  ipadPortrait: {
-    name: "iPad Portrait",
-    styles: {
-      width: "1024px",
-      height: "768px"
     }
   }
 };

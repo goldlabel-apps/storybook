@@ -1,2 +1,2 @@
-import Farmyard from "./Farmyard/Farmyard";
-export { Farmyard };
+import Game from "./Game/Game";
+export { Game };

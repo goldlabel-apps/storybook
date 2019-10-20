@@ -1,2 +1,2 @@
-import FarmyardSVG from "./FarmyardSVG";
-export { FarmyardSVG };
+import Farmyard from "./Farmyard";
+export { Farmyard };

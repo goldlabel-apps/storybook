@@ -28,7 +28,7 @@ export default function CardTable(props) {
         <MuiThemeProvider theme={createMuiTheme(theme)}>
             <CssBaseline />
             <Container id={`card-table`} className={cn(classes.cardTableContainer)}>
-                Card Table.
+                {` `}
             </Container>
         </MuiThemeProvider>
     );
