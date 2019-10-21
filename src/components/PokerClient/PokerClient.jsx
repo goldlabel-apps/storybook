@@ -4,15 +4,18 @@ import theme from '../../common/style/theme';
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import {
-    Container,
     CssBaseline
 } from '@material-ui/core/';
+import {
+    Topbar
+} from "./";
+import brands from '../../common/data/brands';
 
 const styles = theme => ({
     cardTableContainer: {
-        height: '100vh',
-        // border: '1px solid #222',
-        // backgroundImage: 'linear-gradient(limegreen, darkgreen )',
+        height: 'calc(100vh - 65px)',
+        border: '1px solid #333',
+        backgroundImage: 'linear-gradient(limegreen, darkgreen )',
         background: 'rgba(255,255,255, 0.05)'
     },
 });
@@ -23,9 +26,13 @@ class PokerClient extends Component {
         const {
             classes,
         } = this.props;
+        console.log (this.props.brand)
+        let brand = brands[this.props.brand];
+        
         return (
             <MuiThemeProvider theme={createMuiTheme(theme)}>
-            <CssBaseline />
+                <CssBaseline />
+                <Topbar brand={brand} />
                 <div className={cn(classes.cardTableContainer)}>
                     Poker Client
                 </div>

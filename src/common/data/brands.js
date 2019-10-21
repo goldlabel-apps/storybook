@@ -1,8 +1,14 @@
 const brands = {
     whitelabel : {
-        title: `Whitelabel brand`,
-        logo: `https://firebasestorage.googleapis.com/v0/b/codeworx-storybook.appspot.com/o/logo_whitelabel_512.png?alt=media&token=938b2758-8c2b-4548-b8bf-e2291b46f0c7`,
+        title: `White Label`,
+        logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Fwhitelabel192.png?alt=media&token=94dc91b4-e7eb-4724-aada-0e012fcc4c1f`,
         colours: {
+            mui:{
+                primary: `#228B22`,
+                secondary: `#00FF00`,
+                text: `dark`,
+                background: `#eee`,
+            },
             table: {
                 gradientLight: `#099125`,
                 gradientDark: `#006813`,
@@ -18,8 +24,8 @@ const brands = {
         }
     },
     fancyspade: {
-        title:`Fancy Sapde`,
-        logo: `https://firebasestorage.googleapis.com/v0/b/codeworx-storybook.appspot.com/o/logo_fancyspade_512.png?alt=media&token=cab990c4-9e75-42ff-9e4d-c443f06d436f`,
+        title:`Fancy Spade`,
+        logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Ffancy-spade192.png?alt=media&token=38315cca-f0ef-43d3-90de-019146c4c641`,
         colours: {
             table: {
                 gradientLight: `#22929b`,
@@ -37,7 +43,7 @@ const brands = {
     },
     ugly: {
         title:`Ugly as Oil`,
-        logo: `https://firebasestorage.googleapis.com/v0/b/codeworx-storybook.appspot.com/o/logo_chucken_512.png?alt=media&token=12ed61ae-97b4-41b2-9c9c-b4a714be4ba1`,
+        logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Fugly192.png?alt=media&token=4f2b823f-2e6a-4435-8783-7903a06e8e77`,
         colours: {
             table: {
                 gradientLight: `#d23e43`,
