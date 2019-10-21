@@ -27,7 +27,7 @@ import {
     Typography
 } from '@material-ui/core/';
 import React, { Component } from 'react';
-import defaultCardObj from '../../../common/data/defaultCardObj';
+import playingcard from '../../../common/data/playingcard';
 import cn from 'classnames';
 import { withStyles } from '@material-ui/styles';
 
@@ -72,7 +72,7 @@ const styles = (theme) => ({
 class PlayingCard extends Component {
 
     state = {
-        cardObj: this.props.cardObj || defaultCardObj,
+        cardObj: this.props.cardObj || playingcard,
     }
 
     componentDidUpdate(prevProps) {
