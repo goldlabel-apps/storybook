@@ -1,8 +1,14 @@
 const brands = {
     whitelabel : {
-        title: `Whitelabel brand`,
-        logo: `https://firebasestorage.googleapis.com/v0/b/codeworx-storybook.appspot.com/o/logo_whitelabel_512.png?alt=media&token=938b2758-8c2b-4548-b8bf-e2291b46f0c7`,
+        title: `White Label`,
+        logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Fwhitelabel192.png?alt=media&token=94dc91b4-e7eb-4724-aada-0e012fcc4c1f`,
         colours: {
+            mui:{
+                primary: `#444`,
+                secondary: `#333`,
+                text: `light`,
+                background: `#000`,
+            },
             table: {
                 gradientLight: `#099125`,
                 gradientDark: `#006813`,
@@ -18,9 +24,15 @@ const brands = {
         }
     },
     fancyspade: {
-        title:`Fancy Sapde`,
-        logo: `https://firebasestorage.googleapis.com/v0/b/codeworx-storybook.appspot.com/o/logo_fancyspade_512.png?alt=media&token=cab990c4-9e75-42ff-9e4d-c443f06d436f`,
+        title:`Fancy Spade`,
+        logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Ffancy-spade192.png?alt=media&token=38315cca-f0ef-43d3-90de-019146c4c641`,
         colours: {
+            mui:{
+                primary: `#22929b`,
+                secondary: `#126a71`,
+                text: `light`,
+                background: `#000`,
+            },
             table: {
                 gradientLight: `#22929b`,
                 gradientDark: `#126a71`,
@@ -35,10 +47,16 @@ const brands = {
             }
         }
     },
-    ugly: {
-        title:`Ugly as Oil`,
-        logo: `https://firebasestorage.googleapis.com/v0/b/codeworx-storybook.appspot.com/o/logo_chucken_512.png?alt=media&token=12ed61ae-97b4-41b2-9c9c-b4a714be4ba1`,
+    redHeart: {
+        title:`Red Heart`,
+        logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Fredheart192.png?alt=media&token=eea3e969-ce28-495b-8f85-ccaa9b35ddb6`,
         colours: {
+            mui:{
+                primary: `#d23e43`,
+                secondary: `#932b2e`,
+                text: `light`,
+                background: `#000`,
+            },
             table: {
                 gradientLight: `#d23e43`,
                 gradientDark: `#932b2e`,

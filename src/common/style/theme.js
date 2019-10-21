@@ -17,7 +17,7 @@ const theme = {
     },
     text,
     background: {
-      default: 'none'
+      default: 'black',
     }
   },
 };
