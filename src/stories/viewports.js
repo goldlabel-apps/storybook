@@ -2,8 +2,8 @@ const viewports = {
   baseline: {
     name: "baseline",
     styles: {
-      width: "600px",
-      height: "360px"
+      height: "600px",
+      width: "360px"
     }
   },
   iPhone: {

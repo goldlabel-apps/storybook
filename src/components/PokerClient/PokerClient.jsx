@@ -28,23 +28,23 @@ class PokerClient extends Component {
         } = this.props;
         let brand = brands[this.props.brand];
         let brandedTheme = theme;
-        const { 
+        const {
             primary,
             secondary,
             background,
         } = brand.colours.mui;
         theme.palette.primary.main = primary;
         theme.palette.secondary.main = secondary;
-        theme.palette.background.default = background;      
+        theme.palette.background.default = background;
         return (
             <MuiThemeProvider theme={createMuiTheme(brandedTheme)}>
                 <CssBaseline />
                 <Topbar brand={brand} />
                 <div className={cn(classes.cardTableContainer)}>
-                    Poker Client
+
                 </div>
             </MuiThemeProvider>
-        );    
+        );
     }
 }
 

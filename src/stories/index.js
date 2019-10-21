@@ -1,7 +1,7 @@
 import packageJSON from "../../package.json";
 import { /* color, files, */ select, withKnobs } from "@storybook/addon-knobs";
 import { PokerClient } from "../components/PokerClient";
-import { Game } from "../components/Chuckens";
+import { Game } from "../components/ChuckenGotchi";
 import { MP3 } from "../components/MP3";
 import React from "react";
 import { storiesOf } from "@storybook/react";
@@ -29,25 +29,8 @@ stories.addParameters({
 
 stories.addDecorator(withKnobs);
 
-
-
-stories.add("Card Table", () => (
-  // see /src/common/brands.js
-  <PokerClient
-    brand={select(
-      `Switch Brands`,
-      {
-        "White Label": `whitelabel`,
-        "Fancy Spade": `fancyspade`,
-        "Red Heart": `redHeart`
-      },
-      `whitelabel`
-    )}
-  />
-));
-
 stories.add("Chicken Game", () => (
-  // see /src/common/chuckens.js
+  // data: /src/common/chuckens.js
   <Game
     chuckens={select(
       `Chuckens`,
@@ -65,6 +48,19 @@ stories.add("Chicken Game", () => (
   />
 ));
 
-stories.add("Audio", () => (
-  <MP3 />
+stories.add("Card Table", () => (
+  // data: /src/common/brands.js
+  <PokerClient
+    brand={select(
+      `Switch Brands`,
+      {
+        "White Label": `whitelabel`,
+        "Fancy Spade": `fancyspade`,
+        "Red Heart": `redHeart`
+      },
+      `whitelabel`
+    )}
+  />
 ));
+
+stories.add("Audio", () => <MP3 />);
