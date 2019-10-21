@@ -4,7 +4,6 @@ import {
   withKnobs,
   text
 } from "@storybook/addon-knobs";
-import { PokerClient } from "../components/PokerClient";
 import { Game } from "../components/ChuckenGotchi";
 import { MP3 } from "../components/MP3";
 import React from "react";
@@ -52,20 +51,7 @@ stories.add("ChuckenGotchi", () => (
   />
 ));
 
-stories.add("PokerClient", () => (
-  // data: /src/common/brands.js
-  <PokerClient
-    brand={select(
-      `Switch Brands`,
-      {
-        "White Label": `whitelabel`,
-        "Fancy Spade": `fancyspade`,
-        "Red Heart": `redHeart`
-      },
-      `whitelabel`
-    )}
-  />
-));
+
 
 stories.add("MP3", () => (
   <MP3 freeText={text("User Input> Text", "Default text.")} />
