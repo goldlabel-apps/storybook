@@ -36,7 +36,7 @@ stories.add("Card Table", () => (
       {
         "White Label": `whitelabel`,
         "Fancy Spade": `fancyspade`,
-        "Ugly as Oil": `ugly`
+        "Red Heart": `redHeart`
       },
       `whitelabel`
     )}

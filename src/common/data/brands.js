@@ -4,10 +4,10 @@ const brands = {
         logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Fwhitelabel192.png?alt=media&token=94dc91b4-e7eb-4724-aada-0e012fcc4c1f`,
         colours: {
             mui:{
-                primary: `#228B22`,
-                secondary: `#00FF00`,
-                text: `dark`,
-                background: `#eee`,
+                primary: `#444`,
+                secondary: `#333`,
+                text: `light`,
+                background: `#000`,
             },
             table: {
                 gradientLight: `#099125`,
@@ -27,6 +27,12 @@ const brands = {
         title:`Fancy Spade`,
         logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Ffancy-spade192.png?alt=media&token=38315cca-f0ef-43d3-90de-019146c4c641`,
         colours: {
+            mui:{
+                primary: `#22929b`,
+                secondary: `#126a71`,
+                text: `light`,
+                background: `#000`,
+            },
             table: {
                 gradientLight: `#22929b`,
                 gradientDark: `#126a71`,
@@ -41,10 +47,16 @@ const brands = {
             }
         }
     },
-    ugly: {
-        title:`Ugly as Oil`,
-        logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Fugly192.png?alt=media&token=4f2b823f-2e6a-4435-8783-7903a06e8e77`,
+    redHeart: {
+        title:`Red Heart`,
+        logo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Fredheart192.png?alt=media&token=eea3e969-ce28-495b-8f85-ccaa9b35ddb6`,
         colours: {
+            mui:{
+                primary: `#d23e43`,
+                secondary: `#932b2e`,
+                text: `light`,
+                background: `#000`,
+            },
             table: {
                 gradientLight: `#d23e43`,
                 gradientDark: `#932b2e`,

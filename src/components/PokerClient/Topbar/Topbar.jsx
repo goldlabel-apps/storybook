@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core/';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import brands from '../../../common/data/brands';
+// import brands from '../../../common/data/brands';
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -22,7 +22,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Topbar(props) {
   const classes = useStyles();
-  console.log (props.brand)
   const { 
     title,
     logo,
