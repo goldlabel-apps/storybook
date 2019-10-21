@@ -1,6 +1,6 @@
 import packageJSON from "../../package.json";
 import { /* color, files, */ select, withKnobs } from "@storybook/addon-knobs";
-import { CardTable } from "../components/PokerClient";
+import { PokerClient } from "../components/PokerClient";
 import { Game } from "../components/Chuckens";
 import React from "react";
 import { storiesOf } from "@storybook/react";
@@ -18,7 +18,7 @@ stories.addParameters({
     panelPosition: "right",
     showPanel: true,
     showNav: false,
-    theme: themes.light
+    theme: themes.dark
   },
   viewport: {
     viewports,
@@ -30,9 +30,9 @@ stories.addDecorator(withKnobs);
 
 stories.add("Card Table", () => (
   // see /src/common/brands.js
-  <CardTable
+  <PokerClient
     brand={select(
-      `Brand`,
+      `Switch Brands`,
       {
         "White Label": `whitelabel`,
         "Fancy Spade": `fancyspade`,

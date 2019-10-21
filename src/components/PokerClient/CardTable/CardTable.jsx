@@ -12,6 +12,7 @@ import {
 export default function CardTable(props) {
 
     const { table } = brands[props.brand].colours;
+    // console.log (table);
     const useStyles = makeStyles(theme => ({
         cardTableContainer: {
             height: '100vh',
@@ -28,7 +29,7 @@ export default function CardTable(props) {
         <MuiThemeProvider theme={createMuiTheme(theme)}>
             <CssBaseline />
             <Container id={`card-table`} className={cn(classes.cardTableContainer)}>
-                {` `}
+                {`bobbly heads`}
             </Container>
         </MuiThemeProvider>
     );
