@@ -17,7 +17,7 @@ stories.addParameters({
   options: {
     panelPosition: "right",
     showPanel: true,
-    showNav: true,
+    showNav: false,
     theme: themes.light
   },
   viewport: {
@@ -27,6 +27,21 @@ stories.addParameters({
 });
 
 stories.addDecorator(withKnobs);
+
+stories.add("Card Table", () => (
+  // see /src/common/brands.js
+  <CardTable
+    brand={select(
+      `Brand`,
+      {
+        "White Label": `whitelabel`,
+        "Fancy Spade": `fancyspade`,
+        "Ugly as Oil": `ugly`
+      },
+      `whitelabel`
+    )}
+  />
+));
 
 stories.add("Chicken Game", () => (
   // see /src/common/chuckens.js
@@ -43,21 +58,6 @@ stories.add("Chicken Game", () => (
         Sunshine: `yellow`
       },
       `default`
-    )}
-  />
-));
-
-stories.add("Card Table", () => (
-  // see /src/common/brands.js
-  <CardTable
-    brand={select(
-      `Brand`,
-      {
-        "White Label": `whitelabel`,
-        "Fancy Spade": `fancyspade`,
-        "Ugly as Oil": `ugly`
-      },
-      `whitelabel`
     )}
   />
 ));
