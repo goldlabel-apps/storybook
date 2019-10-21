@@ -37,13 +37,13 @@ class MP3 extends Component {
             <MuiThemeProvider theme={createMuiTheme(theme)}>
                 <CssBaseline />
                 <List component="nav" aria-label="mp3 list">
-                    { soundArr.map ((item, i) => {
+                    {soundArr.map((item, i) => {
                         return (
                             <ListItem key={`mp3_${i}`} button>
                                 <ListItemIcon>
-                                    <InboxIcon color={`secondary`} />
+                                    <InboxIcon color={`primary`} />
                                 </ListItemIcon>
-                                <ListItemText 
+                                <ListItemText
                                     primary={item.title}
                                     secondary={item.description}
                                 />
@@ -52,7 +52,7 @@ class MP3 extends Component {
                     })}
                 </List>
             </MuiThemeProvider>
-        );    
+        );
     }
 }
 

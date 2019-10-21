@@ -1,12 +1,12 @@
 import textColours from "./textColours";
 
-const primary = '#333';
-const secondary = '#ccc';
+const primary = "#ddd";
+const secondary = "#ccc";
 let text = textColours.light;
 
 const theme = {
   typography: {
-    fontFamily: 'Helvetica'
+    fontFamily: "Helvetica"
   },
   palette: {
     primary: {
@@ -17,9 +17,9 @@ const theme = {
     },
     text,
     background: {
-      default: 'black',
+      default: "black"
     }
-  },
+  }
 };
 
 export default theme;
