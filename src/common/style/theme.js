@@ -2,7 +2,7 @@ import textColours from "./textColours";
 
 const primary = '#333';
 const secondary = '#ccc';
-let text = textColours.dark;
+let text = textColours.light;
 
 const theme = {
   typography: {

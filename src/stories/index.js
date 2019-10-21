@@ -2,6 +2,7 @@ import packageJSON from "../../package.json";
 import { /* color, files, */ select, withKnobs } from "@storybook/addon-knobs";
 import { PokerClient } from "../components/PokerClient";
 import { Game } from "../components/Chuckens";
+import { MP3 } from "../components/MP3";
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
@@ -27,6 +28,8 @@ stories.addParameters({
 });
 
 stories.addDecorator(withKnobs);
+
+
 
 stories.add("Card Table", () => (
   // see /src/common/brands.js
@@ -60,4 +63,8 @@ stories.add("Chicken Game", () => (
       `default`
     )}
   />
+));
+
+stories.add("Audio", () => (
+  <MP3 />
 ));
