@@ -9,6 +9,9 @@ firebase.json
 .firebaserc
 .firebase
 
+# Private Stories
+src/components/PokerClient
+
 # env
 .env.development
 .env.production
