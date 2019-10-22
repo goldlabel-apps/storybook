@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 // import cn from 'classnames';
 import {
     // Card,
-    Avatar,
+    // Avatar,
     CssBaseline,
     List,
     ListItem,
@@ -26,9 +26,9 @@ const styles = theme => ({
 class MP3 extends Component {
 
     render() {
-        const {
-            titleText,
-        } = this.props;
+        // const {
+        //     titleText,
+        // } = this.props;
         const soundArr = [];
         let currentMP3 = null;
         for (const section in listMP3) {
@@ -46,10 +46,14 @@ class MP3 extends Component {
                 <CssBaseline />
 
                 <Typography variant={`h6`}>
-                    {titleText}
+                    {currentMP3.title}
                 </Typography>
 
-                {console.log('currentMP3', currentMP3.url)}
+                <Typography variant={`body1`}>
+                    {currentMP3.description}
+                </Typography>
+
+                {/* {console.log('currentMP3', currentMP3.url)} */}
 
                 <ReactAudioPlayer
                     src={currentMP3.url}
