@@ -22,7 +22,7 @@ stories.addParameters({
     panelPosition: "right",
     showPanel: true,
     showNav: true,
-    theme: themes.light
+    theme: themes.dark
   },
   viewport: {
     viewports,
