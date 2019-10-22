@@ -32,11 +32,12 @@ stories.addParameters({
 
 stories.addDecorator(withKnobs);
 
+stories.add("MP3", () => <MP3 titleText={text("Title Text", "MP3 Player")} />);
+
 stories.add("ChuckenGotchi", () => (
-  // data: /src/common/chuckens.js
   <Game
     chuckens={select(
-      `Chucken Select`,
+      `Chucken Selector`,
       {
         Random: `random`,
         Scarlet: `red`,
@@ -49,10 +50,4 @@ stories.add("ChuckenGotchi", () => (
       `random`
     )}
   />
-));
-
-
-
-stories.add("MP3", () => (
-  <MP3 freeText={text("User Input> Text", "Default text.")} />
 ));

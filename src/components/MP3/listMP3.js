@@ -1,4 +1,4 @@
-const mp3 = {
+const listMP3 = {
   mario: {
     grabCoin: {
       title: `Coin Grab`,
@@ -40,4 +40,4 @@ const mp3 = {
   }
 };
 
-export default mp3;
+export default listMP3;
