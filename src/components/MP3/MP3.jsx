@@ -15,7 +15,8 @@ import {
 } from '@material-ui/core/';
 import InboxIcon from '@material-ui/icons/VolumeUp';
 import listMP3 from './listMP3';
-import ReactAudioPlayer from 'react-audio-player';
+
+import Player from './Player';
 
 const styles = theme => ({
     gridItem: {
@@ -44,23 +45,8 @@ class MP3 extends Component {
         return (
             <MuiThemeProvider theme={createMuiTheme(theme)}>
                 <CssBaseline />
-
-                <Typography variant={`h6`}>
-                    {currentMP3.title}
-                </Typography>
-
-                <Typography variant={`body1`}>
-                    {currentMP3.description}
-                </Typography>
-
+                <Player mp3={currentMP3} />
                 {/* {console.log('currentMP3', currentMP3.url)} */}
-
-                <ReactAudioPlayer
-                    src={currentMP3.url}
-                    autoPlay
-                    controls
-                />
-
                 <List component="nav" aria-label="mp3 list">
                     {soundArr.map((item, i) => {
                         return (
