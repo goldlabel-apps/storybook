@@ -3,6 +3,13 @@ const Cloud = props => {
     const c = {
         cloud: `white`,
     };
+    // console.log(props);
+    const { cloud } = props;
+    if (cloud) {
+        if (cloud.backgroundColor) {
+            c.cloud = cloud.backgroundColor;
+        }
+    }
     return (
         <React.Fragment>
             <svg {...props} viewBox="0 0 500 500">

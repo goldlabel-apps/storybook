@@ -1,52 +1,62 @@
-import React from 'react';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import theme from '../../../common/style/theme';
-import { makeStyles } from '@material-ui/core/styles';
+
+import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
+import { styles } from './Game.Style';
 import {
     CssBaseline
 } from '@material-ui/core/';
 import {
     Cloud
 } from '../graphics';
-// import { scudCloud } from './greensock';
+import { scudCloud } from './greensock';
 
-export default function Game(props) {
-    const useStyles = makeStyles(theme => ({
-        cardTableContainer: {
-            height: '100vh',
-            // border: '1px solid #eee',
-            position: 'relative',
-            // 
-        },
-        element: {
-            position: 'absolute',
-            zIndex: 1000000
-        },
-        sky: {
-            height: '44vh',
-            position: 'relative',
-            backgroundImage: 'linear-gradient(skyblue, teal)',
-        },
-        ground: {
-            height: '66vh',
-            position: 'relative',
-            backgroundImage: 'linear-gradient(darkgreen, limegreen )',
-        }
-    }));
+class Game extends Component {
 
-    const classes = useStyles();
+    componentDidMount() {
+        // console.log('Init Game');
+        /* 
+            Start clouds
+        */
+        this.scudClouds(`init`);
+    }
 
-    return (
-        <MuiThemeProvider theme={createMuiTheme(theme)}>
-            <CssBaseline />
-            <div
-                id={`game`}
-                className={cn(classes.cardTableContainer)}>
-                <Cloud className={cn(classes.element)} />
-                <div className={cn(classes.sky)} />
-                <div className={cn(classes.ground)} />
+    scudClouds = (payload) => {
+        /* 
+            Initialises the cloud scudding animation 
+            from the greensock.js file 
+        */
+        //console.log('scudClouds()', payload);
+        scudCloud(`cloud1`);
+    }
+
+    render() {
+        const {
+            classes
+        } = this.props;
+
+        return (
+            <div className={cn(classes.game)}>
+                <CssBaseline />
+                <div className={cn(classes.gameContainer)}>
+                    <div className={cn(classes.sky)}>
+                        <Cloud
+                            id={`cloud1`}
+                            cloud={{
+                                backgroundColor: `rgba(255, 255, 255, 0.5)`,
+                            }} className={cn(classes.cloud1)} />
+                        <Cloud
+                            id={`cloud2`}
+                            cloud={{
+                                backgroundColor: `rgba(255, 255, 255, 0.5)`,
+                            }} className={cn(classes.cloud2)} />
+                    </div>
+                    <div className={cn(classes.ground)} />
+                </div>
             </div>
-        </MuiThemeProvider>
-    );
+        );
+    }
 }
+export default (
+    withStyles(styles, { withTheme: true })(Game)
+);
