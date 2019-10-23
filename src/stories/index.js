@@ -32,8 +32,6 @@ stories.addParameters({
 
 stories.addDecorator(withKnobs);
 
-stories.add("MP3", () => <MP3 titleText={text("Title Text", "MP3 Player")} />);
-
 stories.add("ChuckenGotchi", () => (
   <Game
     chuckens={select(
@@ -51,3 +49,5 @@ stories.add("ChuckenGotchi", () => (
     )}
   />
 ));
+
+stories.add("MP3", () => <MP3 titleText={text("Title Text", "MP3 Player")} />);
