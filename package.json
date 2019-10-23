@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": {
     "name": "listingslab",
     "email": "listingslab@gmail.com"
@@ -9,7 +9,7 @@
     "start": "clear && yarn storybook",
     "storybook": "clear && start-storybook -p 9009 -s public",
     "storybook:build": "clear && build-storybook -s ./build",
-    "deploy": "clear && yarn storybook:build && firebase deploy"
+    "deploy": "clear && yarn storybook:build && firebase deploy --only hosting"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.2.4",
