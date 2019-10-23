@@ -4,23 +4,34 @@ import theme from '../../../common/style/theme';
 import { makeStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import {
-    Container,
     CssBaseline
 } from '@material-ui/core/';
-
 import {
-    Farmyard
+    Cloud
 } from '../graphics';
+// import { scudCloud } from './greensock';
 
 export default function Game(props) {
     const useStyles = makeStyles(theme => ({
         cardTableContainer: {
             height: '100vh',
-            border: '1px solid #222',
-            backgroundImage: 'linear-gradient(limegreen, darkgreen )',
+            // border: '1px solid #eee',
+            position: 'relative',
+            // 
         },
-        graphic: {
-            maxHeight: '99vh',
+        element: {
+            position: 'absolute',
+            zIndex: 1000000
+        },
+        sky: {
+            height: '44vh',
+            position: 'relative',
+            backgroundImage: 'linear-gradient(skyblue, teal)',
+        },
+        ground: {
+            height: '66vh',
+            position: 'relative',
+            backgroundImage: 'linear-gradient(darkgreen, limegreen )',
         }
     }));
 
@@ -29,11 +40,13 @@ export default function Game(props) {
     return (
         <MuiThemeProvider theme={createMuiTheme(theme)}>
             <CssBaseline />
-            <Container
+            <div
                 id={`game`}
                 className={cn(classes.cardTableContainer)}>
-                <Farmyard className={cn(classes.graphic)} />
-            </Container>
+                <Cloud className={cn(classes.element)} />
+                <div className={cn(classes.sky)} />
+                <div className={cn(classes.ground)} />
+            </div>
         </MuiThemeProvider>
     );
 }

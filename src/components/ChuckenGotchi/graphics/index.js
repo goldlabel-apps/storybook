@@ -1,2 +1,3 @@
+import Cloud from "./Cloud";
 import Farmyard from "./Farmyard";
-export { Farmyard };
+export { Cloud, Farmyard };
