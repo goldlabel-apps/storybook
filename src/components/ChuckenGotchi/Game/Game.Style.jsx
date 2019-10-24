@@ -8,9 +8,12 @@ export const styles = theme => ({
         position: 'absolute',
         maxWidth: 275,
     },
+    chuckenGotchi: {
+        position: 'absolute',
+    },
     viewportInfo: {
         position: 'absolute',
-        border: '1px solid rgba(255, 255, 255, 0.5)',
+        border: '1px solid rgba(255, 255, 255, 0.9)',
         padding: theme.spacing(),
         margin: theme.spacing(),
         backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7))',
@@ -18,12 +21,12 @@ export const styles = theme => ({
     },
     sky: {
         position: 'relative',
-        height: '45vh',
+        height: '50vh',
         backgroundImage: 'linear-gradient(lightblue, skyblue)',
     },
     ground: {
         position: 'relative',
-        height: '55vh',
+        height: '50vh',
         backgroundImage: 'linear-gradient(green, lightgreen )',
     },
     startPoint: {

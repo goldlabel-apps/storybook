@@ -1,4 +1,5 @@
 import Barn from "./Barn";
+import ChuckenGotchi from "./ChuckenGotchi";
 import Cloud from "./Cloud";
 
-export { Barn, Cloud };
+export { Barn, ChuckenGotchi, Cloud };

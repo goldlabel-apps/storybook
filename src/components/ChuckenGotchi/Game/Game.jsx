@@ -9,7 +9,8 @@ import {
 } from '@material-ui/core/';
 import {
     Barn,
-    Cloud
+    ChuckenGotchi,
+    Cloud,
 } from '../graphics';
 // import { scudCloud } from './greensock';
 
@@ -73,6 +74,19 @@ class Game extends Component {
                 <CssBaseline />
 
                 <div className={cn(classes.gameContainer)}>
+
+                    <ChuckenGotchi
+                        style={{
+                            zIndex: 50000,
+                            bottom: '50%',
+                        }}
+                        className={cn(classes.chuckenGotchi)}
+                        id={`chucken-gotchi`}
+                        colours={{
+                            stroke: `rgba(0, 0, 0, 0.75)`,
+                            fill: `rgba(255, 255, 255, 0.95)`,
+                        }}
+                    />
 
                     <div
                         className={cn(classes.sky)} />
