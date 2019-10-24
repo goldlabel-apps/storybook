@@ -103,7 +103,7 @@ class Game extends Component {
                         className={cn(classes.cloud1, classes.startPoint)}
                         id={`cloud1`}
                         cloud={{
-                            backgroundColor: `rgba(255, 255, 255, 0.5)`,
+                            backgroundColor: `rgba(255, 255, 255, 0.75)`,
                         }} />
                     <Cloud
                         style={{
@@ -115,7 +115,7 @@ class Game extends Component {
                         className={cn(classes.cloud2, classes.startPoint)}
                         id={`cloud2`}
                         cloud={{
-                            backgroundColor: `rgba(255, 255, 255, 0.5)`,
+                            backgroundColor: `rgba(255, 255, 255, 0.75)`,
                         }} />
 
                     <Barn

@@ -20,7 +20,7 @@ const stories = storiesOf("listingslab", module);
 stories.addParameters({
   options: {
     panelPosition: "right",
-    showPanel: true,
+    showPanel: false,
     showNav: true,
     theme: themes.light
   },
