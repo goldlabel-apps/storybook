@@ -1,34 +1,39 @@
 
 export const styles = theme => ({
-    game: {
-    },
     gameContainer: {
         position: 'relative',
         height: '100vh',
-        // border: '1px solid rgba(255,255,255,0.1)',
+    },
+    barn: {
+        position: 'absolute',
+        maxWidth: 275,
+    },
+    viewportInfo: {
+        position: 'absolute',
+        border: '1px solid rgba(255, 255, 255, 0.5)',
+        padding: theme.spacing(),
+        margin: theme.spacing(),
+        backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7))',
+        borderRadius: theme.spacing(0.5)
     },
     sky: {
         position: 'relative',
-        height: '49vh',
+        height: '45vh',
         backgroundImage: 'linear-gradient(lightblue, skyblue)',
-    },
-    cloud1: {
-        position: 'absolute',
-        zIndex: 1,
-        transform: 'scale(0.85)',
-        top: '5%',
-        left: '20%'
-    },
-    cloud2: {
-        position: 'absolute',
-        transform: 'scale(0.75)',
-        zIndex: 2,
-        top: '0%',
-        left: '30%'
     },
     ground: {
         position: 'relative',
-        height: '66vh',
+        height: '55vh',
         backgroundImage: 'linear-gradient(green, lightgreen )',
-    }
+    },
+    startPoint: {
+        position: 'absolute',
+        transform: 'scale(1)',
+        left: 0,
+        top: 0,
+    },
+    cloud1: {
+    },
+    cloud2: {
+    },
 });
