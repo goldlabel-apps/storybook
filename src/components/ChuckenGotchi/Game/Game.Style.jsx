@@ -4,6 +4,9 @@ export const styles = theme => ({
         position: 'relative',
         height: '100vh',
     },
+    audio: {
+        position: 'absolute',
+    },
     barn: {
         position: 'absolute',
         maxWidth: 275,

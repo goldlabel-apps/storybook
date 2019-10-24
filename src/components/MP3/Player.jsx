@@ -44,43 +44,21 @@ const useStyles = makeStyles(theme => ({
 export default function Player(props) {
     const { mp3 } = props;
     const classes = useStyles();
-    // const theme = useTheme();
-    // const photo = `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/png%2Fredheart192.png?alt=media&token=eea3e969-ce28-495b-8f85-ccaa9b35ddb6`;
-    // console.log(mp3)
     return (
-        <Card className={classes.card}>
+        <React.Fragment>
             <div className={classes.details}>
-                <CardContent className={classes.content}>
-                    <Typography component="h5" variant="h5">
-                        {mp3.title}
-                    </Typography>
-                    <Typography variant="subtitle1" color="textSecondary">
-                        {mp3.description}
-                    </Typography>
-
-                    <ReactAudioPlayer
-                        src={mp3.url}
-                        autoPlay
-                        controls
-                    />
-                </CardContent>
-                {/* <div className={classes.controls}>
-                    <IconButton aria-label="previous">
-                        {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                        <PlayArrowIcon className={classes.playIcon} />
-                    </IconButton>
-                    <IconButton aria-label="next">
-                        {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-                    </IconButton>
-                </div> */}
+                <Typography component="h5" variant="h5">
+                    {mp3.title}
+                </Typography>
+                <Typography variant="subtitle1" color="textSecondary">
+                    {mp3.description}
+                </Typography>
+                <ReactAudioPlayer
+                    src={mp3.url}
+                    autoPlay
+                    controls
+                />
             </div>
-            <CardMedia
-                className={classes.cover}
-                image={mp3.photo}
-                title="Live from space album cover"
-            />
-        </Card>
+        </React.Fragment>
     );
 }

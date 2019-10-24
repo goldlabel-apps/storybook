@@ -12,7 +12,17 @@ import {
     ChuckenGotchi,
     Cloud,
 } from '../graphics';
+import ReactAudioPlayer from 'react-audio-player';
 // import { scudCloud } from './greensock';
+
+const mp3 = {
+    title: `Chicken Impossible`,
+    description: `Funny Mission Impossible Chicken Theme`,
+    photo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/jpg%2Fchicken-impossible.jpg?alt=media&token=89632f43-0c1b-40a4-a6be-ad769bbdf8dc`,
+    url: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/mp3%2Fchicken_impossible.mp3?alt=media&token=eeba9ebc-89a3-4678-a010-b767dd6e643b`,
+    bytes: 435930,
+    seconds: 27
+}
 
 class Game extends Component {
     constructor(props) {
@@ -75,10 +85,22 @@ class Game extends Component {
 
                 <div className={cn(classes.gameContainer)}>
 
+                    <ReactAudioPlayer
+                        style={{
+                            zIndex: 30000,
+                            top: 8,
+                            left: 8,
+                        }}
+                        className={cn(classes.audio)}
+                        src={mp3.url}
+                        autoPlay
+                        controls
+                    />
+
                     <ChuckenGotchi
                         style={{
                             zIndex: 50000,
-                            bottom: '50%',
+                            bottom: 75,
                         }}
                         className={cn(classes.chuckenGotchi)}
                         id={`chucken-gotchi`}
@@ -97,8 +119,8 @@ class Game extends Component {
                     <div
                         style={{
                             zIndex: 100001,
-                            bottom: 10,
-                            right: 5
+                            bottom: 8,
+                            left: 8
                         }}
                         className={cn(classes.viewportInfo)}>
 
@@ -112,6 +134,7 @@ class Game extends Component {
                     <Cloud
                         style={{
                             zIndex: 5,
+                            top: 80,
                             left: 150,
                         }}
                         className={cn(classes.cloud1, classes.startPoint)}
@@ -122,7 +145,7 @@ class Game extends Component {
                     <Cloud
                         style={{
                             zIndex: 10,
-                            top: 25,
+                            top: 100,
                             left: 10,
 
                         }}
@@ -140,6 +163,8 @@ class Game extends Component {
                         }}
                         className={cn(classes.barn, classes.startPoint)} />
 
+
+
                 </div>
             </div>
         );
@@ -148,3 +173,14 @@ class Game extends Component {
 export default (
     withStyles(styles, { withTheme: true })(Game)
 );
+
+/*
+    chickenImpossible: {
+      title: `Chicken Impossible`,
+      description: `Funny Mission Impossible Chicken Theme`,
+      photo: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/jpg%2Fchicken-impossible.jpg?alt=media&token=89632f43-0c1b-40a4-a6be-ad769bbdf8dc`,
+      url: `https://firebasestorage.googleapis.com/v0/b/listingslab-storybook.appspot.com/o/mp3%2Fchicken_impossible.mp3?alt=media&token=eeba9ebc-89a3-4678-a010-b767dd6e643b`,
+      bytes: 435930,
+      seconds: 27
+    },
+*/

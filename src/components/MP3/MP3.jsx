@@ -43,30 +43,11 @@ class MP3 extends Component {
         }
 
         return (
-            <MuiThemeProvider theme={createMuiTheme(theme)}>
-                <CssBaseline />
+            <React.Fragment>
+
                 <Player mp3={currentMP3} />
-                {/* {console.log('currentMP3', currentMP3.url)} */}
-                <List component="nav" aria-label="mp3 list">
-                    {soundArr.map((item, i) => {
-                        return (
-                            <ListItem key={`mp3_${i}`} button
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    console.log(item)
-                                }}
-                            >
-                                <ListItemIcon>
-                                    <InboxIcon color={`primary`} />
-                                </ListItemIcon>
-                                <ListItemText
-                                    primary={item.title}
-                                />
-                            </ListItem>
-                        );
-                    })}
-                </List>
-            </MuiThemeProvider>
+
+            </React.Fragment>
         );
     }
 }

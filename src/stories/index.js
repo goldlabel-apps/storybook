@@ -1,11 +1,10 @@
 import packageJSON from "../../package.json";
 import {
   /* color, files, */ select,
-  withKnobs,
-  text
+  withKnobs
+  //   text
 } from "@storybook/addon-knobs";
 import { Game } from "../components/ChuckenGotchi";
-import { MP3 } from "../components/MP3";
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
@@ -49,5 +48,3 @@ stories.add("ChuckenGotchi", () => (
     )}
   />
 ));
-
-stories.add("MP3", () => <MP3 titleText={text("Title Text", "MP3 Player")} />);
