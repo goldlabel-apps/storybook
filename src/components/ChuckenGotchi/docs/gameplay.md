@@ -1,3 +1,5 @@
+## Playing the game
+
 On starting the game, the first egg is laid. it is the focus of the screen. It wiggles for a second and then hatches into the first stage of it's lifecycle, the chick.
 
 The player must name the chick and select it's colour to continue.
@@ -13,4 +15,3 @@ You interact with each chicken in your flock once a day, although you can intera
 The point is to keep you coming back regularly to checkup on your chooks, keep them happy and keep them laying.
 
 There are no in-game ads. It's free and always will be.
-
