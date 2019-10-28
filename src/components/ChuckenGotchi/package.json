@@ -1,6 +1,26 @@
 {
   "name": "chuckengotchi",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "description": "Based on the 1990's classic Tamagotchi",
+  "version": "1.0.2",
+  "license": "MIT",
+  "scripts": {
+    "install": "yarn",
+    "deploy": "clear && echo deploy",
+    "start": "clear && yarn start",
+    "build": "clear && echo build"
+  },
+  "author": {
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/listingslab-software/package-chuckengotchi"
+  },
+  "keywords": [
+    "game",
+    "JavaScript",
+    "React",
+    "Redux"
+  ]
 }
