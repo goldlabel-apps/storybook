@@ -1,50 +1,42 @@
 import packageJSON from "../../package.json";
-import {
-  /* color, files, */ select,
-  withKnobs
-  //   text
-} from "@storybook/addon-knobs";
-import { Game } from "../components/ChuckenGotchi";
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
 import viewports from "./viewports";
+import {
+  // select,
+  // color,
+  // files
+  text,
+  withKnobs,
+  color
+} from "@storybook/addon-knobs";
+import { Blank } from "../components/";
 
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
 );
 
-const stories = storiesOf("listingslab", module);
+const stories = storiesOf("Stories", module);
 
 stories.addParameters({
-  options: {
-    panelPosition: "right",
-    showPanel: false,
-    showNav: true,
-    theme: themes.light
-  },
   viewport: {
     viewports,
     defaultViewport: "baseline"
+  },
+  options: {
+    panelPosition: "right",
+    showPanel: true,
+    showNav: true,
+    theme: themes.dark
   }
 });
 
 stories.addDecorator(withKnobs);
 
-stories.add("ChuckenGotchi", () => (
-  <Game
-    chuckens={select(
-      `Chucken Selector`,
-      {
-        Random: `random`,
-        Scarlet: `red`,
-        Bluey: `blue`,
-        Midnight: `black`,
-        Lilly: `green`,
-        Violet: `purple`,
-        Sunshine: `yellow`
-      },
-      `random`
-    )}
-  />
+stories.add("Blank", () => (
+  <Blank storybook={{
+    title: text (`Title`,`Blank Component`),
+    backgroundColor: color(`Background Color`, `#3C779B`),
+  }} />
 ));
