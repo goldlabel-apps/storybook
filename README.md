@@ -6,9 +6,12 @@ Storybook is the construct. Just like in the Matrix. It is an excellent piece of
 
 Another approach is to use Storybook is as part of the development process. For us, Stories are the finest grain in our Agile GitHub workflow. Everything starts with a Story. [Create New Story](https://github.com/listingslab-software/storybook/issues/new/choose).
 
-## Stories
+## WhitelabelPWA Stories
 
-- [ChuckenGotchi](./src/components/ChuckenGotchi)
-- [MP3](./src/components/MP3)
+- ChuckenGotchi
+- MP3
+- ZooParty
+- Characters
+- WordPress
 
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://storybook.listingslab.com)
