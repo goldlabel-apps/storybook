@@ -4,10 +4,10 @@
 storybook-static
 
 # Firebase
-functions
-firebase
-firebase.json
-.firebaserc
+# functions
+# firebase
+# firebase.json
+# .firebaserc
 .firebase
 
 # env
