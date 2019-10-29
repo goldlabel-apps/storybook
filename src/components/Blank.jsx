@@ -1,13 +1,29 @@
 import React from 'react';
 
 export default function Blank(props) {
-    console.log ('Blank', props);
+    const c = {
+        title: `Default title`,
+        backgroundColor: `#ccc`,
+    }
+    const { storybook } = props;
+    if (storybook){
+        if (storybook.title) c.title = storybook.title;
+        if (storybook.backgroundColor) c.backgroundColor = storybook.backgroundColor;
+    }
     return (
-        <div style={{
-            // border: '1px solid red',
-            color: 'white',
-        }}>
-            Blank
+        <div>
+            <h1>
+                {c.title}
+            </h1>
         </div>
     );
 }
+
+
+
+/*
+    style={{
+        // border: '1px solid red',
+        color: 'white',
+    }}
+*/
