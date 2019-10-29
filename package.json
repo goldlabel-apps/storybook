@@ -1,10 +1,6 @@
 {
   "name": "storybook",
-  "version": "0.2.1",
-  "author": {
-    "name": "listingslab",
-    "email": "listingslab@gmail.com"
-  },
+  "version": "0.2.2",
   "scripts": {
     "start": "clear && yarn storybook",
     "storybook": "clear && start-storybook -p 1975 -s public",
@@ -56,7 +52,11 @@
       "last 1 safari version"
     ]
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "author": {
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
+  },
   "repository": {
     "type": "github",
     "url": "https://github.com/listingslab-software/storybook"
