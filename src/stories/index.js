@@ -11,7 +11,7 @@ import {
   withKnobs,
   color
 } from "@storybook/addon-knobs";
-import { Blank } from "../components/";
+import { Blank, ZooParty } from "../components/";
 
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
@@ -26,13 +26,20 @@ stories.addParameters({
   },
   options: {
     panelPosition: "right",
-    showPanel: true,
-    showNav: true,
+    showPanel: false,
+    showNav: false,
     theme: themes.dark
   }
 });
 
 stories.addDecorator(withKnobs);
+
+stories.add("ZooParty", () => (
+  <ZooParty storybook={{
+    title: text (`Title`,`ZooParty. 7th Birthday Invitation`),
+    version: 1,
+  }} />
+));
 
 stories.add("Blank", () => (
   <Blank storybook={{
