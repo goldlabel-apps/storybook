@@ -1,6 +1,3 @@
-import Blank from './Blank';
-import ZooParty from './ZooParty/ZooParty';
-export {
-    Blank,
-    ZooParty
-};
+import CakeLady from "./CakeLady/CakeLady";
+import ZooParty from "./ZooParty/ZooParty";
+export { CakeLady, ZooParty };

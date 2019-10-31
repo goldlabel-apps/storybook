@@ -1,21 +1,29 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    CssBaseline
+    CssBaseline,
+    Typography,
 } from '@material-ui/core/';
+import Mumma from './Mumma';
 
 const useStyles = makeStyles({
     cakeLady: {
         background: 'black',
-        border: '1px solid red',
+        height: '100vh',
+        border: '1px solid rgba(255,255,255,0.25)',
     },
+    mumma: {
+        height: '100vh',
+    },
+    white: {
+        color: 'white',
+    }
 });
 
 export default function CakeLady(props) {
     const classes = useStyles();
     const c = {
         title: `Cake Lady`,
-        backgroundColor: `#ccc`,
     }
     const { storybook } = props;
     if (storybook) {
@@ -26,9 +34,10 @@ export default function CakeLady(props) {
         <React.Fragment>
             <CssBaseline />
             <div className={classes.cakeLady}>
-                <h1>
-                    {c.title}
-                </h1>
+                <Typography className={classes.white}>
+                    Cake Lady, October 2019
+                </Typography>
+                <Mumma className={classes.mumma} />
             </div>
         </React.Fragment>
     );
