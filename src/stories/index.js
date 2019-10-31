@@ -22,7 +22,7 @@ const stories = storiesOf("Stories", module);
 stories.addParameters({
   viewport: {
     viewports,
-    defaultViewport: "baseline"
+    defaultViewport: "printA4Landscape"
   },
   options: {
     panelPosition: "right",

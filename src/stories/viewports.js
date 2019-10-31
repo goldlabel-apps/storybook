@@ -1,4 +1,18 @@
 const viewports = {
+  printA4Landscape:{
+    name: "A4 Paper, Landscape",
+    styles: {
+      height: "596px",
+      width: "842px"
+    }
+  },
+  printA4Portrait:{
+    name: "A4 Paper, Portrait",
+    styles: {
+      height: "842px",
+      width: "596px"
+    }
+  },
   baseline: {
     name: "baseline",
     // styles: {
