@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import zooPartySrc from './ZooParty.png';
+import zooPartySrc from './ZooParty.jpg';
 import {
     CssBaseline
   } from '@material-ui/core/';
