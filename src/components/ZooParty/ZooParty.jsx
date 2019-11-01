@@ -28,7 +28,6 @@ export default function ZooParty(props) {
     const { storybook } = props;
     if (storybook){
         if (storybook.title) c.title = storybook.title;
-        if (storybook.backgroundColor) c.backgroundColor = storybook.backgroundColor;
     }
     return (
         <React.Fragment>
