@@ -4,14 +4,22 @@ import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
 import viewports from "./viewports";
 import {
-  // select,
-  // color,
   // files
+  color,
+  select,
   text,
-  withKnobs,
-  color
+  withKnobs
 } from "@storybook/addon-knobs";
-import { CakeLady, ZooParty } from "../components/";
+import {
+  CodeWorx,
+  CakeLady,
+  ChuckenAnimation,
+  Mapbox,
+  MaterialUI,
+  ReactPlayingCards,
+  WordPress,
+  ZooParty
+} from "../components/";
 
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
@@ -22,7 +30,7 @@ const stories = storiesOf("Stories", module);
 stories.addParameters({
   viewport: {
     viewports,
-    defaultViewport: "printA4Landscape"
+    defaultViewport: "baseline"
   },
   options: {
     panelPosition: "right",
@@ -34,6 +42,57 @@ stories.addParameters({
 
 stories.addDecorator(withKnobs);
 
+stories.add("CodeWorx", () => (
+  <CodeWorx
+    animation={{
+      baseDuration: select(
+        `Speed`,
+        {
+          Fast: 0.75,
+          Normal: 1,
+          Slow: 2.25
+        },
+        1
+      )
+    }}
+  />
+));
+
+stories.add("ChuckenAnimation", () => (
+  <ChuckenAnimation
+    animation={{
+      baseDuration: select(
+        `Speed`,
+        {
+          Fast: 0.75,
+          Normal: 1,
+          Slow: 2.25
+        },
+        1
+      )
+    }}
+  />
+));
+
+stories.add("WordPress", () => <WordPress />);
+
+stories.add("MaterialUI", () => (
+  <MaterialUI
+    mui={{
+      primary: color(`Primary`, `#000`),
+      secondary: color(`Secondary`, `#ccc`)
+    }}
+  />
+));
+
+stories.add("Mapbox", () => (
+  <Mapbox
+    mapbox={{
+      asdhas: 123
+    }}
+  />
+));
+
 stories.add("ZooParty", () => (
   <ZooParty
     storybook={{
@@ -42,6 +101,8 @@ stories.add("ZooParty", () => (
     }}
   />
 ));
+
+stories.add("ReactPlayingCards", () => <ReactPlayingCards />);
 
 stories.add("CakeLady", () => (
   <CakeLady
