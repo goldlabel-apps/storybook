@@ -11,9 +11,10 @@ const useStyles = makeStyles({
         background: 'black',
         height: '100vh',
         border: '1px solid rgba(255,255,255,0.25)',
+        textAlign: `center`,
     },
     mumma: {
-        height: '100vh',
+        height: '80%',
     },
     white: {
         color: 'white',
