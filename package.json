@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "scripts": {
     "start": "clear && yarn storybook",
     "storybook": "clear && start-storybook -p 1975 -s public",
