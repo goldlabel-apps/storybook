@@ -9004,6 +9004,7 @@ react-lifecycles-compat@^3.0.4:
 react-mapbox-gl@^4.7.3:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/react-mapbox-gl/-/react-mapbox-gl-4.7.3.tgz#8b99afc4153e74bc21a8ee11aa86002ed341fa5e"
+  integrity sha512-zTt7OFAH5EmFPizOksxBmDz+Q6T2qGKXZCINogvQ2SlzPZh3PPU3pfoVOFaXMvwzmIgcFV/6d42wTiOyJNXfCA==
   dependencies:
     "@turf/bbox" "4.7.3"
     "@turf/helpers" "4.7.3"
