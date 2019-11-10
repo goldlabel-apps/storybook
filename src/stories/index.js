@@ -11,8 +11,10 @@ import {
   withKnobs
 } from "@storybook/addon-knobs";
 import {
+  CodeWorx,
   CakeLady,
   ChuckenAnimation,
+  Mapbox,
   MaterialUI,
   ReactPlayingCards,
   WordPress,
@@ -40,6 +42,22 @@ stories.addParameters({
 
 stories.addDecorator(withKnobs);
 
+stories.add("CodeWorx", () => (
+  <CodeWorx
+    animation={{
+      baseDuration: select(
+        `Speed`,
+        {
+          Fast: 0.75,
+          Normal: 1,
+          Slow: 2.25
+        },
+        1
+      )
+    }}
+  />
+));
+
 stories.add("ChuckenAnimation", () => (
   <ChuckenAnimation
     animation={{
@@ -57,11 +75,20 @@ stories.add("ChuckenAnimation", () => (
 ));
 
 stories.add("WordPress", () => <WordPress />);
+
 stories.add("MaterialUI", () => (
   <MaterialUI
     mui={{
       primary: color(`Primary`, `#000`),
       secondary: color(`Secondary`, `#ccc`)
+    }}
+  />
+));
+
+stories.add("Mapbox", () => (
+  <Mapbox
+    mapbox={{
+      asdhas: 123
     }}
   />
 ));

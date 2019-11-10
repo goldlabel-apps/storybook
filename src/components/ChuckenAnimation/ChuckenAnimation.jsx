@@ -5,23 +5,14 @@ import {
     CssBaseline,
 } from '@material-ui/core/';
 import bgImage from './graphics/brisvegas.jpg';
-
+import GSAPPlayer from './GSAPPlayer';
 import CurlyBrace from './graphics/jsx/CurlyBrace';
-import BlueC from './graphics/jsx/BlueC';
-import BlueD from './graphics/jsx/BlueD';
-import BlueE from './graphics/jsx/BlueE';
-import BlueO from './graphics/jsx/BlueO';
-import WhiteO from './graphics/jsx/WhiteO';
-import WhiteR from './graphics/jsx/WhiteR';
-import WhiteW from './graphics/jsx/WhiteW';
-import WhiteX from './graphics/jsx/WhiteX';
 
 // import { animate } from './animation';
-
-const offsets = {
-    left: 0,
-    top: 0
-};
+// const offsets = {
+//     left: 0,
+//     top: 0
+// };
 
 const image = {
     src: bgImage,
@@ -79,84 +70,18 @@ class ChuckenAnimation extends Component {
                             src={image.src}
                             alt={image.alt} />
                     </div>
-                    {/* <CurlyBrace
+
+                    <div className={cn(classes.graphics)}>
+                        <GSAPPlayer />
+                    </div>
+
+                    <CurlyBrace
                         id={`curly-brace`}
                         style={{
                             position: `absolute`,
                             height: 86,
                             opacity: '0',
                         }} />
-
-                    <BlueC
-                        id={`blue-c`}
-                        style={{
-                            position: `absolute`,
-                            height: 41,
-                            left: offsets.left,
-                            top: 14 + offsets.top,
-                        }} />
-                    <BlueO
-                        id={`blue-o`}
-                        style={{
-                            position: `absolute`,
-                            left: 41 + offsets.left,
-                            height: 41,
-                            top: 14 + offsets.top,
-                        }} />
-
-                    <BlueD
-                        id={`blue-d`}
-                        style={{
-                            position: `absolute`,
-                            left: 84 + offsets.left,
-                            height: 56,
-                            top: offsets.top,
-                        }} />
-
-                    <BlueE
-                        id={`blue-e`}
-                        style={{
-                            position: `absolute`,
-                            left: 128 + offsets.left,
-                            height: 41,
-                            top: 14 + offsets.top,
-                        }} />
-
-                    <WhiteW
-                        id={`white-w`}
-                        style={{
-                            position: `absolute`,
-                            left: 167 + offsets.left,
-                            height: 40,
-                            top: 15 + offsets.top,
-                        }} />
-
-                    <WhiteO
-                        id={`white-o`}
-                        style={{
-                            position: `absolute`,
-                            left: 225 + offsets.left,
-                            height: 41,
-                            top: 15 + offsets.top,
-                        }} />
-
-                    <WhiteR
-                        id={`white-r`}
-                        style={{
-                            position: `absolute`,
-                            left: 270 + offsets.left,
-                            height: 40,
-                            top: 15 + offsets.top,
-                        }} />
-
-                    <WhiteX
-                        id={`white-r`}
-                        style={{
-                            position: `absolute`,
-                            left: 292 + offsets.left,
-                            height: 40,
-                            top: 15 + offsets.top,
-                        }} /> */}
                 </div>
             </React.Fragment>
         );
