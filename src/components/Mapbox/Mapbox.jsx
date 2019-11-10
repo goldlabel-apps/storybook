@@ -5,7 +5,6 @@ import {
     CssBaseline,
 } from '@material-ui/core/';
 import ReactMapboxGl from "react-mapbox-gl";
-import { mapboxAccessToken } from './mapboxAccessToken';
 
 const styles = theme => ({
     markdown: {
@@ -22,7 +21,7 @@ const styles = theme => ({
 });
 
 const Map = ReactMapboxGl({
-    accessToken: mapboxAccessToken
+    accessToken: process.env.REACT_APP_MAPBOX
 });
 
 class Mapbox extends Component {

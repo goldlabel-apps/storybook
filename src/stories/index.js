@@ -13,8 +13,8 @@ import {
 import {
   CodeWorx,
   CakeLady,
-  ChuckenAnimation,
-  Mapbox,
+  // ChuckenAnimation,
+  // Mapbox,
   MaterialUI,
   ReactPlayingCards,
   WordPress,
@@ -34,8 +34,8 @@ stories.addParameters({
   },
   options: {
     panelPosition: "right",
-    showPanel: true,
-    showNav: true,
+    showPanel: false,
+    showNav: false,
     theme: themes.dark
   }
 });
@@ -58,21 +58,21 @@ stories.add("CodeWorx", () => (
   />
 ));
 
-stories.add("ChuckenAnimation", () => (
-  <ChuckenAnimation
-    animation={{
-      baseDuration: select(
-        `Speed`,
-        {
-          Fast: 0.75,
-          Normal: 1,
-          Slow: 2.25
-        },
-        1
-      )
-    }}
-  />
-));
+// stories.add("ChuckenAnimation", () => (
+//   <ChuckenAnimation
+//     animation={{
+//       baseDuration: select(
+//         `Speed`,
+//         {
+//           Fast: 0.75,
+//           Normal: 1,
+//           Slow: 2.25
+//         },
+//         1
+//       )
+//     }}
+//   />
+// ));
 
 stories.add("WordPress", () => <WordPress />);
 
@@ -85,13 +85,13 @@ stories.add("MaterialUI", () => (
   />
 ));
 
-stories.add("Mapbox", () => (
-  <Mapbox
-    mapbox={{
-      asdhas: 123
-    }}
-  />
-));
+// stories.add("Mapbox", () => (
+//   <Mapbox
+//     mapbox={{
+//       asdhas: 123
+//     }}
+//   />
+// ));
 
 stories.add("ZooParty", () => (
   <ZooParty

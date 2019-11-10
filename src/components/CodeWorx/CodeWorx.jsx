@@ -25,22 +25,16 @@ const styles = theme => ({
     },
     logo: {
         position: 'absolute',
-        width: 380,
+        width: 370,
         height: 86,
         left: 'calc(50vw - 190px)',
         top: 'calc(50vh - 43px)',
-
     },
     image: {
         width: '100%',
     }
 });
 
-const offsets = {
-    top: 9,
-    left: 0,
-
-};
 const image = {
     src: bgImage,
     alt: 'Brisvegas',
@@ -49,11 +43,15 @@ const image = {
 class CodeWorx extends Component {
 
     componentDidMount() {
-        this.startAnimation();
+        animate(`start`, 0.25, this.callBack);
     }
 
-    startAnimation = () => {
-        animate(`cursor`, `startAnimation`, 0.5, null);
+    componentDidUpdate() {
+        animate(`reanimate`);
+    }
+
+    callBack = (completionEvent) => {
+        console.log('completionEvent', completionEvent);
     }
 
     render() {
@@ -76,8 +74,8 @@ class CodeWorx extends Component {
                                 position: `absolute`,
                                 opacity: '0',
                                 height: 41,
-                                left: offsets.left,
-                                top: 14 + offsets.top,
+                                left: 0,
+                                top: 23,
                             }} />
 
                         <BlueO
@@ -89,9 +87,10 @@ class CodeWorx extends Component {
                                 zIndex: 380,
                                 position: `absolute`,
                                 opacity: '0',
-                                left: 41 + offsets.left,
+                                left: 41,
+                                top: 23,
                                 height: 41,
-                                top: 14 + offsets.top,
+
                             }} />
 
                         <BlueD
@@ -103,9 +102,9 @@ class CodeWorx extends Component {
                                 zIndex: 400,
                                 position: `absolute`,
                                 opacity: '0',
-                                left: 84 + offsets.left,
+                                left: 84,
+                                top: 9,
                                 height: 56,
-                                top: offsets.top,
                             }} />
 
                         <BlueE
@@ -117,9 +116,10 @@ class CodeWorx extends Component {
                                 zIndex: 420,
                                 position: `absolute`,
                                 opacity: '0',
-                                left: 128 + offsets.left,
+                                left: 128,
+                                top: 23,
                                 height: 41,
-                                top: 14 + offsets.top,
+
                             }} />
 
                         <WhiteW
@@ -131,9 +131,10 @@ class CodeWorx extends Component {
                                 zIndex: 440,
                                 position: `absolute`,
                                 opacity: '0',
-                                left: 167 + offsets.left,
+                                left: 167,
+                                top: 24,
                                 height: 40,
-                                top: 15 + offsets.top,
+
                             }} />
 
                         <WhiteO
@@ -145,9 +146,10 @@ class CodeWorx extends Component {
                                 zIndex: 460,
                                 position: `absolute`,
                                 opacity: '0',
-                                left: 225 + offsets.left,
+                                left: 225,
+                                top: 24,
                                 height: 41,
-                                top: 15 + offsets.top,
+
                             }} />
 
                         <WhiteR
@@ -159,9 +161,10 @@ class CodeWorx extends Component {
                                 zIndex: 480,
                                 position: `absolute`,
                                 opacity: '0',
-                                left: 270 + offsets.left,
+                                left: 270,
+                                top: 24,
                                 height: 40,
-                                top: 15 + offsets.top,
+
                             }} />
 
                         <WhiteX
@@ -173,12 +176,24 @@ class CodeWorx extends Component {
                                 zIndex: 500,
                                 position: `absolute`,
                                 opacity: '0',
-                                left: 292 + offsets.left,
+                                left: 292,
+                                top: 24,
                                 height: 40,
-                                top: 15 + offsets.top,
+
                             }} />
 
-
+                        <CurlyBrace
+                            id={`curly-brace`}
+                            colors={
+                                { fill: '#EFEFEF' }
+                            }
+                            style={{
+                                zIndex: 540,
+                                position: `absolute`,
+                                left: 335,
+                                height: 86,
+                                opacity: '0',
+                            }} />
 
                         <CurlyBrace
                             id={`cursor`}
@@ -191,6 +206,7 @@ class CodeWorx extends Component {
                                 height: 86,
                                 opacity: '0',
                             }} />
+
                     </div>
                     <img className={classes.image}
                         src={image.src}

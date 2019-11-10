@@ -1,4 +1,5 @@
 import { TimelineMax, Power2 } from "gsap";
+
 const ani = {
   i: 0,
   letters: [
@@ -33,18 +34,29 @@ const ani = {
     {
       divId: `white-x`,
       cursorPositionLeft: 300
+    },
+    {
+      divId: `curly-brace`,
+      cursorPositionLeft: 335
     }
   ]
 };
 
-const tick = (div, baseDuration) => {
+const stop = callBack => {
+  callBack({ akshd: 123 });
+  //   console.log("stop");
+};
+
+const tick = (baseDuration, callBack) => {
   const tick = ani.i++;
+  // console.log("tick", tick);
   switch (tick) {
     case 0:
       moveCursor(baseDuration, ani.letters[0].cursorPositionLeft);
       break;
     case 1:
       printLetter(ani.letters[0].divId, baseDuration);
+
       break;
     case 2:
       moveCursor(baseDuration, ani.letters[1].cursorPositionLeft);
@@ -53,6 +65,7 @@ const tick = (div, baseDuration) => {
       printLetter(ani.letters[1].divId, baseDuration);
       break;
     case 4:
+      // stop(callBack);
       moveCursor(baseDuration, ani.letters[2].cursorPositionLeft);
       break;
     case 5:
@@ -88,25 +101,26 @@ const tick = (div, baseDuration) => {
     case 15:
       printLetter(ani.letters[7].divId, baseDuration);
       break;
+    case 16:
+      moveCursor(baseDuration, ani.letters[8].cursorPositionLeft);
+      break;
+    case 17:
+      printLetter(ani.letters[8].divId, baseDuration);
+      break;
+    case 18:
+      hideCursor(baseDuration);
+      stop(() => {
+        callBack({ eventId: `logo-complete` });
+      });
+      break;
     default:
   }
-};
-
-const startAnimation = (div, baseDuration) => {
-  const timeline = new TimelineMax({ repeat: -1 });
-  timeline.to(div, baseDuration * 0.75, {
-    opacity: "0.25",
-    ease: Power2.easeOut,
-    onComplete: () => {
-      tick(div, baseDuration);
-    }
-  });
 };
 
 const printLetter = (divId, baseDuration) => {
   const div = document.getElementById(divId);
   const timeline = new TimelineMax();
-  timeline.to(div, baseDuration * 0.75, {
+  timeline.to(div, baseDuration * 0.6, {
     opacity: "1",
     ease: Power2.easeOut
   });
@@ -115,17 +129,47 @@ const printLetter = (divId, baseDuration) => {
 const moveCursor = (baseDuration, left) => {
   const div = document.getElementById(`cursor`);
   const timeline = new TimelineMax();
-  timeline.to(div, baseDuration * 0.75, {
+  timeline.to(div, baseDuration * 0.6, {
     left,
     ease: Power2.easeOut
   });
 };
 
-export function animate(divId, animation, baseDuration, callback) {
-  const div = document.getElementById(divId);
+const hideCursor = baseDuration => {
+  const div = document.getElementById(`cursor`);
+  const timeline = new TimelineMax();
+  timeline.to(div, baseDuration * 0.6, {
+    // rotationY: -180,
+    height: 0,
+    ease: Power2.easeOut
+  });
+};
+
+const startTimer = (baseDuration, callBack) => {
+  const div = document.getElementById(`cursor`);
+  const timeline = new TimelineMax({ repeat: -1 });
+  timeline.to(div, baseDuration * 0.6, {
+    opacity: "0.5",
+    ease: Power2.easeOut,
+    onComplete: () => {
+      tick(baseDuration, callBack);
+    }
+  });
+};
+
+const setup = (div, baseDuration) => {
+  console.log("SETUP");
+};
+
+export function animate(animation, baseDuration, callBack) {
+  //   const div = document.getElementById(divId);
   switch (animation) {
-    case `startAnimation`:
-      startAnimation(div, baseDuration);
+    case `reanimate`:
+      stop();
+      setup();
+      break;
+    case `start`:
+      startTimer(baseDuration, callBack);
       break;
     default:
   }
