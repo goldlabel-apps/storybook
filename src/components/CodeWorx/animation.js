@@ -42,21 +42,89 @@ const ani = {
   ]
 };
 
-const stop = callBack => {
-  callBack({ akshd: 123 });
-  //   console.log("stop");
+const fade = (baseDuration) => {
+  const letterDivs = [];
+  for (var i = 0; i < ani.letters.length; i++) {
+    letterDivs.push(document.getElementById(ani.letters[i].divId))
+  }
+  var tl = new TimelineMax({
+    onComplete: () => {
+      ani.i = 0;
+    }
+  });
+  tl.staggerTo(letterDivs, baseDuration / 2, {
+    opacity: "0",
+    repeat: 2,
+    yoyo: true,
+    cycle: {
+      delay: function (i) {
+        return Math.abs(Math.floor(letterDivs.length / 2) - i) * baseDuration / 2;
+      }
+    },
+  });
 };
+
+
+const startTimer = (baseDuration, callBack) => {
+  const div = document.getElementById(`cursor`);
+  const timeline = new TimelineMax({ repeat: -1 });
+  showCursor()
+  timeline.to(div, baseDuration * 0.4, {
+    opacity: "0.75",
+    ease: Power2.easeOut,
+    onComplete: () => {
+      tick(baseDuration, callBack);
+    }
+  });
+};
+
+const printLetter = (divId, baseDuration) => {
+  const div = document.getElementById(divId);
+  const timeline = new TimelineMax();
+  timeline.to(div, baseDuration * 2, {
+    opacity: "1",
+    ease: Power2.easeOut
+  });
+};
+
+const moveCursor = (baseDuration, left) => {
+  const div = document.getElementById(`cursor`);
+  const timeline = new TimelineMax();
+  timeline.to(div, baseDuration * 0.75, {
+    left,
+    ease: Power2.easeOut
+  });
+};
+
+const hideCursor = baseDuration => {
+  const div = document.getElementById(`cursor`);
+  const timeline = new TimelineMax();
+  timeline.to(div, baseDuration * 0.5, {
+    rotationY: -90,
+    ease: Power2.easeOut
+  });
+};
+
+const showCursor = baseDuration => {
+  const div = document.getElementById(`cursor`);
+  moveCursor(baseDuration, 0);
+  const timeline = new TimelineMax();
+  timeline.to(div, baseDuration * 0.5, {
+    opacity: "1",
+    rotationY: "0",
+    ease: Power2.easeOut
+  });
+};
+
 
 const tick = (baseDuration, callBack) => {
   const tick = ani.i++;
-  // console.log("tick", tick);
   switch (tick) {
     case 0:
       moveCursor(baseDuration, ani.letters[0].cursorPositionLeft);
       break;
     case 1:
       printLetter(ani.letters[0].divId, baseDuration);
-
       break;
     case 2:
       moveCursor(baseDuration, ani.letters[1].cursorPositionLeft);
@@ -65,7 +133,6 @@ const tick = (baseDuration, callBack) => {
       printLetter(ani.letters[1].divId, baseDuration);
       break;
     case 4:
-      // stop(callBack);
       moveCursor(baseDuration, ani.letters[2].cursorPositionLeft);
       break;
     case 5:
@@ -109,64 +176,16 @@ const tick = (baseDuration, callBack) => {
       break;
     case 18:
       hideCursor(baseDuration);
-      stop(() => {
-        callBack({ eventId: `logo-complete` });
-      });
+      callBack({ eventId: `logo-complete` });
       break;
     default:
   }
 };
 
-const printLetter = (divId, baseDuration) => {
-  const div = document.getElementById(divId);
-  const timeline = new TimelineMax();
-  timeline.to(div, baseDuration * 0.6, {
-    opacity: "1",
-    ease: Power2.easeOut
-  });
-};
-
-const moveCursor = (baseDuration, left) => {
-  const div = document.getElementById(`cursor`);
-  const timeline = new TimelineMax();
-  timeline.to(div, baseDuration * 0.6, {
-    left,
-    ease: Power2.easeOut
-  });
-};
-
-const hideCursor = baseDuration => {
-  const div = document.getElementById(`cursor`);
-  const timeline = new TimelineMax();
-  timeline.to(div, baseDuration * 0.6, {
-    // rotationY: -180,
-    height: 0,
-    ease: Power2.easeOut
-  });
-};
-
-const startTimer = (baseDuration, callBack) => {
-  const div = document.getElementById(`cursor`);
-  const timeline = new TimelineMax({ repeat: -1 });
-  timeline.to(div, baseDuration * 0.6, {
-    opacity: "0.5",
-    ease: Power2.easeOut,
-    onComplete: () => {
-      tick(baseDuration, callBack);
-    }
-  });
-};
-
-const setup = (div, baseDuration) => {
-  console.log("SETUP");
-};
-
 export function animate(animation, baseDuration, callBack) {
-  //   const div = document.getElementById(divId);
   switch (animation) {
-    case `reanimate`:
-      stop();
-      setup();
+    case `fade`:
+      fade(baseDuration);
       break;
     case `start`:
       startTimer(baseDuration, callBack);

@@ -35,10 +35,6 @@ const styles = theme => ({
     }
 });
 
-const image = {
-    src: bgImage,
-    alt: 'Brisvegas',
-};
 
 class CodeWorx extends Component {
 
@@ -51,7 +47,10 @@ class CodeWorx extends Component {
     }
 
     callBack = (completionEvent) => {
-        console.log('completionEvent', completionEvent);
+        // console.log('completionEvent', completionEvent);
+        setTimeout(() => {
+            animate(`fade`, 1);
+        }, 3000)
     }
 
     render() {
@@ -201,16 +200,17 @@ class CodeWorx extends Component {
                                 { fill: '#EFEFEF' }
                             }
                             style={{
-                                zIndex: 999,
+                                zIndex: 1,
                                 position: `absolute`,
                                 height: 86,
                                 opacity: '0',
                             }} />
 
                     </div>
+
                     <img className={classes.image}
-                        src={image.src}
-                        alt={image.alt} />
+                        src={bgImage}
+                        alt={`Brisvegas`} />
                 </div>
             </React.Fragment>
         );

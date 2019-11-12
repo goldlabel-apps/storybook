@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import {
+    Avatar,
     Button,
+    Card,
+    CardHeader,
+    CardContent,
+    CardActions,
     CssBaseline,
+    IconButton,
+    Tooltip,
     Typography,
-    // Typography
 } from '@material-ui/core/';
-
-/* 
-Turns out you can't do this because github won't let you. 
-They don't want you using the service as a cdn. 
-Which is exactly what I'm trying to do here.
-They control that with CORS by the way
-*/
-const markdownIndex = `https://docs.listingslab.com/markdown/index.json`;
+import IconCardHeader from '@material-ui/icons/Link';
+import avatarSrc from './icons/WordPress/WordPress.png';
 
 const styles = theme => ({
-    markdown: {
+    stage: {
         height: '100vh',
         backgroundImage: 'radial-gradient(#fff, #ccc)',
         padding: theme.spacing(),
@@ -25,14 +25,21 @@ const styles = theme => ({
     btn: {
         margin: theme.spacing(0.5),
     },
+    card: {
+        padding: theme.spacing(),
+    },
 });
 
 class WordPress extends Component {
 
+    state = {
+        siteUrl: null,
+    }
+
     loadIndex = (e) => {
         console.log('loadIndex');
-
-        fetch(markdownIndex, {
+        const { siteUrl } = this.state;
+        fetch(siteUrl, {
             method: "GET",
             headers: {
                 "Accept": "application/json, text/plain, */*",
@@ -54,45 +61,58 @@ class WordPress extends Component {
     }
 
     render() {
-        const {
-            classes,
-        } = this.props;
+        const { classes } = this.props;
+        const { siteUrl } = this.state;
+        let cardTitle = `Get Started`;
+        let cardSubheader = `Enter WordPress URL`;
+        let showLoad = false;
         return (
-            <div className={cn(classes.markdown)}>
+            <div className={cn(classes.stage)}>
                 <CssBaseline />
-                <Typography variant={`h3`}>
-                    WordPress?
-                </Typography>
-                <Button
-                    className={cn(classes.btn)}
-                    variant={`outlined`}
-                    color={`primary`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        window.open(markdownIndex, '_blank')
-                    }}>
-                    View
-                </Button>
+                <Card className={cn(classes.card)}>
+                    <CardHeader
+                        title={cardTitle}
+                        subheader={cardSubheader}
+                        avatar={<Avatar src={avatarSrc} />}
+                        action={
+                            <Tooltip title="View siteUrl" aria-label="add">
+                                <IconButton
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.open(siteUrl, '_blank')
+                                    }}>
+                                    <IconCardHeader color={`primary`} />
+                                </IconButton>
+                            </Tooltip>
+                        }
+                    />
 
-                <Button
-                    className={cn(classes.btn)}
-                    variant={`contained`}
-                    color={`primary`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        this.loadIndex();
-                    }}>
-                    Load
-                </Button>
+                    <CardContent>
+                        <Typography variant={`body1`}>
+                            Enter the URL of any WordPress site with the wp-json plugin
+                            running and CORS access allowed. (That bit is up to you)
+                        </Typography>
+                    </CardContent>
 
-                <Typography variant={`body1`}>
-                    Turns out you can't do this because github won't let you.
-                    They don't want you using the service as a cdn.
-                    Which is exactly what I'm trying to do here.
-                    They control that with CORS by the way
-                </Typography>
+                    <CardActions>
+                        {showLoad ?
+                            <Button
+                                className={cn(classes.btn)}
+                                variant={`contained`}
+                                color={`primary`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    this.loadIndex();
+                                }}>
+                                Load
+                        </Button>
+                            : null}
 
-            </div>
+
+                    </CardActions>
+                </Card>
+
+            </div >
         );
     }
 }

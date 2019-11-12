@@ -28,35 +28,19 @@ console.log(
 const stories = storiesOf("Stories", module);
 
 stories.addParameters({
-  viewport: {
-    viewports,
-    defaultViewport: "baseline"
-  },
+  // viewport: {
+  //   viewports,
+  //   defaultViewport: "baseline"
+  // },
   options: {
     panelPosition: "right",
-    showPanel: false,
-    showNav: false,
+    showPanel: true,
+    showNav: true,
     theme: themes.dark
   }
 });
 
 stories.addDecorator(withKnobs);
-
-stories.add("CodeWorx", () => (
-  <CodeWorx
-    animation={{
-      baseDuration: select(
-        `Speed`,
-        {
-          Fast: 0.75,
-          Normal: 1,
-          Slow: 2.25
-        },
-        1
-      )
-    }}
-  />
-));
 
 // stories.add("ChuckenAnimation", () => (
 //   <ChuckenAnimation
@@ -74,7 +58,12 @@ stories.add("CodeWorx", () => (
 //   />
 // ));
 
-stories.add("WordPress", () => <WordPress />);
+
+stories.add("WordPress", () => <WordPress
+  wordpress={{
+    siteUrl: text(`siteUrl`, `https://listingslab.io/`),
+  }} />
+);
 
 stories.add("MaterialUI", () => (
   <MaterialUI
@@ -96,8 +85,7 @@ stories.add("MaterialUI", () => (
 stories.add("ZooParty", () => (
   <ZooParty
     storybook={{
-      title: text(`Title`, `ZooParty. 7th Birthday Invitation`),
-      version: 1
+      version: 3
     }}
   />
 ));
@@ -109,6 +97,22 @@ stories.add("CakeLady", () => (
     storybook={{
       title: text(`Title`, `Blank Component`),
       backgroundColor: color(`Background Color`, `#3C779B`)
+    }}
+  />
+));
+
+stories.add("CodeWorx", () => (
+  <CodeWorx
+    animation={{
+      baseDuration: select(
+        `Speed`,
+        {
+          Fast: 0.75,
+          Normal: 1,
+          Slow: 2.25
+        },
+        1
+      )
     }}
   />
 ));

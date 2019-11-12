@@ -49,7 +49,7 @@ class MaterialUI extends Component {
                                 e.preventDefault();
                                 window.open('https://material-ui.com/getting-started/installation/', '_blank')
                             }}>
-                            Primary
+                            Material UI Docs
                         </Button>
                         <Button
                             className={cn(classes.btn)}
@@ -57,8 +57,9 @@ class MaterialUI extends Component {
                             variant={`contained`}
                             onClick={(e) => {
                                 e.preventDefault();
+                                window.open('https://material.io/resources/icons/', '_blank')
                             }}>
-                            Secondary
+                            Material Icons
                         </Button>
                         <Button
                             className={cn(classes.btn)}
