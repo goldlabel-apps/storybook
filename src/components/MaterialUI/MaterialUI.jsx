@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import {
@@ -28,18 +29,40 @@ class MaterialUI extends Component {
         const {
             classes,
         } = this.props;
+        let colors = this.props.colors;
+        if (!colors) {
+            colors = {
+                primary: "#222",
+                secondary: "#11b0b9",
+            };
+        }
+        const muiTheme = {
+            palette: {
+                primary: {
+                    main: colors.primary
+                },
+                secondary: {
+                    main: colors.secondary
+                }
+            }
+        };
         return (
-            <React.Fragment>
+            <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
                 <CssBaseline />
                 <div className={cn(classes.mui)}>
                     <Container>
                         <Typography variant={`h5`} className={cn(classes.title)}>
-                            Material UI. React UI framework.
+                            Material UI
+                        </Typography>
+
+                        <Typography variant={`body1`}>
+                            New to Material-UI? It's easy to learn if you know where to start! This guide will help you to get started quickly.
                         </Typography>
 
                         <Typography variant={`h6`} className={cn(classes.title)}>
-                            Contained buttons
+                            Buttons
                         </Typography>
+
 
                         <Button
                             className={cn(classes.btn)}
@@ -68,13 +91,8 @@ class MaterialUI extends Component {
                             onClick={(e) => {
                                 e.preventDefault();
                             }}>
-                            Default
+                            Contained
                         </Button>
-
-                        <Typography variant={`h6`} className={cn(classes.title)}>
-                            Outlined buttons
-                        </Typography>
-
 
                         <Button
                             className={cn(classes.btn)}
@@ -84,7 +102,7 @@ class MaterialUI extends Component {
                                 e.preventDefault();
                                 window.open('https://material-ui.com/getting-started/installation/', '_blank')
                             }}>
-                            Primary
+                            Outlined Primary
                         </Button>
                         <Button
                             className={cn(classes.btn)}
@@ -93,7 +111,7 @@ class MaterialUI extends Component {
                             onClick={(e) => {
                                 e.preventDefault();
                             }}>
-                            Secondary
+                            Outlined Secondary
                         </Button>
                         <Button
                             className={cn(classes.btn)}
@@ -102,14 +120,11 @@ class MaterialUI extends Component {
                             onClick={(e) => {
                                 e.preventDefault();
                             }}>
-                            Default
+                            Outlined Default
                         </Button>
-
-
-
                     </Container>
                 </div>
-            </React.Fragment>
+            </MuiThemeProvider >
         );
     }
 }

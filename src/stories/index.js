@@ -13,7 +13,7 @@ import {
 import {
   CodeWorx,
   CakeLady,
-  // ChuckenAnimation,
+  // Steve,
   // Mapbox,
   MaterialUI,
   ReactPlayingCards,
@@ -42,45 +42,44 @@ stories.addParameters({
 
 stories.addDecorator(withKnobs);
 
-// stories.add("ChuckenAnimation", () => (
-//   <ChuckenAnimation
-//     animation={{
-//       baseDuration: select(
-//         `Speed`,
-//         {
-//           Fast: 0.75,
-//           Normal: 1,
-//           Slow: 2.25
-//         },
-//         1
-//       )
-//     }}
-//   />
-// ));
+
+
 
 
 stories.add("WordPress", () => <WordPress
-  wordpress={{
-    siteUrl: text(`siteUrl`, `https://listingslab.io/`),
-  }} />
+  site={{
+    siteURL: select(
+      `Select Site`,
+      {
+        listingslab: {
+          title: `Listingslab`,
+          url: `https://listingslab.io/`,
+          avatar: `https://i1.wp.com/listingslab.io/wp-content/uploads/2019/10/cropped-logo512-1.png?w=190&ssl=1`,
+        },
+        crashCourses: {
+          title: `Crash Courses`,
+          url: `https://crash-courses.com.au/`,
+          avatar: `https://crash-courses.com.au/wp-content/uploads/2019/07/Icon.png`,
+        },
+      },
+      1
+    )
+  }}
+  colors={{
+    primary: color(`Theme Primary`, `#fab385`),
+    secondary: color(`Theme Secondary`, `#6e4229`),
+  }}
+/>
 );
 
 stories.add("MaterialUI", () => (
   <MaterialUI
-    mui={{
-      primary: color(`Primary`, `#000`),
-      secondary: color(`Secondary`, `#ccc`)
+    colors={{
+      primary: color(`Primary`, `#2ccbd3`),
+      secondary: color(`Secondary`, `#11b0b9`)
     }}
   />
 ));
-
-// stories.add("Mapbox", () => (
-//   <Mapbox
-//     mapbox={{
-//       asdhas: 123
-//     }}
-//   />
-// ));
 
 stories.add("ZooParty", () => (
   <ZooParty
@@ -116,3 +115,18 @@ stories.add("CodeWorx", () => (
     }}
   />
 ));
+
+// stories.add("Steve", () => <Steve
+//   colors={{
+//     primary: color(`Primary`, `#fab385`),
+//     secondary: color(`Secondary`, `#6e4229`),
+//   }}
+// />);
+
+// stories.add("Mapbox", () => (
+//   <Mapbox
+//     mapbox={{
+//       asdhas: 123
+//     }}
+//   />
+// ));

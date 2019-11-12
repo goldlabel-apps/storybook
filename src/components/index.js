@@ -1,6 +1,6 @@
 import CodeWorx from "./CodeWorx/CodeWorx";
 import CakeLady from "./CakeLady/CakeLady";
-import ChuckenAnimation from "./ChuckenAnimation/ChuckenAnimation";
+import Steve from "./Steve/Steve";
 import Mapbox from "./Mapbox/Mapbox";
 import MaterialUI from "./MaterialUI/MaterialUI";
 import ReactPlayingCards from "./ReactPlayingCards/ReactPlayingCards";
@@ -10,7 +10,7 @@ import ZooParty from "./ZooParty/ZooParty";
 export {
   CodeWorx,
   CakeLady,
-  ChuckenAnimation,
+  Steve,
   Mapbox,
   MaterialUI,
   ReactPlayingCards,

@@ -11,24 +11,15 @@ const useStyles = makeStyles({
     },
     image: {
         width: '100vw',
-        height: 'calc(100vh - 5px)',
     }
 });
 
 export default function ZooParty(props) {
     const classes = useStyles();
-    const c = {
-        title: `Default title`,
-        backgroundColor: `#ccc`,
-    }
     const image = {
         src: zooPartySrc,
         alt: 'Zoo Party',
     };
-    const { storybook } = props;
-    if (storybook) {
-        if (storybook.title) c.title = storybook.title;
-    }
     return (
         <React.Fragment>
             <CssBaseline />
