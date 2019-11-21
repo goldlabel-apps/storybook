@@ -8,8 +8,8 @@ import { CardFront } from './PlayingCard/cardElements';
 
 const styles = theme => ({
     pokerCards: {
-        border: '1px solid black',
-        backgroundImage: 'linear-gradient(#222, #444)',
+        // border: '1px solid black',
+        backgroundImage: 'linear-gradient(#ddd, #eee)',
         height: '100vh',
         position: 'relative',
     },
@@ -37,9 +37,9 @@ class ReactPlayingCards extends Component {
                     id={`thecard`}
                     style={{
                         position: 'absolute',
-                        left: 25,
+                        left: 'calc(50vw - 150px)',
                         top: 25,
-                        width: 225
+                        width: 300
                     }}
                     colors={colors}
                 />
