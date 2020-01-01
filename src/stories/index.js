@@ -2,16 +2,16 @@ import packageJSON from "../../package.json";
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { themes } from "@storybook/theming";
-// import viewports from "./viewports";
+import viewports from "./viewports";
 import { files, color, select, text, withKnobs } from "@storybook/addon-knobs";
 import {
+  AAMilly,
   CodeWorx,
   CakeLady,
-  // ChuckenAnimation,
-  // Mapbox,
   MaterialUI,
   ReactPlayingCards,
   WordPress,
+  CompositeVid,
   ZooParty
 } from "../components/";
 
@@ -22,15 +22,15 @@ console.log(
 const stories = storiesOf("Stories", module);
 
 stories.addParameters({
-  // viewport: {
-  //   viewports,
-  //   defaultViewport: "baseline"
-  // },
+  viewport: {
+    viewports,
+    defaultViewport: "youtubeVid"
+  },
   options: {
     panelPosition: "right",
-    showPanel: true,
+    showPanel: false,
     showNav: true,
-    theme: themes.dark
+    theme: themes.light
   }
 });
 
@@ -46,6 +46,38 @@ const playingCard = {
   blackSuit: `#1c1c19`,
   redSuit: `#d43943`
 };
+
+stories.add("AAMilly", () => (
+  <AAMilly
+    animation={{
+      baseDuration: select(
+        `Speed`,
+        {
+          Fast: 0.75,
+          Normal: 1,
+          Slow: 2.25
+        },
+        1
+      )
+    }}
+  />
+));
+
+stories.add("CompositeVid", () => (
+  <CompositeVid
+    animation={{
+      baseDuration: select(
+        `Speed`,
+        {
+          Fast: 0.75,
+          Normal: 1,
+          Slow: 2.25
+        },
+        1
+      )
+    }}
+  />
+));
 
 stories.add("ReactPlayingCards", () => (
   <ReactPlayingCards
