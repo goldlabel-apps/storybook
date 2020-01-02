@@ -6,12 +6,13 @@ import viewports from "./viewports";
 import { files, color, select, text, withKnobs } from "@storybook/addon-knobs";
 import {
   AAMilly,
-  CodeWorx,
   CakeLady,
+  CodeWorx,
+  CompositeVid,
   MaterialUI,
   ReactPlayingCards,
+  UserEntity,
   WordPress,
-  CompositeVid,
   ZooParty
 } from "../components/";
 
@@ -24,7 +25,7 @@ const stories = storiesOf("Stories", module);
 stories.addParameters({
   viewport: {
     viewports,
-    defaultViewport: "youtubeVid"
+    // defaultViewport: "youtubeVid"
   },
   options: {
     panelPosition: "right",
@@ -46,6 +47,22 @@ const playingCard = {
   blackSuit: `#1c1c19`,
   redSuit: `#d43943`
 };
+
+stories.add("UserEntity", () => (
+  <UserEntity
+    animation={{
+      baseDuration: select(
+        `Speed`,
+        {
+          Fast: 0.75,
+          Normal: 1,
+          Slow: 2.25
+        },
+        1
+      )
+    }}
+  />
+));
 
 stories.add("AAMilly", () => (
   <AAMilly
