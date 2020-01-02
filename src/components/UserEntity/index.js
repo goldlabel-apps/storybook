@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react'
+import React from 'react';
 import initRedux from "./redux/initRedux";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-import UserEntityDiv from "./UserEntityDiv";
+import { UserEntity as UE } from './UserEntity';
 
 const disablePersitance = true;
 const purgeStore = () => {
@@ -12,18 +12,16 @@ const purgeStore = () => {
 if (disablePersitance) {
   purgeStore();
 }
-
 const persistedRedux = initRedux(); 
 const getStore = () => {
   return persistedRedux.store;
 };
 export { getStore };
-
 export default function UserEntity(props) {
   return (
     <Provider store={persistedRedux.store}>
       <PersistGate loading={null} persistor={persistedRedux.persistor}>
-        <UserEntityDiv />
+        <UE />
       </PersistGate>
     </Provider>
   );

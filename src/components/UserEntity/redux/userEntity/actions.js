@@ -1,7 +1,7 @@
 // import axios from "axios";
 import { createAction } from "@reduxjs/toolkit";
 import Fingerprint2 from "fingerprintjs2";
-import { getStore } from "../..";
+import { getStore } from "../../";
 
 export const updateFingerprint = createAction("USERENTITY/UPDATE/FINGERPRINT");
 
@@ -13,8 +13,6 @@ export const createFingerprint = () => {
         store.dispatch({ type: 'USERENTITY/UPDATE/FINGERPRINT', fingerprint })
     })    
 }
-
-
 
 
 
