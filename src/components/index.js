@@ -6,7 +6,7 @@ import ChuckenAnimation from "./ChuckenAnimation/ChuckenAnimation";
 import Mapbox from "./Mapbox/Mapbox";
 import MaterialUI from "./MaterialUI/MaterialUI";
 import ReactPlayingCards from "./ReactPlayingCards/ReactPlayingCards";
-import UserEntity from "./UserEntity/UserEntity";
+import UserEntity from "./UserEntity/";
 import WordPress from "./WordPress/WordPress";
 import ZooParty from "./ZooParty/ZooParty";
 
