@@ -4,38 +4,6 @@ const ani = {
   i: 0,
   letters: [
     {
-      divId: `blue-c`,
-      cursorPositionLeft: 10
-    },
-    {
-      divId: `blue-o`,
-      cursorPositionLeft: 52
-    },
-    {
-      divId: `blue-d`,
-      cursorPositionLeft: 96
-    },
-    {
-      divId: `blue-e`,
-      cursorPositionLeft: 139
-    },
-    {
-      divId: `white-w`,
-      cursorPositionLeft: 186
-    },
-    {
-      divId: `white-o`,
-      cursorPositionLeft: 235
-    },
-    {
-      divId: `white-r`,
-      cursorPositionLeft: 271
-    },
-    {
-      divId: `white-x`,
-      cursorPositionLeft: 300
-    },
-    {
       divId: `curly-brace`,
       cursorPositionLeft: 335
     }
