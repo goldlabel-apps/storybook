@@ -70,7 +70,7 @@ export default function PiJS(props) {
                                     <Button
                                         className={classes.controlBtn}
                                         variant={`contained`}
-                                        color={`primary`}
+                                        color={`secondary`}
                                         onClick={resetTransform}
                                     >Reset</Button>
 
