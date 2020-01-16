@@ -10,6 +10,7 @@ import {
   CodeWorx,
   CompositeVid,
   MaterialUI,
+  PiJS,
   ReactPlayingCards,
   UserEntity,
   WordPress,
@@ -25,7 +26,7 @@ const stories = storiesOf("Stories", module);
 stories.addParameters({
   viewport: {
     viewports,
-    // defaultViewport: "youtubeVid"
+    defaultViewport: "baseline"
   },
   options: {
     panelPosition: "right",
@@ -47,6 +48,12 @@ const playingCard = {
   blackSuit: `#1c1c19`,
   redSuit: `#d43943`
 };
+
+
+
+stories.add("PiJS", () => (
+  <PiJS />
+));
 
 stories.add("UserEntity", () => (
   <UserEntity

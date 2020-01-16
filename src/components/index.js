@@ -5,6 +5,7 @@ import CakeLady from "./CakeLady/CakeLady";
 import ChuckenAnimation from "./ChuckenAnimation/ChuckenAnimation";
 import Mapbox from "./Mapbox/Mapbox";
 import MaterialUI from "./MaterialUI/MaterialUI";
+import PiJS from "./PiJS/PiJS";
 import ReactPlayingCards from "./ReactPlayingCards/ReactPlayingCards";
 import UserEntity from "./UserEntity/";
 import WordPress from "./WordPress/WordPress";
@@ -18,6 +19,7 @@ export {
   ChuckenAnimation,
   Mapbox,
   MaterialUI,
+  PiJS,
   ReactPlayingCards,
   UserEntity,
   WordPress,
