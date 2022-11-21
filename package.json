@@ -13,7 +13,7 @@
     "@storybook/addon-storysource": "^5.3.3",
     "@storybook/addon-viewport": "^5.3.3",
     "@storybook/addons": "^5.3.3",
-    "@storybook/react": "^5.2.8",
+    "@storybook/react": "^6.5.13",
     "@storybook/source-loader": "^5.3.3",
     "storybook-readme": "^5.0.8"
   },
@@ -38,7 +38,7 @@
     "react-mapbox-gl": "^4.7.3",
     "react-media-player": "^0.7.9",
     "react-redux": "^7.1.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-swipeable-views": "^0.13.3",
     "react-zoom-pan-pinch": "^1.5.5",
     "redux": "^4.0.4",
